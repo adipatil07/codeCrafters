@@ -155,28 +155,11 @@
 
              </div>
 
-              <label class="form-label" for="fullNameSrEmail">Full name</label>
-
-              <!-- Form -->
-              <div class="row">
-                <div class="col-sm-6">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" name="fullName" id="fullNameSrEmail" placeholder="Mark" aria-label="Mark" required>
-                    <span class="invalid-feedback">Please enter your first name.</span>
-                  </div>
-                  <!-- End Form -->
-                </div>
-
-                <div class="col-sm-6">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Williams" aria-label="Williams" required>
-                    <span class="invalid-feedback">Please enter your last name.</span>
-                  </div>
-                  <!-- End Form -->
-                </div>
-              </div>
+              <div class="mb-4">
+                <label class="form-label" for="fullName">Full Name</label>
+                <input type="text" class="form-control form-control-lg" name="fullName" id="fullName" placeholder="Mark Williams" aria-label="Mark Williams" required>
+                <span class="invalid-feedback">Please enter your full name.</span>
+            </div>
               <!-- End Form -->
 
               <!-- Form -->
@@ -189,14 +172,21 @@
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">Department</label>
                 <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
-                <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
+                <span class="invalid-feedback">Please Enter your Department name</span>
               </div>
 
               <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Department</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
-                <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
-              </div>
+                <label class="form-label" for="departmentDropdown">Domain</label>
+                <select class="form-select form-select-lg" id="departmentDropdown" name="department" required>
+                <option value="" selected disabled>Choose Your Domain</option>
+                <option value="AD">Android Development</option>
+                <option value="WD">Web Development</option>
+                <option value="AM">AI/ML</option>
+                <option value="CC">Cloud Computing</option>
+                <!-- Add more options as needed -->
+                </select>
+                <span class="invalid-feedback">Please select your department.</span>
+            </div>
 
 
               <div class="mb-4">
@@ -254,14 +244,11 @@
               </div> -->
               <!-- End Form -->
 
-              <!-- Form Check -->
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" value="" id="termsCheckbox" required>
-                <label class="form-check-label" for="termsCheckbox">
-                  I accept the <a href="#">Terms and Conditions</a>
-                </label>
-                <span class="invalid-feedback">Please accept our Terms and Conditions.</span>
-              </div>
+              <div class="mb-4">
+    <label class="form-label" for="reasonForJoining">Why do you want to join the club?</label>
+    <textarea class="form-control" name="reasonForJoining" id="reasonForJoining" rows="4" placeholder="Write your response here..." required></textarea>
+    <span class="invalid-feedback">Please provide a reason for joining the club.</span>
+  </div>
 
               
               <!-- End Form Check -->
