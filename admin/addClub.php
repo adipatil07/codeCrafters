@@ -145,9 +145,7 @@
         <div class="row align-items-center">
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
-              <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item active" aria-current="page">Event</li>
-              </ol>
+              
             </nav>
 
             <h1 class="page-header-title">Add Club</h1>
