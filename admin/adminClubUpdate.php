@@ -158,15 +158,15 @@
               </ol>
             </nav>
 
-            <h1 class="page-header-title">Events</h1>
+            <h1 class="page-header-title">Clubs</h1>
           </div>
           <!-- End Col -->
 
-          <div class="col-sm-auto">
+          <!-- <div class="col-sm-auto">
             <a class="btn btn-primary" href="./users-add-user.html">
               <i class="bi-person-plus-fill me-1"></i> Add Event
             </a>
-          </div>
+          </div> -->
           <!-- End Col -->
         </div>
         <!-- End Row -->
@@ -188,7 +188,7 @@
                 <div class="input-group-prepend input-group-text">
                   <i class="bi-search"></i>
                 </div>
-                <input id="datatableSearch" type="search" class="form-control" placeholder="Search Events" aria-label="Search Events">
+                <input id="datatableSearch" type="search" class="form-control" placeholder="Search Clubs" aria-label="Search Clubs">
               </div>
               <!-- End Search -->
             </form>
