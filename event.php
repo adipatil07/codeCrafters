@@ -152,7 +152,11 @@
       <div class="card-body">
         <h1 class="card-title">Codex - Competative Coding</h5>
         <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
+<<<<<<< HEAD
         <a href="./eventRegistration.php"><button type="button"class="btn btn-soft-primary" >Enroll Now</button></a>
+=======
+        <a href="eventRegistration.php"><button type="button"class="btn btn-soft-primary" >Enroll Now</button></a>
+>>>>>>> 9575ab2365ada77ef74b45cc93e30a1da0754138
       </div>
     </div>
   </div>
