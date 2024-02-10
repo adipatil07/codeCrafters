@@ -168,16 +168,21 @@
                 <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@site.com" aria-label="Markwilliams@site.com" required>
                 <span class="invalid-feedback">Please enter a valid email address.</span>
               </div>
+               <div class="mb-4">
+                <label class="form-label" for="signupSrEmail">Your Mobile No</label>
+                <input type="email" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="+91 xxxxx xxxxx"  required>
+                <span class="invalid-feedback">Please enter a valid mobile number.</span>
+              </div>
             
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">Department</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
+                <input type="email" class="form-control form-control-lg" name="department" id="signupSrEmail" placeholder="Enter your Department name " required>
                 <span class="invalid-feedback">Please Enter your Department name</span>
               </div>
 
               <div class="mb-4">
                 <label class="form-label" for="departmentDropdown">Domain</label>
-                <select class="form-select form-select-lg" id="departmentDropdown" name="department" required>
+                <select class="form-select form-select-lg" id="departmentDropdown" name="domain" required>
                 <option value="" selected disabled>Choose Your Domain</option>
                 <option value="AD">Android Development</option>
                 <option value="WD">Web Development</option>
@@ -191,13 +196,13 @@
 
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">LinkedIn Profile</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz" aria-label="Markwilliams@site.com" required>
+                <input type="email" class="form-control form-control-lg" name="linkedin" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz"  required>
                 <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
               </div>
 
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">Github Profile</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="https://github.com/xyz" aria-label="Markwilliams@site.com" required>
+                <input type="email" class="form-control form-control-lg" name="github" id="signupSrEmail" placeholder="https://github.com/xyz" required>
                 <span class="invalid-feedback">Please enter your Github Profile link</span>
               </div>
 
@@ -254,7 +259,7 @@
               <!-- End Form Check -->
 
               <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="btn_submit">Submit</button>
 
               </div>
             </form>
@@ -300,3 +305,39 @@
   </script>
 </body>
 </html>
+<?php
+if(isset($_POST['btn_submit'])){
+    include 'admin/include/config.php';
+    $con = new mysqli($servername, $username, $password, $dbname);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+    
+    // Retrieve form data
+    $fullName = $_POST['fullName'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $department = $_POST['department'];
+    $domain = $_POST['domain'];
+    $linkedin = $_POST['linkedin'];
+    $github = $_POST['github'];
+    $reasonForJoining = $_POST['reasonForJoining'];
+    
+    // Prepare SQL statement
+    $stmt = $con->prepare("INSERT INTO `tbl_user_club_req`(`req_user_name`, `req_user_email`, `req_user_mobile`, `req_user_dept`, `req_user_domain`, `reg_user_linkedin`, `reg_user_github`, `req_user_msg`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    // Bind parameters
+    $stmt->bind_param("ssssssss", $fullName, $email, $mobile, $department, $domain, $linkedin, $github, $reasonForJoining);
+    
+    // Execute statement
+    if ($stmt->execute()) {
+        echo '<script>alert("Send Message Successfully");</script>';
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    
+    // Close statement and connection
+    // $stmt->close();
+    // $con->close();
+}
+?>
