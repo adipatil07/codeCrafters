@@ -32,7 +32,6 @@
 
               <div id="navbarVerticalMenuDashboards" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenu">
                 <a class="nav-link " href="./dashboard.php">Default</a>
-                <a class="nav-link " href="./dashboard-alternative.php">Alternative</a>
               </div>
             </div>
             <!-- End Collapse -->
