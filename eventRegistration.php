@@ -130,22 +130,14 @@
 
     <!-- ========== HEADER ========== -->
 
-    <!-- <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-container navbar-bordered bg-white">
+    <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-container navbar-bordered bg-white">
       <div class="navbar-nav-wrap">
         
         </div>
       </div>
-    </header> -->
+    </header>
 
     <main id="content" role="main" class="main">
-      <!-- Content -->
-      <!-- <div class="content container-fluid">
-        
-        <div class=" col-lg-4 mb-4">
-        <h2>Tech Event</h2>
-        <p>Start Date: [Your Start Date]</p>
-        <p>End Date: [Your End Date]</p>
-    </div> -->
         <form class="js-step-form py-md-5" data-hs-step-form-options='{
                 "progressSelector": "#addUserStepFormProgress",
                 "stepsSelector": "#addUserStepFormContent",
@@ -153,8 +145,14 @@
                 "isValidate": false
               }'>
           <div class="row justify-content-lg-center">
+            
             <div class="col-lg-8">
               <!-- Step -->
+              <div class="content container-fluid">
+        <div class=" col-lg-4 mb-4">
+        <h1>EventName</h1>
+        <p>Start Date - End Date</p>
+      </div>
               <ul id="addUserStepFormProgress" class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
                 <li class="step-item">
                   <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
@@ -280,15 +278,15 @@
 
                 <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
                   <!-- Body -->
-                  <div class="card-body">
-                  <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Event Name</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Amount : 50</h6>
-                      <p class="card-text">Pay with Razorpay</p>
-                      <a href="#" class="card-link">Pay</a>
-                    </div>
-                  </div>
+                  <div class="card-body ">
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body ">
+                          <h5 class="card-title">Event Name</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Amount : 50</h6>
+                          <p class="card-text">Pay with Razorpay</p>
+                          <a href="#" class="card-link">Pay</a>
+                        </div>
+                      </div>
                     <!-- End Form -->
                   </div>
                   <!-- End Body -->
@@ -320,9 +318,6 @@
                     </div>
                   </div>
                   <!-- End Profile Cover -->
-
-                  
-
                   <!-- Body -->
                   <div class="card-body">
                     <dl class="row">
@@ -355,7 +350,7 @@
                     </button>
 
                     <div class="ms-auto">
-                      <button type="button" class="btn btn-white me-2">Save in drafts</button>
+                      
                       <button id="addUserFinishBtn" type="button" class="btn btn-primary">Done</button>
                     </div>
                   </div>
