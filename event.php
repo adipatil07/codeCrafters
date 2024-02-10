@@ -138,7 +138,7 @@
     <!-- Content -->
     <div class="container py-5 py-sm-7">
       <a class="d-flex justify-content-center mb-5" href="./index.html">
-        <img class="zi-2" src="./images/Sinhgad White.png" alt="Image Description" style="width: 15rem;">
+        <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
       </a>
 
       <div class="mx-auto" style="max-width: 65rem;">
@@ -194,7 +194,10 @@ if ($result) {
                 </div>
               </div>
             </div>
-            <!-- End Card -->';
+            <!-- End Card -->
+            ';
+            
+
     }
 
     // Free result set
