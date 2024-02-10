@@ -193,17 +193,21 @@ if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         // Extract data from the row
         $clubName = $row['club_name'];
-        $clubDesc = $row['club_desc'];
-        $clubLogo = $row['club_logo'];
+        $clubDesc = $row['club_purpose'];
+        $clubLogo = $row['club_audience'];
+        $clubSmedia= $row['club_social_media'];
 
+
+        //<img class="card-img-top" src="' . $clubLogo . '" alt="Logo of Club" style="width: 20rem;height: 10rem">
         // HTML template with placeholders replaced by fetched values
         echo '<div class="col-sm-4 mb-4">
                 <a href="#">
                     <div class="card" style="width: 20rem;height: 20rem">
-                        <img class="card-img-top" src="' . $clubLogo . '" alt="Logo of Club" style="width: 20rem;height: 10rem">
+                       
                         <div class="card-body">
                             <h5 class="card-title">' . $clubName . '</h5>
                             <p class="card-text">' . $clubDesc . '</p>
+                            <p class="card-text">' . $clubSmedia . '</p>
                         </div>
                         <br>
                         <a href="./adminclub.php"><button type="button" class="btn btn-ghost-primary">More Info</button></a>
