@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <!-- Required Meta Tags Always Come First -->
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Add Event</title>
+  <title>Invoice | Front - Admin &amp; Dashboard Template</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -16,9 +16,6 @@
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-
-  <link rel="stylesheet" href="./assets/vendor/tom-select/dist/css/tom-select.bootstrap5.css">
-  <link rel="stylesheet" href="./assets/vendor/quill/dist/quill.snow.css">
 
   <!-- CSS Front Template -->
 
@@ -130,28 +127,24 @@
 
   <!-- ========== HEADER ========== -->
 
-<?php   include "include/header.php"; ?>
+
   <!-- ========== END HEADER ========== -->
+
   <!-- ========== MAIN CONTENT ========== -->
   <!-- Navbar Vertical -->
-<?php include "include/sidebar.php";  ?>
-
 
   <main id="content" role="main" class="main">
     <!-- Content -->
     <div class="content container-fluid">
       <!-- Page Header -->
-      <div class="page-header">
-        <div class="row align-items-center">
+      <div class="page-header d-print-none">
+        <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item active" aria-current="page">Event</li>
-              </ol>
-            </nav>
+           
 
-            <h1 class="page-header-title">Add Event</h1>
+            <!-- <h1 class="page-header-title">Invoice</h1> -->
           </div>
+          <!-- End Col -->
           <!-- End Col -->
         </div>
         <!-- End Row -->
@@ -159,127 +152,152 @@
       <!-- End Page Header -->
 
       <div class="row">
-        <div class="col-lg-4 mb-3 mb-lg-0">
-          <h4>Event information</h4>
-        </div>
-
-        <div class="col-lg-8">
-        <div class="d-flex align-items-center">
-        <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
-  <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
-
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
-    "textTarget": "#avatarImg",
-    "mode": "image",
-    "targetAttr": "src",
-    "resetTarget": ".js-file-attach-reset-img",
-    "resetImg": "./assets/img/160x160/img1.jpg",
-    "allowTypes": [".png", ".jpeg", ".jpg"]
-  }'>
-
-  <span class="avatar-uploader-trigger">
-    <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
-  </span>
-</label>
-
-
-                        <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
-                      </div>
+        <div class="col-lg-8 mb-5 mb-lg-0">
           <!-- Card -->
-          <div class="card">
-            <!-- Body -->
+          <div class="card card-lg mb-5">
             <div class="card-body">
-              <div class="row">
-                <div class="col-sm-12">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <label for="firstNameLabel" class="form-label">Event name</label>
-                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="event name" aria-label="Clarice">
+              <div class="row justify-content-lg-between">
+                <div class="col-sm order-2 order-sm-1 mb-3">
+                  <div class="mb-2">
+                    <img class="avatar" src="./assets/svg/logos/logo-short.svg" alt="Logo">
                   </div>
-                  <!-- End Form -->
+
+                  <h1 class="h2 text-primary">Front Inc.</h1>
                 </div>
                 <!-- End Col -->
 
-                
+                <div class="col-sm-auto order-1 order-sm-2 text-sm-end mb-3">
+                  <div class="mb-3">
+                    <h2>Invoice #</h2>
+                    <span class="d-block">3682303</span>
+                  </div>
+
+                  <address class="text-dark">
+                    45 Roker Terrace<br>
+                    Latheronwheel<br>
+                    KW5 8NW, London<br>
+                    United Kingdom
+                  </address>
+                </div>
                 <!-- End Col -->
               </div>
               <!-- End Row -->
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label for="emailLabel" class="form-label">Venue</label>
-                <input type="email" class="form-control" name="email" id="emailLabel" placeholder="" aria-label="clarice@site.com">
-              </div>
-              <!-- End Form -->
+              <div class="row justify-content-md-between mb-3">
+                <div class="col-md">
+                  <h4>Bill to:</h4>
+                  <h4>Sara Williams</h4>
 
-              <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">Start Date</label>
-
-                <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+                  <address>
+                    280 Suzanne Throughway,<br>
+                    Breannabury, OR 45801,<br>
+                    United States
+                  </address>
                 </div>
+                <!-- End Col -->
 
-                <!-- Container For Input Field -->
-
-                
-              </div>
-              <!-- End Form -->
-              <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">End Date</label>
-
-                <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+                <div class="col-md text-md-end">
+                  <dl class="row">
+                    <dt class="col-sm-8">Invoice date:</dt>
+                    <dd class="col-sm-4">03/10/2018</dd>
+                  </dl>
+                  <dl class="row">
+                    <dt class="col-sm-8">Due date:</dt>
+                    <dd class="col-sm-4">03/11/2018</dd>
+                  </dl>
                 </div>
-
-                <!-- Container For Input Field -->
-
-                
+                <!-- End Col -->
               </div>
+              <!-- End Row -->
 
-              <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Time</label>
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-borderless table-nowrap table-align-middle">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Rate</th>
+                      <th class="table-text-end">Amount</th>
+                    </tr>
+                  </thead>
 
-                <div class="input-group">
-                  <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+                  <tbody>
+                    <tr>
+                      <th>Design UX and UI</th>
+                      <td>1</td>
+                      <td>5</td>
+                      <td class="table-text-end">$500</td>
+                    </tr>
 
-                  
+                    <tr>
+                      <th>Web project</th>
+                      <td>1</td>
+                      <td>24</td>
+                      <td class="table-text-end">$1250</td>
+                    </tr>
+
+                    <tr>
+                      <th>SEO</th>
+                      <td>1</td>
+                      <td>6</td>
+                      <td class="table-text-end">$2000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table -->
+
+              <hr class="my-5">
+
+              <div class="row justify-content-md-end mb-3">
+                <div class="col-md-8 col-lg-7">
+                  <dl class="row text-sm-end">
+                    <dt class="col-sm-6">Subtotal:</dt>
+                    <dd class="col-sm-6">$2750.00</dd>
+                    <dt class="col-sm-6">Total:</dt>
+                    <dd class="col-sm-6">$2750.00</dd>
+                    <dt class="col-sm-6">Tax:</dt>
+                    <dd class="col-sm-6">$39.00</dd>
+                    <dt class="col-sm-6">Amount paid:</dt>
+                    <dd class="col-sm-6">$2789.00</dd>
+                    <dt class="col-sm-6">Due balance:</dt>
+                    <dd class="col-sm-6">$0.00</dd>
+                  </dl>
+                  <!-- End Row -->
                 </div>
-
-                <!-- Container For Input Field -->
-
-                
               </div>
-              <!-- End Form -->
-              <div class="d-flex justify-content-end gap-3">
-                <button type="button" class="btn btn-white">Discard</button>
-                <button type="button" class="btn btn-primary">Save</button>
+              <!-- End Row -->
+
+              <div class="mb-3">
+                <h3>Thank you!</h3>
+                <p>If you have any questions concerning this invoice, use the following contact information:</p>
               </div>
+
+              <p class="small mb-0">&copy; 2021 Htmlstream.</p>
             </div>
-            <!-- Body -->
           </div>
           <!-- End Card -->
+
+          <!-- Footer -->
+          <div class="d-flex justify-content-end d-print-none gap-3">
+            <a class="btn btn-white" href="#">
+              <i class="bi-file-earmark-arrow-down me-1"></i> PDF
+            </a>
+
+            <a class="btn btn-primary" href="javascript:;" onclick="window.print(); return false;">
+              <i class="bi-printer me-1"></i> Print details
+            </a>
+          </div>
+          <!-- End Footer -->
         </div>
-      </div>
-      <!-- End Row -->
-
-      <hr class="my-5">
-
-      <!-- End Row -->
-
-      <hr class="my-5">
-
-       <!-- End Row -->
-    </div>
     <!-- End Content -->
 
     <!-- Footer -->
-<?php include "include/footer.php";   ?>
+
+     <?PHP 
+          include'admin/include/footer.php';
+        ?>
 
     <!-- End Footer -->
   </main>
@@ -961,26 +979,9 @@
         <!-- End Body -->
 
         <!-- Footer -->
-        <div class="modal-footer d-block text-center py-sm-5">
-          <small class="text-cap text-muted">Trusted by the world's best teams</small>
+         <!-- Footer -->
 
-          <div class="w-85 mx-auto">
-            <div class="row justify-content-between">
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Image Description">
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Image Description">
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Image Description">
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Image Description">
-              </div>
-            </div>
-          </div>
-        </div>
+  <?php   include "include/footer.php";  ?>
         <!-- End Footer -->
       </div>
     </div>
@@ -998,10 +999,7 @@
   <script src="./assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside.min.js"></script>
   <script src="./assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
 
-  <script src="./assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
-  <script src="./assets/vendor/hs-add-field/dist/hs-add-field.min.js"></script>
-  <script src="./assets/vendor/tom-select/dist/js/tom-select.complete.min.js"></script>
-  <script src="./assets/vendor/imask/dist/imask.min.js"></script>
+  <script src="./assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
@@ -1027,24 +1025,9 @@
         HSBsDropdown.init()
 
 
-        // INITIALIZATION OF SELECT
+        // INITIALIZATION OF NAV SCROLLER
         // =======================================================
-        HSCore.components.HSTomSelect.init('.js-select')
-
-
-        // INITIALIZATION OF ADD FIELD
-        // =======================================================
-        new HSAddField('.js-add-field', {
-          addedField: field => {
-            HSCore.components.HSTomSelect.init(field.querySelector('.js-select-dynamic'))
-            HSCore.components.HSMask.init(field.querySelector('.js-input-mask'))
-          }
-        })
-
-
-        // INITIALIZATION OF INPUT MASK
-        // =======================================================
-        HSCore.components.HSMask.init('.js-input-mask')
+        new HsNavScroller('.js-nav-scroller')
       }
     })()
   </script>

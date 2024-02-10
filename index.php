@@ -347,7 +347,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2024 Code Crafters</p>
+                        <p class="copyright-text">All Right Reserved.<span class="d-none d-sm-inline-block">2024 Code Crafters .</p>
                     </div>
 
                     <div class="col-lg-8 col-12 mt-lg-5">

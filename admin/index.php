@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Basic Log In | Front - Admin &amp; Dashboard Template</title>
+  <title>Sinhgad Admin Login | - Admin &amp; Dashboard Template</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -139,7 +139,7 @@
     <!-- Content -->
     <div class="container py-5 py-sm-7">
       <a class="d-flex justify-content-center mb-5" href="./index.php">
-        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
+      <img class="zi-2" src="../images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
       </a>
       <div class="mx-auto" style="max-width: 30rem;">
         <!-- Card -->
@@ -270,7 +270,7 @@ if (mysqli_num_rows($result) == 0) {
             $_SESSION['admin_name'] = $row['admin_name'];
             $_SESSION['admin_email'] = $row['admin_email'];
             $_SESSION['admin_mobile_no'] = $row['admin_mobile_no'];
-                        echo "<script>alert('Login Sucess...!');</script>";
+             //           echo "<script>alert('Login Sucess...!');</script>";
 
             echo "<script>window.location.href = 'dashboard.php';</script>";
             exit;

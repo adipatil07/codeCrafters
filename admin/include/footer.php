@@ -1,7 +1,7 @@
   <div class="footer">
       <div class="row justify-content-between align-items-center">
         <div class="col">
-          <p class="fs-6 mb-0">&copy; Front. <span class="d-none d-sm-inline-block">2024 Code Crafters  .</span></p>
+          <small class="text-cap text-body mb-4">&copy;All Right Reserved.<span class="d-none d-sm-inline-block">2024 Code Crafters .</small>
         </div>
         <!-- End Col -->
 
