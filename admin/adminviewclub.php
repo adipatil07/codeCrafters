@@ -205,6 +205,9 @@ if ($result) {
                             <h5 class="card-title">' . $clubName . '</h5>
                             <p class="card-text">' . $clubDesc . '</p>
                         </div>
+                        <br>
+                        <a href="./adminclub.php"><button type="button" class="btn btn-ghost-primary">More Info</button></a>
+
                     </div>
                 </a>
             </div>';

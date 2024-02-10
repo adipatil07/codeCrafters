@@ -285,12 +285,12 @@ session_start();
 
                     <!-- Footer -->
                     <div class="card-footer d-flex justify-content-end align-items-center">
+
                       <button type="submit" class="btn btn-primary" name="btn_register" data-hs-step-form-next-options='{
                                 "targetSelector": "#addUserStepBillingAddress"
                               }'>
                         Proceed to pay<i class="bi-chevron-right"></i>
 
-  
                     </div>
                     <!-- End Footer -->
                   </div>
