@@ -75,7 +75,7 @@ npm run build
 
 # Start up the live web server (will be available on port 10001)
 npm run dev
--> http://localhost:10001/index.php
+-> http://localhost:10001/dashboard.php
 
 # Access and test in samples dir
 -> http://localhost:10001/samples/YourSampleName.php

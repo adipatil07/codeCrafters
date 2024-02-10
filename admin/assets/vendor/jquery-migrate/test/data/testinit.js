@@ -151,8 +151,8 @@ TestManager = {
 		 *
 		 * Also prefixes with baseURL automatically.
 		 *
-		 * @example url("index.php")
-		 * @result "data/index.php?10538358428943"
+		 * @example url("dashboard.php")
+		 * @result "data/dashboard.php?10538358428943"
 		 *
 		 * @example url("mock.php?foo=bar")
 		 * @result "data/mock.php?foo=bar&10538358345554"

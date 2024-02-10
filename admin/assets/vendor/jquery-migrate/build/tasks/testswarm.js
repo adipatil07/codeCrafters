@@ -33,7 +33,7 @@ module.exports = function( grunt ) {
 
 		tests.forEach( function( test ) {
 			var pluginjQuery = test.split( "+" );
-			runs[ test ] = config.testUrl + commit + "/test/index.php?plugin=" +
+			runs[ test ] = config.testUrl + commit + "/test/dashboard.php?plugin=" +
 				pluginjQuery[ 0 ] + "&jquery=" + pluginjQuery[ 1 ];
 		} );
 

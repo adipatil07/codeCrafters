@@ -45,13 +45,13 @@ module.exports = function(gulp, conf) {
     var dest = path.join(process.cwd(), '.gh-pages');
     mkdirp(dest);
 
-    fs.writeFileSync(path.join(dest, 'index.php'), templates.index(data));
+    fs.writeFileSync(path.join(dest, 'dashboard.php'), templates.index(data));
     data.title = ' - simple example';
     mkdirp(path.join(dest, 'examples', 'simple'));
-    fs.writeFileSync(path.join(dest, 'examples', 'simple', 'index.php'), templates['examples/simple/index'](data));
+    fs.writeFileSync(path.join(dest, 'examples', 'simple', 'dashboard.php'), templates['examples/simple/index'](data));
     data.title = ' - lazyload example';
     mkdirp(path.join(dest, 'examples', 'lazy'));
-    fs.writeFileSync(path.join(dest, 'examples', 'lazy', 'index.php'), templates['examples/lazy/index'](data));
+    fs.writeFileSync(path.join(dest, 'examples', 'lazy', 'dashboard.php'), templates['examples/lazy/index'](data));
 
     cb();
 

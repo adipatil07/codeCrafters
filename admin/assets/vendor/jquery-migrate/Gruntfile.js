@@ -103,7 +103,7 @@ module.exports = function( grunt ) {
 			}
 		},
 		qunit: {
-			files: [ "test/**/index.php" ]
+			files: [ "test/**/dashboard.php" ]
 		},
 		eslint: {
 			options: {
