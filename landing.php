@@ -204,7 +204,7 @@ https://templatemo.com/tm-583-festava-live
                                 <li class="pricing-list-item">Engagement</li>
                             </ul>
 
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="#">
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="./userClub.php">
                                 <span>Join Club</span>
                                 <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">

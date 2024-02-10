@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Event</title>
+  <title>Club</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -146,11 +146,11 @@
 <div class="card mb-3" style="max-width: 1000px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-    <img class="img-fluid" src="./images/codex.jpg" alt="Card image cap" style="width: 300px; height: 200px;">
+    <img class="img-fluid" src="./images/gdsc.jpg" alt="Card image cap" style="width: 300px; height: 200px;">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h1 class="card-title">Codex - Competative Coding</h5>
+        <h1 class="card-title">GDSC - Google Developer Students club</h5>
         <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
         <button type="button" href= "./eventRegistration.php"class="btn btn-soft-primary" >Enroll Now</button>
       </div>
