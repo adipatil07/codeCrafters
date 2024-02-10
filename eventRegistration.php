@@ -371,7 +371,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <a class="btn btn-white me-3" href="./landing.php">
+                    <a class="btn btn-white me-3" href="./index.php">
                       <i class="bi-chevron-left ms-1"></i> Home
                     </a>
                     <a class="btn btn-primary" href="./event.php">
