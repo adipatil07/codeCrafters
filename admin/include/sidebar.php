@@ -48,14 +48,14 @@
               <!-- Collapse -->
               <div class="nav-item">
                 <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesUsersMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesUsersMenu" aria-expanded="false" aria-controls="navbarVerticalMenuPagesUsersMenu">
-                  <i class="bi-people nav-icon"></i>
-                  <span class="nav-link-title">Users</span>
+                  <i class="bi bi-calendar-event nav-icon"></i> 
+                  <span class="nav-link-title">Events</span>
                 </a>
 
                 <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link " href="./users.php">Overview</a>
-                  <a class="nav-link " href="./users-leaderboard.php">Leaderboard</a>
-                  <a class="nav-link " href="./users-add-user.php">Add User <span class="badge bg-info rounded-pill ms-1">Hot</span></a>
+                  <a class="nav-link " href="./users.php">Add Event</a>
+                  <a class="nav-link " href="./users-leaderboard.php">Update Event</a>
+                  <a class="nav-link " href="./users-add-user.php">View Event</a>
                 </div>
               </div>
               <!-- End Collapse -->
@@ -63,16 +63,17 @@
               <!-- Collapse -->
               <div class="nav-item">
                 <a class="nav-link dropdown-toggle " href="#navbarVerticalMenuPagesUserProfileMenu" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuPagesUserProfileMenu" aria-expanded="false" aria-controls="navbarVerticalMenuPagesUserProfileMenu">
-                  <i class="bi-person nav-icon"></i>
-                  <span class="nav-link-title">User Profile <span class="badge bg-primary rounded-pill ms-1">5</span></span>
+                 <i class="bi bi-people nav-icon"></i>
+                  <span class="nav-link-title">Clubs</span>
                 </a>
+                <!-- <span class="badge bg-primary rounded-pill ms-1">5</span> -->
 
                 <div id="navbarVerticalMenuPagesUserProfileMenu" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link " href="./user-profile.php">Profile</a>
-                  <a class="nav-link " href="./user-profile-teams.php">Teams</a>
-                  <a class="nav-link " href="./user-profile-projects.php">Projects</a>
-                  <a class="nav-link " href="./user-profile-connections.php">Connections</a>
-                  <a class="nav-link " href="./user-profile-my-profile.php">My Profile</a>
+                  <a class="nav-link " href="./user-profile.php">Add Club</a>
+                  <a class="nav-link " href="#">Update Club</a>
+                  <a class="nav-link " href="#">View Club</a>
+                  <!-- <a class="nav-link " href="./user-profile-connections.php">Connections</a>
+                  <a class="nav-link " href="./user-profile-my-profile.php">My Profile</a> -->
                 </div>
               </div>
               <!-- End Collapse -->

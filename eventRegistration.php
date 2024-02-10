@@ -203,8 +203,8 @@
 
                       <div class="col-sm-9">
                         <div class="input-group input-group-sm-vertical">
-                          <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Aditya" aria-label="Aditya">
-                          <input type="text" class="form-control" name="lastName" id="lastNameLabel" placeholder="Patil" aria-label="Patil">
+                          <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="First Name" aria-label="Aditya">
+                          <input type="text" class="form-control" name="lastName" id="lastNameLabel" placeholder="Last Name" aria-label="Patil">
                         </div>
                       </div>
                     </div>
@@ -215,7 +215,7 @@
                       <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
 
                       <div class="col-sm-9">
-                        <input type="email" class="form-control" name="email" id="emailLabel" placeholder="aditya@gmail.com" aria-label="aditya@gmail.com">
+                        <input type="email" class="form-control" name="email" id="emailLabel" placeholder="email@gmail.com" aria-label="aditya@gmail.com">
                       </div>
                     </div>
                     <!-- End Form -->
@@ -226,7 +226,7 @@
                             "container": "#addPhoneFieldContainer",
                             "defaultCreated": 0
                           }'>
-                      <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone <span class="form-label-secondary">(Optional)</span></label>
+                      <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone</label>
 
                       <div class="col-sm-9">
                         <div class="input-group input-group-sm-vertical">
@@ -538,3 +538,9 @@
     <!-- End Style Switcher JS -->
   </body>
   </html>
+<?PHP
+
+include 'include/config.php';
+
+
+?>
