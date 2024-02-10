@@ -227,49 +227,8 @@
               </div>
               <!-- End Form -->
               <!-- Form -->
-              <div class="js-add-field mb-4">
-                    <label for="memberLabel" class="form-label">Club Members</label>
-                    <div class="input-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox1" id="memberCheckbox1" value="President">
-                            <label class="form-check-label" for="memberCheckbox1">
-                                President
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox2" id="memberCheckbox2" value="Android Developer">
-                            <label class="form-check-label" for="memberCheckbox2">
-                                Android Developer
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
-                            <label class="form-check-label" for="memberCheckbox3">
-                                Web Developer
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
-                            <label class="form-check-label" for="memberCheckbox3">
-                                Cloud Lead
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
-                            <label class="form-check-label" for="memberCheckbox3">
-                                Cyber Security
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
-                            <label class="form-check-label" for="memberCheckbox3">
-                                AI/Ml
-                            </label>
-                        </div>
-    <!-- Add more checkboxes as needed -->
-                </div>
+              
 
-              </div>
 
               <div class="js-add-field mb-4" >
                 <label for="time" class="form-label">Social Media Links</label>

@@ -234,17 +234,17 @@
             <thead class="thead-light">
               <tr>
                 <th class="table-column-pe-0">
-                  <!-- <div class="form-check">
+                  <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll">
                     <label class="form-check-label" for="datatableCheckAll"></label>
-                  </div> -->
+                  </div>
                 </th>
-                <th class="table-column-ps-0">Event Name</th>
-                <th>Current Enrolled</th>
-                <th>Venue</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <!-- <th>Time</th> -->
+                <th class="table-column-ps-0">Club Name</th>
+                <th>Members</th>
+                <th>Club Purpose</th>
+                <th>Target Audience</th>
+                <th>Social Media Links</th>
+                
                 <!-- <th>Capacity</th> -->
                 <th>Action</th>
               </tr>
@@ -283,6 +283,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td class="table-column-pe-0">
               <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll1">
+                <label class="form-check-label" for="datatableCheckAll1"></label>
               </div>
             </td>';
     echo '<td class="table-column-ps-0">
@@ -292,17 +294,11 @@ while ($row = mysqli_fetch_assoc($result)) {
               </div>
             </td>';
     echo '<td><span class="d-block h5 mb-0">' . $eventId . '</span></td>';
-
-    echo '<td>' . $eventDescription . '</td>'; 
-    echo '<td>' . $eventStartDate . '<br>'.$eventStartTime.'</td>';
-    echo '<td>' . $eventEndDate . '<br>'.$eventEndTime.'</td>';
-    // echo '<td>' . $eventStartTime . '</td>'; // Removed event status column
-    echo '<td><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
     echo '<td>' . $eventDescription . '</td>'; // Changed venue to description
     echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
     echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';
     // echo '<td><span class="legend-indicator bg-success"></span>' . $eventStatus . '</td>'; // Removed event status column
-    echo '<td><a href="./addevent.php"><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+    echo '<td><a href="./addClub.php"><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="bi-pencil-fill me-1"></i> Edit
               </button></a></td>';
     echo '</tr>';
@@ -1157,11 +1153,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <!-- Form -->
                 <br>
                 <div class="row mb-4">
-                  <label for="editFirstNameModalLabel" class="col-sm-3 col-form-label form-label">Event Name <i class="tio-help-outlined text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Displayed on public forums, such as Front."></i></label>
+                  <label for="editFirstNameModalLabel" class="col-sm-3 col-form-label form-label">Club Name <i class="tio-help-outlined text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Displayed on public forums, such as Front."></i></label>
 
                   <div class="col-sm-9">
                     <div class="input-group input-group-sm-vertical">
-                      <input type="text" class="form-control" name="editFirstNameModal" id="editFirstNameModalLabel" placeholder="New Event Name" aria-label="Your first name" value="">
+                      <input type="text" class="form-control" name="editFirstNameModal" id="editFirstNameModalLabel" placeholder="New Club Name" aria-label="Your first name" value="">
                       <!-- <input type="text" class="form-control" name="editLastNameModal" id="editLastNameModalLabel" placeholder="Your last name" aria-label="Your last name" value="Lauda"> -->
                     </div>
                   </div>
