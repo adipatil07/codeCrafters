@@ -159,16 +159,14 @@
       <!-- End Page Header -->
 
       <div class="row">
-        <div class="col-lg-4 mb-3 mb-lg-0">
-          <h4>Event information</h4>
-        </div>
+        
 
-        <div class="col-lg-8">
+        <div class="col-lg-12">
         <div class="d-flex align-items-center">
         <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
   <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
 
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" accept=".png, .jpeg, .jpg">
+  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" name="logo" accept=".png, .jpeg, .jpg">
 
   <span class="avatar-uploader-trigger">
     <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
@@ -190,111 +188,94 @@
   });
 </script>
 
-                        <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
+                        <!-- <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button> -->
                       </div>
           <!-- Card -->
           <br>
-          <div class="card">
-            <!-- Body -->
-            <div class="card-body">
-              <div class="row">
+          <form action="#" method="post">
+    <div class="card">
+        <!-- Body -->
+        <div class="card-body">
+            <div class="row">
                 <div class="col-sm-12">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <label for="firstNameLabel" class="form-label">Event name</label>
-                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="event name" aria-label="Clarice">
-                  </div>
-                  <!-- End Form -->
+                    <!-- Form -->
+                    <div class="mb-4">
+                        <label for="eventName" class="form-label">Event name</label>
+                        <input type="text" class="form-control" name="eventName" id="eventName" placeholder="Event name" aria-label="Clarice">
+                    </div>
+                    <!-- End Form -->
                 </div>
                 <!-- End Col -->
 
                 
                 <!-- End Col -->
-              </div>
-              <!-- End Row -->
+            </div>
+            <!-- End Row -->
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label for="emailLabel" class="form-label">Venue</label>
-                <input type="email" class="form-control" name="email" id="emailLabel" placeholder="" aria-label="clarice@site.com">
-              </div>
-              <!-- End Form -->
+            <!-- Form -->
+            <div class="mb-4">
+                <label for="venue" class="form-label">Venue</label>
+                <input type="text" class="form-control" name="venue" id="venue" placeholder="Venue" aria-label="clarice@site.com">
+            </div>
+            <!-- End Form -->
 
-              <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">Start Date</label>
-
+            <!-- Form -->
+            <div class="js-add-field mb-4">
+                <label for="startDate" class="form-label">Start Date</label>
                 <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+                    <input type="date" class="js-input-mask form-control" name="startDate" id="startDate" placeholder="Start Date" aria-label="">
                 </div>
+            </div>
+            <!-- End Form -->
 
-                <!-- Container For Input Field -->
-
-                
-              </div>
-              <!-- End Form -->
-              <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">End Date</label>
-
+            <!-- Form -->
+            <div class="js-add-field mb-4">
+                <label for="endDate" class="form-label">End Date</label>
                 <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+                    <input type="date" class="js-input-mask form-control" name="endDate" id="endDate" placeholder="End Date" aria-label="">
                 </div>
+            </div>
+            <!-- End Form -->
 
-                <!-- Container For Input Field -->
-
-                
-              </div>
-
-              <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Start Time</label>
-
+            <div class="js-add-field mb-4">
+                <label for="startTime" class="form-label">Start Time</label>
                 <div class="input-group">
-                  <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
-                </div>
-              </div>
-
-              <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">End Time</label>
-
-                <div class="input-group">
-                  <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-                </div>
-              </div>
-
-              <div class="js-add-field mb-4" >
-                <label for="number" class="form-label">Registration Fee</label>
-
-                <div class="input-group">
-                  <input type="number" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
-                </div>
-              </div>
-
-              <div class="js-add-field mb-4">
-                <label for="description" class="form-label">Event Description</label>
-
-                <div class="input-group">
-                    <textarea class="form-control" name="description" id="description" placeholder="Enter event description" aria-label="Event Description"></textarea>
+                    <input type="time" class="js-input-mask form-control" name="startTime" id="startTime" placeholder="Start Time" aria-label="">
                 </div>
             </div>
 
+            <div class="js-add-field mb-4">
+                <label for="endTime" class="form-label">End Time</label>
+                <div class="input-group">
+                    <input type="time" class="js-input-mask form-control" name="endTime" id="endTime" placeholder="End Time" aria-label="">
+                </div>
+            </div>
 
-              <!-- End Form -->
-              <div class="d-flex justify-content-end gap-3">
+            <div class="js-add-field mb-4">
+                <label for="registrationFee" class="form-label">Registration Fee</label>
+                <div class="input-group">
+                    <input type="number" class="js-input-mask form-control" name="registrationFee" id="registrationFee" placeholder="Registration Fee" aria-label="">
+                </div>
+            </div>
+
+            <div class="js-add-field mb-4">
+                <label for="eventDescription" class="form-label">Event Description</label>
+                <div class="input-group">
+                    <textarea class="form-control" name="eventDescription" id="eventDescription" placeholder="Enter event description" aria-label="Event Description"></textarea>
+                </div>
+            </div>
+
+            <!-- End Form -->
+            <div class="d-flex justify-content-end gap-3">
                 <button type="button" class="btn btn-white">Discard</button>
-                <button type="button" class="btn btn-primary">Save</button>
-              </div>
+                <button type="submit" class="btn btn-primary" name="btn_submit">Save</button>
             </div>
-            <!-- Body -->
-          </div>
+        </div>
+        <!-- Body -->
+    </div>
+    <!-- End Card -->
+</form>
+
           <!-- End Card -->
         </div>
       </div>
@@ -312,6 +293,44 @@
 
     <!-- Footer -->
 <?php include "include/footer.php";   ?>
+<?php
+include 'include/config.php';
+if(isset($_POST['btn_submit'])){
+    $con = new mysqli($servername, $username, $password, $dbname);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+    
+    // Retrieve form data
+    $eventName = $_POST['eventName'];
+    $venue = $_POST['venue'];
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
+    $registrationFee = $_POST['registrationFee'];
+    $eventDescription = $_POST['eventDescription'];
+    // $logo = $_POST['logo'];
+    
+    // Prepare SQL statement
+    $stmt = $con->prepare("INSERT INTO `tbl_add_event`(`add_event_name`, `add_event_veneu`, `add_event_sdate`, `add_event_ldate`, `add_event_stime`, `add_event_ltime`, `add_event_fee`, `add_event_dis`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    // Bind parameters
+    $stmt->bind_param("ssssssss", $eventName, $venue, $startDate, $endDate, $startTime, $endTime, $registrationFee, $eventDescription);
+    
+    // Execute statement
+    if ($stmt->execute()) {
+        echo '<script>alert("Event added successfully.");</script>';
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    
+    // Close statement and connection
+    $stmt->close();
+    $con->close();
+}
+?>
+
 
     <!-- End Footer -->
   </main>
@@ -1122,3 +1141,4 @@
   <!-- End Style Switcher JS -->
 </body>
 </html>
+

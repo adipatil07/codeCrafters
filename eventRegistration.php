@@ -291,8 +291,6 @@ session_start();
                               }'>
                         Proceed to pay<i class="bi-chevron-right"></i>
 
-                     
-
                     </div>
                     <!-- End Footer -->
                   </div>

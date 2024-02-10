@@ -234,17 +234,17 @@
             <thead class="thead-light">
               <tr>
                 <th class="table-column-pe-0">
-                  <div class="form-check">
+                  <!-- <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll">
                     <label class="form-check-label" for="datatableCheckAll"></label>
-                  </div>
+                  </div> -->
                 </th>
                 <th class="table-column-ps-0">Event Name</th>
                 <th>Current Enrolled</th>
                 <th>Venue</th>
                 <th>Start Date</th>
                 <th>End Date</th>
-                <th>Time</th>
+                <!-- <th>Time</th> -->
                 <!-- <th>Capacity</th> -->
                 <th>Action</th>
               </tr>
@@ -283,8 +283,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     echo '<td class="table-column-pe-0">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll1">
-                <label class="form-check-label" for="datatableCheckAll1"></label>
               </div>
             </td>';
     echo '<td class="table-column-ps-0">
@@ -294,6 +292,9 @@ while ($row = mysqli_fetch_assoc($result)) {
               </div>
             </td>';
     echo '<td><span class="d-block h5 mb-0">' . $eventId . '</span></td>';
+    echo '<td>' . $eventDescription . '</td>'; 
+    echo '<td>' . $eventStartDate . '<br>'.$eventStartTime.'</td>';
+    echo '<td>' . $eventEndDate . '<br>'.$eventEndTime.'</td>';
     echo '<td>' . $eventDescription . '</td>'; // Changed venue to description
     echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
     echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';

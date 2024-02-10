@@ -146,10 +146,13 @@
         <div class="card card-lg mb-5">
           <div class="card-body">
             <!-- Form -->
-            <form class="js-validate needs-validation" novalidate>
+            <form action="#" method="post">
               <div class="text-center">
                 <div class="mb-5">
-                  <h1 class="display-5">Join our Club</h1>
+                  <h1 class="display-4">Join Club</h1>
+                  <h2 class="display-5">Club Name : <?php extract($_GET); echo $club_name; ?></h2>
+                  <h2 class="display-5">Club ID : <?php echo $club_id; ?></h2>
+
                   <!-- <p>Already have an account? <a class="link" href="./authentication-login-basic.html">Sign in here</a></p> -->
                 </div>
 
@@ -168,16 +171,25 @@
                 <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@site.com" aria-label="Markwilliams@site.com" required>
                 <span class="invalid-feedback">Please enter a valid email address.</span>
               </div>
+               <div class="mb-4">
+                <label class="form-label" for="signupSrEmail">Your Mobile No</label>
+                <input type="email" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="+91 xxxxx xxxxx"  required>
+                <span class="invalid-feedback">Please enter a valid mobile number.</span>
+              </div>
             
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">Department</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
+<<<<<<< HEAD
+                <input type="email" class="form-control form-control-lg" name="department" id="signupSrEmail" placeholder="Enter your Department name " required>
+=======
+                <input type="text" class="form-control form-control-lg" name="dept" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
+>>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
                 <span class="invalid-feedback">Please Enter your Department name</span>
               </div>
 
               <div class="mb-4">
                 <label class="form-label" for="departmentDropdown">Domain</label>
-                <select class="form-select form-select-lg" id="departmentDropdown" name="department" required>
+                <select class="form-select form-select-lg" id="departmentDropdown" name="domain" required>
                 <option value="" selected disabled>Choose Your Domain</option>
                 <option value="AD">Android Development</option>
                 <option value="WD">Web Development</option>
@@ -191,13 +203,21 @@
 
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">LinkedIn Profile</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz" aria-label="Markwilliams@site.com" required>
+<<<<<<< HEAD
+                <input type="email" class="form-control form-control-lg" name="linkedin" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz"  required>
+=======
+                <input type="text" class="form-control form-control-lg" name="linkdean" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz" aria-label="Markwilliams@site.com" required>
+>>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
                 <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
               </div>
 
               <div class="mb-4">
                 <label class="form-label" for="signupSrEmail">Github Profile</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="https://github.com/xyz" aria-label="Markwilliams@site.com" required>
+<<<<<<< HEAD
+                <input type="email" class="form-control form-control-lg" name="github" id="signupSrEmail" placeholder="https://github.com/xyz" required>
+=======
+                <input type="text" class="form-control form-control-lg" name="git_hub" id="signupSrEmail" placeholder="https://github.com/xyz" aria-label="Markwilliams@site.com" required>
+>>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
                 <span class="invalid-feedback">Please enter your Github Profile link</span>
               </div>
 
@@ -254,7 +274,7 @@
               <!-- End Form Check -->
 
               <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="btn_submit">Submit</button>
 
               </div>
             </form>
@@ -300,3 +320,66 @@
   </script>
 </body>
 </html>
+<?php
+if(isset($_POST['btn_submit'])){
+<<<<<<< HEAD
+    include 'admin/include/config.php';
+    $con = new mysqli($servername, $username, $password, $dbname);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+    
+    // Retrieve form data
+    $fullName = $_POST['fullName'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $department = $_POST['department'];
+    $domain = $_POST['domain'];
+    $linkedin = $_POST['linkedin'];
+    $github = $_POST['github'];
+    $reasonForJoining = $_POST['reasonForJoining'];
+    
+    // Prepare SQL statement
+    $stmt = $con->prepare("INSERT INTO `tbl_user_club_req`(`req_user_name`, `req_user_email`, `req_user_mobile`, `req_user_dept`, `req_user_domain`, `reg_user_linkedin`, `reg_user_github`, `req_user_msg`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    // Bind parameters
+    $stmt->bind_param("ssssssss", $fullName, $email, $mobile, $department, $domain, $linkedin, $github, $reasonForJoining);
+    
+    // Execute statement
+    if ($stmt->execute()) {
+        echo '<script>alert("Send Message Successfully");</script>';
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    
+    // Close statement and connection
+    // $stmt->close();
+    // $con->close();
+}
+?>
+=======
+  print_r($_POST);
+  extract($_POST);
+include('admin/include/config.php');
+
+// Inserting values into the database
+$sql = "INSERT INTO `tbl_user_club_req` 
+        (`req_user_id`, `req_user_name`, `req_user_email`, `req_user_mobile`, `req_user_dept`, `req_user_domain`, `reg_user_linkedin`, `reg_user_github`, `req_user_msg`,`req_club_name`,`req_club_id`) 
+        VALUES 
+        (NULL, '$fullName', '$email', '', '$dept', '$domain', '$linkdean', '$git_hub', '$reasonForJoining','$club_name','$club_id')";
+
+if(mysqli_query($con, $sql)){
+    echo "<script>alert('Records inserted successfully.'); window.location.href = 'index.php';</script>";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+}
+
+
+
+}
+
+
+
+
+?>
+>>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7

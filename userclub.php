@@ -158,6 +158,7 @@ if (!$result) {
 
 // Fetch the data from the result set
 while ($row = mysqli_fetch_assoc($result)) {
+    $clubID = $row['club_id'];
     $clubName = $row['club_name'];
     $clubDescription = $row['club_desc'];
     $clubImage = $row['club_logo'];
@@ -172,15 +173,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="card-body">
                   <h1 class="card-title">' . $clubName . '</h1>
                   <p class="card-text">' . $clubDescription . '</p>
-                  <a href="./clubRegistration.php"><button type="button" class="btn btn-soft-primary">Enroll Now</button></a>
+                  <a href="./clubRegistration.php?club_id=' . $clubID . '&club_name=' . urlencode($clubName) . '"><button type="button" class="btn btn-soft-primary">Enroll Now</button></a>
                 </div>
               </div>
             </div>
           </div>';
 }
 
-
 ?>
+
 <!-- End Card -->
 
 

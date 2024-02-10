@@ -44,7 +44,7 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    Karandak 2k24
+                   <b> Karandak 2k24</b>
                 </a>
 
 
@@ -273,7 +273,7 @@ https://templatemo.com/tm-583-festava-live
                                             id="contact-message" placeholder="Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" class="form-control">Send message</button>
+                                            <button type="submit" class="form-control" name="btn_submit">Send message</button>
                                         </div>
                                     </div>
                                 </form>
@@ -384,3 +384,29 @@ T e m p l a t e M o
 </body>
 
 </html>
+
+<?php
+// Check if the form is submitted
+if(isset($_POST['btn_submit'])){
+   include 'admin/include/config.php';
+    $con = new mysqli($servername, $username, $password, $dbname);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+    $stmt = $con->prepare("INSERT INTO tbl_contact_us (con_name, con_email, con_clg, con_msg, con_timestamp) VALUES (?, ?, ?, ?, NOW())");
+    $stmt->bind_param("ssss", $con_name, $con_email, $con_clg, $con_msg);
+
+    // Set parameters and execute
+    $con_name = $_POST['contact-name'];
+    $con_email = $_POST['contact-email'];
+    $con_clg = $_POST['contact-company'];
+    $con_msg = $_POST['contact-message'];
+
+if ($stmt->execute()) {
+    echo '<script> alert("Send Message Successfully"); </script>';
+} else {
+    echo "Error: " . $stmt->error;
+}
+}
+
+?>
