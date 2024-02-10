@@ -1,9 +1,3 @@
-    <?PHP
-    
-
-
-    ?>
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -43,51 +37,6 @@
         }
       </style>
 
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get the "Next" button
-      var nextButton = document.querySelector('.btn-primary');
-
-      // Add click event listener to the "Next" button
-      nextButton.addEventListener('click', function (event) {
-          // Prevent the default form submission behavior
-          event.preventDefault();
-
-          // Get the form element
-          var form = document.querySelector('.js-step-form');
-
-          // Create a new FormData object from the form
-          var formData = new FormData(form);
-
-          // Send a POST request to the PHP script with the form data
-          fetch('eventRegistration.php', {
-              method: 'POST',
-              body: formData
-          })
-          .then(response => response.text())
-          .then(data => {
-              // Display the response from the server
-              console.log(data); // You can replace this with your desired behavior
-              // Check if the registration was successful
-              if (data.trim() === 'Data inserted successfully!') {
-                  // Hide the form
-                  form.style.display = 'none';
-                  // Show the registration success message
-                  var successMessage = document.getElementById('successMessageContent');
-                  successMessage.style.display = 'block';
-              } else {
-                  // Registration failed, you can handle this accordingly
-                  console.error('Registration failed:', data);
-              }
-          })
-          .catch(error => {
-              // Handle any errors
-              console.error('Error:', error);
-          });
-      });
-  });
-
-  </script>
 
       <script>
                 window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/index.html","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
@@ -190,7 +139,7 @@
       </header>
 
       <main id="content" role="main" class="main">
-         <form class="js-step-form py-md-5" method="post" action="eventRegistration.php" data-hs-step-form-options='{ "progressSelector": "#addUserStepFormProgress", "stepsSelector": "#addUserStepFormContent", "endSelector": "#addUserFinishBtn", "isValidate": false }'>
+         <form class="js-step-form py-md-5" method="POST" action="#" data-hs-step-form-options='{ "progressSelector": "#addUserStepFormProgress", "stepsSelector": "#addUserStepFormContent", "endSelector": "#addUserFinishBtn", "isValidate": false }'>
             <div class="row justify-content-lg-center">
               
               <div class="col-lg-8">
@@ -429,8 +378,7 @@
                 </div>
                 <!-- End Message Body -->
               </div>
-<<<<<<< HEAD
-=======
+
               <!-- End Content Step Form -->
 
               <!-- Message Body -->
@@ -455,7 +403,6 @@
                 </div>
               </div>
               <!-- End Message Body -->
->>>>>>> b6093fd157e127d9f99810b8493e2b1907308875
             </div>
             <!-- End Row -->
           </form>
@@ -571,7 +518,6 @@
         })()
       </script>
 
-<<<<<<< HEAD
       <!-- Style Switcher JS -->
 
       <script>
@@ -613,42 +559,37 @@
       <!-- End Style Switcher JS -->
     </body>
     </html>
-    
-  <?php
-
-  include 'admin/include/config.php';
-
-  if(isset($_POST['register'])) {
-      // Sanitize user input
-      $reg_fname = mysqli_real_escape_string($con, $_POST["firstName"]);
-      $reg_lname = mysqli_real_escape_string($con, $_POST["lastName"]);
-      $reg_email = mysqli_real_escape_string($con, $_POST["email"]);
-      $reg_mobile = mysqli_real_escape_string($con, $_POST["phone"]);
-      $reg_clg = mysqli_real_escape_string($con, $_POST["organization"]);
-      $reg_dept = mysqli_real_escape_string($con, $_POST["department"]);
-
-      // Prepare the SQL statement
-      $stmt = $con->prepare("INSERT INTO tbl_register (reg_fname, reg_lname, reg_email, reg_mobile, reg_clg, reg_dept, reg_timestamp) VALUES (?, ?, ?, ?, ?, ?, NOW())");
-      
-      // Bind parameters
-      $stmt->bind_param("ssssss", $reg_fname, $reg_lname, $reg_email, $reg_mobile, $reg_clg, $reg_dept);
-      
-      // Execute the statement
-      if ($stmt->execute()) {
-    echo "<script>alert('Register Success...!');</script>";
-    exit();
-    } else {
-    echo "Error: " . $stmt->error;
-    }
-
-
-      // Close statement
-      $stmt->close();
-  }
-
-  ?>
-=======
     <!-- End Style Switcher JS -->
   </body>
   </html>
->>>>>>> b6093fd157e127d9f99810b8493e2b1907308875
+
+<?php
+// Database connection parameters
+include 'admin/include/config.php'; // Added a semicolon here
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $reg_fname = $_POST['firstName'];
+    $reg_lname = $_POST['lastName'];
+    $reg_email = $_POST['email'];
+    $reg_mobile = $_POST['phone'];
+    $reg_clg = $_POST['organization'];
+    $reg_dept = $_POST['department'];
+    $reg_timestamp = date("Y-m-d H:i:s"); // Current timestamp
+
+    // SQL query to insert data into tbl_register
+    $sql = "INSERT INTO `tbl_register`(`reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`) 
+            VALUES ('$reg_fname', '$reg_lname', '$reg_email', '$reg_mobile', '$reg_clg', '$reg_dept', '$reg_timestamp')";
+
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+        echo "New record inserted successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Close connection
+$con->close();
+?>
