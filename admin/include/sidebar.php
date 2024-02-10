@@ -32,7 +32,6 @@
 
               <div id="navbarVerticalMenuDashboards" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenu">
                 <a class="nav-link " href="./dashboard.php">Default</a>
-                <a class="nav-link " href="./dashboard-alternative.php">Alternative</a>
               </div>
             </div>
             <!-- End Collapse -->
@@ -71,7 +70,7 @@
                 <div id="navbarVerticalMenuPagesUserProfileMenu" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
                   <a class="nav-link " href="./addClub.php">Add Club</a>
                   <a class="nav-link " href="#">Update Club</a>
-                  <a class="nav-link " href="#">View Club</a>
+                  <a class="nav-link " href="./adminviewclub.php">View Club</a>
                   <!-- <a class="nav-link " href="./user-profile-connections.php">Connections</a>
                   <a class="nav-link " href="./user-profile-my-profile.php">My Profile</a> -->
                 </div>
