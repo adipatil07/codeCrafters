@@ -138,7 +138,7 @@
     <!-- Content -->
     <div class="container py-5 py-sm-7">
       <a class="d-flex justify-content-center mb-5" href="./index.html">
-        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
+        <img class="zi-2" src="./images/Sinhgad White.png" alt="Image Description" style="width: 15rem;">
       </a>
 
       <div class="mx-auto" style="max-width: 65rem;">
@@ -152,7 +152,7 @@
       <div class="card-body">
         <h1 class="card-title">Codex - Competative Coding</h5>
         <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
-        <button type="button" href= "./eventRegistration.php"class="btn btn-soft-primary" >Enroll Now</button>
+        <a href="eventRegistration.php"><button type="button"class="btn btn-soft-primary" >Enroll Now</button></a>
 
       </div>
     </div>
