@@ -138,9 +138,8 @@
     <!-- Content -->
     <div class="container py-5 py-sm-7">
       <a class="d-flex justify-content-center mb-5" href="./index.php">
-        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
+        <img class="zi-2" src="./assets/svg/logos/Sinhgad White.png" alt="Image Description" style="width: 15rem;">
       </a>
-
       <div class="mx-auto" style="max-width: 30rem;">
         <!-- Card -->
         <div class="card card-lg mb-5">
@@ -149,25 +148,25 @@
             <form class="js-validate needs-validation" novalidate>
               <div class="text-center">
                 <div class="mb-5">
-                  <h1 class="display-5">Sign in</h1>
-                  <p>Don't have an account yet? <a class="link" href="./authentication-signup-basic.php">Sign up here</a></p>
+                  <h1 class="display-5">Admin Login</h1>
+                  <!-- <p>Don't have an account yet?</p> -->
                 </div>
 
-                <div class="d-grid mb-4">
+                <!-- <div class="d-grid mb-4">
                   <a class="btn btn-white btn-lg" href="#">
                     <span class="d-flex justify-content-center align-items-center">
                       <img class="avatar avatar-xss me-2" src="./assets/svg/brands/google-icon.svg" alt="Image Description">
                       Sign in with Google
                     </span>
                   </a>
-                </div>
+                </div> -->
 
-                <span class="divider-center text-muted mb-4">OR</span>
+                <!-- <span class="divider-center text-muted mb-4">OR</span> -->
               </div>
 
               <!-- Form -->
               <div class="mb-4">
-                <label class="form-label" for="signinSrEmail">Your email</label>
+                <label class="form-label" for="signinSrEmail">Email</label>
                 <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required>
                 <span class="invalid-feedback">Please enter a valid email address.</span>
               </div>
@@ -208,7 +207,7 @@
               <!-- End Form Check -->
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
               </div>
             </form>
             <!-- End Form -->
@@ -218,32 +217,7 @@
 
         <!-- Footer -->
         <div class="position-relative text-center zi-1">
-          <small class="text-cap text-body mb-4">Trusted by the world's best teams</small>
-
-          <div class="w-85 mx-auto">
-            <div class="row justify-content-between">
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-            </div>
-            <!-- End Row -->
-          </div>
+          <small class="text-cap text-body mb-4">&copy;All Right Reserved.<span class="d-none d-sm-inline-block">2024 Code Crafters .</small>
         </div>
         <!-- End Footer -->
       </div>
@@ -285,3 +259,10 @@
   </script>
 </body>
 </html>
+<?PHP
+
+include 'include/config.php';
+
+
+
+?>
