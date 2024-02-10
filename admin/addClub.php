@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Add Event</title>
+  <title>Add Club</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -150,7 +150,7 @@
               </ol>
             </nav>
 
-            <h1 class="page-header-title">Add Event</h1>
+            <h1 class="page-header-title">Add Club</h1>
           </div>
           <!-- End Col -->
         </div>
@@ -160,15 +160,15 @@
 
       <div class="row">
         <div class="col-lg-4 mb-3 mb-lg-0">
-          <h4>Event information</h4>
+          <h4>Club information</h4>
         </div>
-
+        
         <div class="col-lg-8">
         <div class="d-flex align-items-center">
         <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
   <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
 
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
+   <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
     "textTarget": "#avatarImg",
     "mode": "image",
     "targetAttr": "src",
@@ -186,6 +186,7 @@
                         <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
                       </div>
           <!-- Card -->
+          <br>
           <div class="card">
             <!-- Body -->
             <div class="card-body">
@@ -193,8 +194,8 @@
                 <div class="col-sm-12">
                   <!-- Form -->
                   <div class="mb-4">
-                    <label for="firstNameLabel" class="form-label">Event name</label>
-                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="event name" aria-label="Clarice">
+                    <label for="firstNameLabel" class="form-label">Club name</label>
+                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Club name" aria-label="Clarice">
                   </div>
                   <!-- End Form -->
                 </div>
@@ -207,19 +208,17 @@
 
               <!-- Form -->
               <div class="mb-4">
-                <label for="emailLabel" class="form-label">Venue</label>
-                <input type="email" class="form-control" name="email" id="emailLabel" placeholder="" aria-label="clarice@site.com">
+                <label for="emailLabel" class="form-label">Club Purpose</label>
+                <input type="textArea" class="form-control" name="email" id="purposeLabel" placeholder="" aria-label="clarice@site.com">
               </div>
               <!-- End Form -->
 
               <!-- Form -->
               <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">Start Date</label>
+                <label for="phoneLabel" class="form-label">Target Audience</label>
 
                 <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+                  <input type="text" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="">
                 </div>
 
                 <!-- Container For Input Field -->
@@ -228,25 +227,55 @@
               </div>
               <!-- End Form -->
               <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">End Date</label>
-
-                <div class="input-group">
-                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
+              <div class="js-add-field mb-4">
+                    <label for="memberLabel" class="form-label">Club Members</label>
+                    <div class="input-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox1" id="memberCheckbox1" value="President">
+                            <label class="form-check-label" for="memberCheckbox1">
+                                President
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox2" id="memberCheckbox2" value="Android Developer">
+                            <label class="form-check-label" for="memberCheckbox2">
+                                Android Developer
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
+                            <label class="form-check-label" for="memberCheckbox3">
+                                Web Developer
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
+                            <label class="form-check-label" for="memberCheckbox3">
+                                Cloud Lead
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
+                            <label class="form-check-label" for="memberCheckbox3">
+                                Cyber Security
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="memberCheckbox3" id="memberCheckbox3" value="Web Developer">
+                            <label class="form-check-label" for="memberCheckbox3">
+                                AI/Ml
+                            </label>
+                        </div>
+    <!-- Add more checkboxes as needed -->
                 </div>
 
-                <!-- Container For Input Field -->
-
-                
               </div>
 
               <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Time</label>
+                <label for="time" class="form-label">Social Media Links</label>
 
                 <div class="input-group">
-                  <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+                  <input type="text" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
 
                   
                 </div>
@@ -1005,7 +1034,22 @@
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
-  
+  <script>
+  $(document).ready(function () {
+    $('.js-file-attach').fileAttach();
+
+    $('#avatarUploader').on('change', function () {
+      var input = this;
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $('#avatarImg').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    });
+  });
+</script>
   <!-- JS Plugins Init. -->
   <script>
     (function() {

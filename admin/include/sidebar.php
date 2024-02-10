@@ -68,7 +68,7 @@
                 <!-- <span class="badge bg-primary rounded-pill ms-1">5</span> -->
 
                 <div id="navbarVerticalMenuPagesUserProfileMenu" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
-                  <a class="nav-link " href="./user-profile.php">Add Club</a>
+                  <a class="nav-link " href="./addClub.php">Add Club</a>
                   <a class="nav-link " href="#">Update Club</a>
                   <a class="nav-link " href="./adminviewclub.php">View Club</a>
                   <!-- <a class="nav-link " href="./user-profile-connections.php">Connections</a>
