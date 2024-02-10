@@ -8,7 +8,6 @@
         <img class="navbar-brand-logo-mini" src="./assets/svg/logos-light/logo-short.svg" alt="Logo" data-hs-theme-appearance="dark">
       </a>
       <!-- End Logo -->
-   Welcome Back : <?php echo $admin_id." - ".$admin_name." - ".$admin_email." - ".$admin_mobile_no;?>
       <div class="navbar-nav-wrap-content-start">
         <!-- Navbar Vertical Toggle -->
         <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler">
