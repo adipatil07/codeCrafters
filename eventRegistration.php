@@ -538,9 +538,3 @@
     <!-- End Style Switcher JS -->
   </body>
   </html>
-<?PHP
-
-include 'include/config.php';
-
-
-?>
