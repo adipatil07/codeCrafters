@@ -181,6 +181,7 @@
                       </div>
           <!-- Card -->
           <br>
+          <form action="#" method="post">
           <div class="card">
             <!-- Body -->
             <div class="card-body">
@@ -229,8 +230,6 @@
 
                 <div class="input-group">
                   <input type="text" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-
-                  
                 </div>
 
                 <!-- Container For Input Field -->
@@ -244,10 +243,10 @@
               </div>
             </div>
             <!-- Body -->
-          </div>
+          </div></form>
           <!-- End Card -->
         </div>
-      </div>
+      </div>-
       <!-- End Row -->
 
       <hr class="my-5">
@@ -262,6 +261,46 @@
 
     <!-- Footer -->
 <?php include "include/footer.php";   ?>
+
+<?php
+// Include the configuration file
+include 'include/config.php';
+
+// Check if the form is submitted
+if(isset($_POST['btn_submit'])){
+    // Create a new MySQLi connection
+    $con = new mysqli($servername, $username, $password, $dbname);
+    
+    // Check the connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+    
+    // Retrieve form data
+    $clubName = $_POST['firstName'];
+    $clubPurpose = $_POST['email'];
+    $clubAudience = $_POST['audience'];
+    $clubSocialMedia = $_POST['socialMedia'];
+    
+    // Prepare SQL statement for insertion
+    $stmt = $con->prepare("INSERT INTO `tbl_club`(`club_name`, `club_purpose`, `club_audience`, `club_social_media`) VALUES (?, ?, ?, ?)");
+    
+    // Bind parameters
+    $stmt->bind_param("ssss", $clubName, $clubPurpose, $clubAudience, $clubSocialMedia);
+    
+    // Execute statement
+    if ($stmt->execute()) {
+        echo '<script>alert("Club added successfully.");</script>';
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    
+    // Close statement and connection
+    // $stmt->close();
+    // $con->close();
+}
+?>
+
 
     <!-- End Footer -->
   </main>
@@ -1087,10 +1126,3 @@
   <!-- End Style Switcher JS -->
 </body>
 </html>
-<?PHP
-
-include'include/config.php';
-
-
-
-?>
