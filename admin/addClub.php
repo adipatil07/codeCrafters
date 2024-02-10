@@ -1034,21 +1034,21 @@
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-  $(document).ready(function () {
-    $('.js-file-attach').fileAttach();
+  document.getElementById('avatarUploader').addEventListener('change', function () {
+    var input = this;
+    var img = document.getElementById('avatarImg');
 
-    $('#avatarUploader').on('change', function () {
-      var input = this;
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          $('#avatarImg').attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
-    });
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
   });
+</script>
 </script>
   <!-- JS Plugins Init. -->
   <script>
