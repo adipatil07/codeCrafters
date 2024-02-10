@@ -429,6 +429,33 @@
                 </div>
                 <!-- End Message Body -->
               </div>
+<<<<<<< HEAD
+=======
+              <!-- End Content Step Form -->
+
+              <!-- Message Body -->
+              <div id="successMessageContent" style="display:none;">
+                <div class="text-center">
+                  <img class="img-fluid mb-3" src="./assets/svg/illustrations/oc-hi-five.svg" alt="Image Description" data-hs-theme-appearance="default" style="max-width: 15rem;">
+                  <img class="img-fluid mb-3" src="./assets/svg/illustrations-light/oc-hi-five.svg" alt="Image Description" data-hs-theme-appearance="dark" style="max-width: 15rem;">
+
+                  <div class="mb-4">
+                    <h2>Welcome</h2>
+                    <p><span class="fw-semibold text-dark">Aditya Patil</span> has been participated in Event</p>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <a class="btn btn-white me-3" href="./index.php">
+                      <i class="bi-chevron-left ms-1"></i> Home
+                    </a>
+                    <a class="btn btn-primary" href="./event.php">
+                      <i class="bi-person-plus-fill me-1"></i> Participate in New Event
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Message Body -->
+>>>>>>> b6093fd157e127d9f99810b8493e2b1907308875
             </div>
             <!-- End Row -->
           </form>
@@ -544,6 +571,7 @@
         })()
       </script>
 
+<<<<<<< HEAD
       <!-- Style Switcher JS -->
 
       <script>
@@ -619,3 +647,8 @@
   }
 
   ?>
+=======
+    <!-- End Style Switcher JS -->
+  </body>
+  </html>
+>>>>>>> b6093fd157e127d9f99810b8493e2b1907308875
