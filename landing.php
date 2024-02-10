@@ -159,7 +159,7 @@ https://templatemo.com/tm-583-festava-live
 
                                 <p class="mb-0">
                                     <strong>Register Yourself:</strong>
-                                    <a href="#">Enroll Now</a>
+                                    <a href="./event.php">Enroll Now</a>
                                 </p>
                             </div>
                         </div>

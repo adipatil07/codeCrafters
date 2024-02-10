@@ -16,7 +16,6 @@
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./assets/vendor/tom-select/dist/css/tom-select.bootstrap5.css">
 
   <!-- CSS Front Template -->
 
@@ -120,191 +119,50 @@
             </script>
 </head>
 
-<body class="d-flex align-items-center min-h-100">
+<body>
 
   <script src="./assets/js/hs.theme-appearance.js"></script>
 
-  <!-- ========== HEADER ========== -->
-  <header class="position-absolute top-0 start-0 end-0 mt-3 mx-3">
-    <div class="d-flex d-lg-none justify-content-between">
-      <a href="./index.html">
-        <img class="w-100" src="./assets/svg/logos/logo.svg" alt="Image Description" data-hs-theme-appearance="default" style="min-width: 7rem; max-width: 7rem;">
-        <img class="w-100" src="./assets/svg/logos-light/logo.svg" alt="Image Description" data-hs-theme-appearance="dark" style="min-width: 7rem; max-width: 7rem;">
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content" role="main" class="main">
+    <div class="position-fixed top-0 end-0 start-0 bg-img-start" style="height: 32rem; background-image: url(./assets/svg/components/card-6.svg);">
+      <!-- Shape -->
+      <div class="shape shape-bottom zi-1">
+        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1921 273">
+          <polygon fill="#fff" points="0,273 1921,273 1921,0 " />
+        </svg>
+      </div>
+      <!-- End Shape -->
+    </div>
+
+    <!-- Content -->
+    <div class="container py-5 py-sm-7">
+      <a class="d-flex justify-content-center mb-5" href="./index.html">
+        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
       </a>
 
-      <!-- Select -->
-      <div class="tom-select-custom tom-select-custom-end zi-2">
-        <select class="js-select form-select form-select-sm form-select-borderless" data-hs-tom-select-options='{
-                  "searchInDropdown": false,
-                  "hideSearch": true,
-                  "dropdownWidth": "12rem",
-                  "placeholder": "Select language"
-                }'>
-          <option label="empty"></option>
-          <option value="language1" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/><span>English (US)</span></span>'>English (US)</option>
-          <option value="language2" selected data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Image description" width="16"/><span>English (UK)</span></span>'>English (UK)</option>
-          <option value="language3" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/><span>Deutsch</span></span>'>Deutsch</option>
-          <option value="language4" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Image description" width="16"/><span>Dansk</span></span>'>Dansk</option>
-          <option value="language5" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/><span>Español</span></span>'>Español</option>
-          <option value="language6" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/nl.svg" alt="Image description" width="16"/><span>Nederlands</span></span>'>Nederlands</option>
-          <option value="language7" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Image description" width="16"/><span>Italiano</span></span>'>Italiano</option>
-          <option value="language8" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/><span>中文 (繁體)</span></span>'>中文 (繁體)</option>
-        </select>
-      </div>
-      <!-- End Select -->
+      <div class="mx-auto" style="max-width: 65rem;">
+ <!-- Card -->
+<div class="card mb-3" style="max-width: 1000px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+    <img class="img-fluid" src="./images/codex.jpg" alt="Card image cap" style="width: 300px; height: 200px;">
     </div>
-  </header>
-  <!-- ========== END HEADER ========== -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title">Codex - Competative Coding</h5>
+        <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
+        <button type="button" href= "./eventRegistration.php"class="btn btn-soft-primary" >Enroll Now</button>
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content" role="main" class="main pt-0">
-    <!-- Content -->
-    <div class="container-fluid px-3">
-      <div class="row">
-        <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
-          <!-- Logo & Language -->
-          <div class="position-absolute top-0 start-0 end-0 mt-3 mx-3">
-            <div class="d-none d-lg-flex justify-content-between">
-              <a href="./index.html">
-                <img class="w-100" src="./assets/svg/logos/logo.svg" alt="Image Description" data-hs-theme-appearance="default" style="min-width: 7rem; max-width: 7rem;">
-                <img class="w-100" src="./assets/svg/logos-light/logo.svg" alt="Image Description" data-hs-theme-appearance="dark" style="min-width: 7rem; max-width: 7rem;">
-              </a>
-
-              <!-- Select -->
-              <div class="tom-select-custom tom-select-custom-end tom-select-custom-bg-transparent">
-                <select class="js-select form-select form-select-sm form-select-borderless" data-hs-tom-select-options='{
-                          "searchInDropdown": false,
-                          "hideSearch": true,
-                          "dropdownWidth": "12rem",
-                          "placeholder": "Select language"
-                        }'>
-                  <option label="empty"></option>
-                  <option value="language1" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/><span>English (US)</span></span>'>English (US)</option>
-                  <option value="language2" selected data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Image description" width="16"/><span>English (UK)</span></span>'>English (UK)</option>
-                  <option value="language3" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/><span>Deutsch</span></span>'>Deutsch</option>
-                  <option value="language4" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Image description" width="16"/><span>Dansk</span></span>'>Dansk</option>
-                  <option value="language5" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/><span>Español</span></span>'>Español</option>
-                  <option value="language6" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/nl.svg" alt="Image description" width="16"/><span>Nederlands</span></span>'>Nederlands</option>
-                  <option value="language7" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Image description" width="16"/><span>Italiano</span></span>'>Italiano</option>
-                  <option value="language8" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle me-2" src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/><span>中文 (繁體)</span></span>'>中文 (繁體)</option>
-                </select>
-              </div>
-              <!-- End Select -->
-            </div>
-          </div>
-          <!-- End Logo & Language -->
-
-          <div style="max-width: 23rem;">
-            <div class="text-center mb-5">
-              <img class="img-fluid" src="./assets/svg/illustrations/oc-chatting.svg" alt="Image Description" style="width: 12rem;" data-hs-theme-appearance="default">
-              <img class="img-fluid" src="./assets/svg/illustrations-light/oc-chatting.svg" alt="Image Description" style="width: 12rem;" data-hs-theme-appearance="dark">
-            </div>
-
-            <div class="mb-5">
-              <h2 class="display-5">Build digital products with:</h2>
-            </div>
-
-            <!-- List Checked -->
-            <ul class="list-checked list-checked-lg list-checked-primary list-py-2">
-              <li class="list-checked-item">
-                <span class="d-block fw-semibold mb-1">All-in-one tool</span>
-                Build, run, and scale your apps - end to end
-              </li>
-
-              <li class="list-checked-item">
-                <span class="d-block fw-semibold mb-1">Easily add &amp; manage your services</span>
-                It brings together your tasks, projects, timelines, files and more
-              </li>
-            </ul>
-            <!-- End List Checked -->
-
-            <div class="row justify-content-between mt-5 gx-3">
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-
-              <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Logo">
-              </div>
-              <!-- End Col -->
-            </div>
-            <!-- End Row -->
-          </div>
-        </div>
-        <!-- End Col -->
-
-        <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
-          <div class="w-100 content-space-t-4 content-space-t-lg-2 content-space-b-1" style="max-width: 25rem;">
-            <div class="text-center">
-              <div class="mb-4">
-                <img class="avatar avatar-xxl avatar-4x3" src="./assets/svg/illustrations/oc-unlock.svg" alt="Image Description" data-hs-theme-appearance="default">
-                <img class="avatar avatar-xxl avatar-4x3" src="./assets/svg/illustrations-light/oc-unlock.svg" alt="Image Description" data-hs-theme-appearance="dark">
-              </div>
-
-              <div class="mb-5">
-                <h1 class="display-5">2-step Verification</h1>
-                <p class="mb-0">We sent a verification code to your email.</p>
-                <p>Enter the code from the email in the field below.</p>
-              </div>
-
-              <div class="row gx-2 gx-sm-3">
-                <div class="col">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-single-number" name="code1" id="twoStepVerificationSrCodeInput1" placeholder="" aria-label="" maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
-                  </div>
-                  <!-- End Form -->
-                </div>
-
-                <div class="col">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-single-number" name="code2" id="twoStepVerificationSrCodeInput2" placeholder="" aria-label="" maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false">
-                  </div>
-                  <!-- End Form -->
-                </div>
-
-                <div class="col">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-single-number" name="code3" id="twoStepVerificationSrCodeInput3" placeholder="" aria-label="" maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false">
-                  </div>
-                  <!-- End Form -->
-                </div>
-
-                <div class="col">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-single-number" name="code4" id="twoStepVerificationSrCodeInput4" placeholder="" aria-label="" maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false">
-                  </div>
-                  <!-- End Form -->
-                </div>
-              </div>
-
-              <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary btn-lg">Verify my account</button>
-              </div>
-
-              <div class="text-center">
-                <p>Haven't received it? <a href="#">Resend a new code.</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Col -->
       </div>
-      <!-- End Row -->
+    </div>
+  </div>
+</div>
+<!-- End Card -->
+
+
+        
+      </div>
     </div>
     <!-- End Content -->
   </main>
@@ -317,7 +175,6 @@
 
   <!-- JS Implementing Plugins -->
   <script src="./assets/vendor/hs-toggle-password/dist/js/hs-toggle-password.js"></script>
-  <script src="./assets/vendor/tom-select/dist/js/tom-select.complete.min.js"></script>
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
@@ -339,11 +196,6 @@
         // INITIALIZATION OF TOGGLE PASSWORD
         // =======================================================
         new HSTogglePassword('.js-toggle-password')
-
-
-        // INITIALIZATION OF SELECT
-        // =======================================================
-        HSCore.components.HSTomSelect.init('.js-select')
       }
     })()
   </script>
