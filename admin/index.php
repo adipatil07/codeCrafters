@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,7 +146,7 @@
         <div class="card card-lg mb-5">
           <div class="card-body">
             <!-- Form -->
-            <form class="js-validate needs-validation" novalidate>
+            <form class="js-validate needs-validation" novalidate action="#" method="post">
               <div class="text-center">
                 <div class="mb-5">
                   <h1 class="display-5">Admin Login</h1>
@@ -177,8 +178,8 @@
                 <label class="form-label w-100" for="signupSrPassword" tabindex="0">
                   <span class="d-flex justify-content-between align-items-center">
                     <span>Password</span>
-                    <a class="form-label-link mb-0" href="./authentication-reset-password-basic.php">Forgot Password?</a>
-                  </span>
+<!--                     <a class="form-label-link mb-0" href="./authentication-reset-password-basic.php">Forgot Password?</a>
+ -->                  </span>
                 </label>
 
                 <div class="input-group input-group-merge" data-hs-validation-validate-class>
@@ -198,16 +199,16 @@
               <!-- End Form -->
 
               <!-- Form Check -->
-              <div class="form-check mb-4">
+           <!--    <div class="form-check mb-4">
                 <input class="form-check-input" type="checkbox" value="" id="termsCheckbox">
                 <label class="form-check-label" for="termsCheckbox">
                   Remember me
                 </label>
-              </div>
+              </div> -->
               <!-- End Form Check -->
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="btn_submit">Login</button>
               </div>
             </form>
             <!-- End Form -->
@@ -238,30 +239,49 @@
   <script src="./assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
-  <script>
-    (function() {
-      window.onload = function () {
-        // INITIALIZATION OF BOOTSTRAP VALIDATION
-        // =======================================================
-        HSBsValidation.init('.js-validate', {
-          onSubmit: data => {
-            data.event.preventDefault()
-            alert('Submited')
-          }
-        })
-
-
-        // INITIALIZATION OF TOGGLE PASSWORD
-        // =======================================================
-        new HSTogglePassword('.js-toggle-password')
-      }
-    })()
-  </script>
+ 
 </body>
 </html>
 <?PHP
 
 include 'include/config.php';
+if(isset($_POST['btn_submit']))
+{
+print_r($_POST);
+extract($_POST);
+// Check if the user exists
+$query = "SELECT * FROM tbl_admin WHERE admin_email = '$email'";
+$result = mysqli_query($con, $query);
 
+if (mysqli_num_rows($result) == 0) {
+    // User not found
+    echo "<script>alert('User not found');</script>";
+} else {
+    $row = mysqli_fetch_assoc($result);
+    
+    if ($row['admin_status'] == 0) {
+        // Inactive user
+        echo "<script>alert('Inactive user');</script>";
+    } else {
+        // Check password
+        if ($row['admin_password'] == $password) {
+            // Password correct, redirect to dashboard
+          $_SESSION['admin_id'] = $row['admin_id'];
+            $_SESSION['admin_name'] = $row['admin_name'];
+            $_SESSION['admin_email'] = $row['admin_email'];
+            $_SESSION['admin_mobile_no'] = $row['admin_mobile_no'];
+                        echo "<script>alert('Login Sucess...!');</script>";
 
+<<<<<<< HEAD
+=======
+            echo "<script>window.location.href = 'dashboard.php';</script>";
+            exit;
+        } else {
+            // Incorrect password
+            echo "<script>alert('Incorrect password');</script>";
+        }
+    }
+}
+}
+>>>>>>> af37672d45d99d9e9405f4b0f254f6db904c190a
 ?>
