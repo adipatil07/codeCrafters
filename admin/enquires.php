@@ -203,6 +203,7 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
         <!-- End Header -->
 
         <!-- Table -->
+        <form method='post' action=''>
         <div class="table-responsive datatable-custom">
           <table id="datatable" class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table" data-hs-datatables-options='{
                    "columnDefs": [{
@@ -234,40 +235,87 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
                 <th>Message</th>
                 <th>Timestamp</th>
                 <th>Action</th>
-
               </tr>
             </thead>
+            <?php
+// Include the configuration file to establish database connection
+include 'include/config.php';
 
-            <tbody>
-              <tr>
-                <td class="table-column-pe-0">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="usersDataCheck2">
-                    <label class="form-check-label" for="usersDataCheck2"></label>
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if the "Mark as Read" button is clicked
+    if (isset($_POST['markAsRead'])) {
+        // Get the unique identifier associated with the button
+        $idToDelete = $_POST['markAsRead'];
+
+        // Perform the deletion query using the correct connection object
+        $deleteQuery = "DELETE FROM tbl_contact_us WHERE id = $idToDelete";
+        if (mysqli_query($con, $deleteQuery)) {
+            echo "";
+        } else {
+            echo "Error deleting record: " . mysqli_error($con);
+        }
+    }
+}
+
+// SQL query to fetch data from tbl_contact_us
+$query = "SELECT * FROM tbl_contact_us";
+$result = mysqli_query($con, $query);
+
+// Check if there are results
+if ($result) {
+    echo "<form method='post' action=''>";
+    echo "<tbody>";
+
+    // Output data of each row
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Assign values to variables
+        $id = $row['id'];
+        $name = $row['con_name'];
+        $email = $row['con_email'];
+        $time = $row['con_timestamp'];
+        $msg = $row['con_msg'];
+
+        echo "<tr>
+                <td class='table-column-pe-0'>
+                  <div class='form-check'>
+                    <input class='form-check-input' type='checkbox' value='' id='usersDataCheck2'>
+                    <label class='form-check-label' for='usersDataCheck2'></label>
                   </div>
                 </td>
-                <td class="table-column-ps-0">
-                  <a class="d-flex align-items-center" href="../user-profile.php">
-                    <div class="flex-shrink-0">
-                      
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                      <h5 class="text-inherit mb-0">1 </h5>
+                <td class='table-column-ps-0'>
+                  <a class='d-flex align-items-center' href='../user-profile.php'>
+                    <div class='flex-shrink-0'></div>
+                    <div class='flex-grow-1 ms-3'>
+                      <h5 class='text-inherit mb-0'>{$id}</h5>
                     </div>
                   </a>
                 </td>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Aditya Patil
+                  <span class='legend-indicator bg-success'></span>{$name}
                 </td>
-                <td>abc@gmail.com</td>
-                <td>Hello There</td>
-                <td>2024-02-10 17:47:26</td>
-                <td><button type="button" class="btn btn-soft-success">Mark as Read</button>
-</td>
-              </tr>
+                <td>{$email}</td>
+                <td>{$msg}</td>
+                <td>{$time}</td>
+                <td>
+                    <button type='submit' class='btn btn-soft-success' name='markAsRead' value='{$id}'>Mark as Read</button>
+                </td>
+              </tr>";
+    }
 
-            </tbody>
+    echo "</tbody>";
+    echo "</form>";
+} else {
+    echo "0 results";
+}
+
+// Close the connection
+mysqli_close($con);
+?>
+
+
           </table>
+          </form>
         </div>
         <!-- End Table -->
 

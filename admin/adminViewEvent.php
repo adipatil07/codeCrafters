@@ -185,7 +185,7 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
 include 'include/config.php';
 
 // Query to fetch event details
-$query = "SELECT * FROM tbl_event";
+$query = "SELECT * FROM tbl_add_event";
 $result = mysqli_query($con, $query);
 
 // Check if query was successful
@@ -193,15 +193,15 @@ if ($result) {
     // Loop through each row in the result set
     while ($row = mysqli_fetch_assoc($result)) {
         // Extract data from the row
-        $eventName = $row['event_name'];
-        $eventDesc = $row['event_desc'];
-        $eventClub = $row['event_cname'];
-        $startDate = $row['event_sdate'];
-        $endDate = $row['event_ldate'];
-        $startTime = $row['event_stime'];
-        $endTime = $row['event_ltime'];
-        $regFee = $row['event_reg_amt'];
-        $imagePath = $row['event_img'];
+        $eventName = $row['add_event_name'];
+        $eventDesc = $row['add_event_dis'];
+        $eventClub = $row['add_event_veneu'];
+        $startDate = $row['add_event_sdate'];
+        $endDate = $row['add_event_ldate'];
+        $startTime = $row['add_event_stime'];
+        $endTime = $row['add_event_ltime'];
+        $regFee = $row['add_event_fee'];
+        $imagePath = $row['add_event_logo'];
 
         // HTML template with placeholders replaced by fetched values
         echo '<div class="col-sm-4 mb-4">
