@@ -251,49 +251,61 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td class="table-column-pe-0">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll1">
-                    <label class="form-check-label" for="datatableCheckAll1"></label>
-                  </div>
-                </td>
-                <td class="table-column-ps-0">
-                 
-                    <div class="ms-3">
-                      <span class="d-block h5 text-inherit mb-0">Event Name </span>
-                      <span class="d-block fs-5 text-body">Main Event Team Name</span>
-                    </div>
-                 
-                </td>
-                <td>
-                  <span class="d-block h5 mb-0">30</span>
-                  <!-- <span class="d-block fs-5">Human resources</span> -->
-                </td>
-                <td>SKNCOE</td>
-                <td>14-Feb-2024</td>
-                
-                <td>16-Feb-2024</td>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <!-- <td>
-                  <div class="d-flex align-items-center">
-                    <span class="fs-5 me-2">72%</span>
-                    <div class="progress table-progress">
-                      <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </td> -->
-                
-                <td>
-                 
-                  <a href="./addevent.php"><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                    <i class="bi-pencil-fill me-1"></i> Edit
-                  </button>
-                  </a>
-                </td>
-              </tr>
+            
+<?php
+// Assuming you have already connected to your database
+// $dbConnection = new PDO("mysql:host=localhost;dbname=your_database", "username", "password");
+include 'include/config.php';
+// SQL query to fetch data from the database
+
+// SQL query to fetch data from the database
+
+// SQL query to fetch data from the database
+$query = "SELECT * FROM tbl_event";
+$result = mysqli_query($con, $query);
+
+// Check if query execution was successful
+if (!$result) {
+    echo "Error: " . mysqli_error($con);
+}
+
+// Fetch the data from the result set
+while ($row = mysqli_fetch_assoc($result)) {
+    $eventId = $row['event_id'];
+    $eventName = $row['event_name'];
+    $eventDescription = $row['event_desc']; // Fetching description instead of venue
+    $eventStartDate = $row['event_sdate'];
+    $eventEndDate = $row['event_ldate'];
+    $eventStartTime = $row['event_stime']; // Assuming you have a field for start time
+    $eventEndTime = $row['event_ltime']; // Assuming you have a field for end time
+
+    // Output the HTML table row with fetched data
+    echo '<tr>';
+    echo '<td class="table-column-pe-0">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll1">
+                <label class="form-check-label" for="datatableCheckAll1"></label>
+              </div>
+            </td>';
+    echo '<td class="table-column-ps-0">
+              <div class="ms-3">
+                <span class="d-block h5 text-inherit mb-0">' . $eventName . '</span>
+                <span class="d-block fs-5 text-body">' . $eventDescription . '</span> <!-- Changed venue to description -->
+              </div>
+            </td>';
+    echo '<td><span class="d-block h5 mb-0">' . $eventId . '</span></td>';
+    echo '<td>' . $eventDescription . '</td>'; // Changed venue to description
+    echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
+    echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';
+    // echo '<td><span class="legend-indicator bg-success"></span>' . $eventStatus . '</td>'; // Removed event status column
+    echo '<td><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                <i class="bi-pencil-fill me-1"></i> Edit
+              </button></td>';
+    echo '</tr>';
+}
+
+
+?>
 
             </tbody>
           </table>

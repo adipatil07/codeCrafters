@@ -168,24 +168,32 @@
         <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
   <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
 
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
-    "textTarget": "#avatarImg",
-    "mode": "image",
-    "targetAttr": "src",
-    "resetTarget": ".js-file-attach-reset-img",
-    "resetImg": "./assets/img/160x160/img1.jpg",
-    "allowTypes": [".png", ".jpeg", ".jpg"]
-  }'>
+  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" accept=".png, .jpeg, .jpg">
 
   <span class="avatar-uploader-trigger">
     <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
   </span>
 </label>
 
+<script>
+  document.getElementById('avatarUploader').addEventListener('change', function () {
+    var input = this;
+    var img = document.getElementById('avatarImg');
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  });
+</script>
 
                         <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
                       </div>
           <!-- Card -->
+          <br>
           <div class="card">
             <!-- Body -->
             <div class="card-body">
@@ -243,18 +251,42 @@
               </div>
 
               <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Time</label>
+                <label for="time" class="form-label">Start Time</label>
 
                 <div class="input-group">
                   <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
 
                   
                 </div>
-
-                <!-- Container For Input Field -->
-
-                
               </div>
+
+              <div class="js-add-field mb-4" >
+                <label for="time" class="form-label">End Time</label>
+
+                <div class="input-group">
+                  <input type="time" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+                </div>
+              </div>
+
+              <div class="js-add-field mb-4" >
+                <label for="number" class="form-label">Registration Fee</label>
+
+                <div class="input-group">
+                  <input type="number" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+
+                  
+                </div>
+              </div>
+
+              <div class="js-add-field mb-4">
+                <label for="description" class="form-label">Event Description</label>
+
+                <div class="input-group">
+                    <textarea class="form-control" name="description" id="description" placeholder="Enter event description" aria-label="Event Description"></textarea>
+                </div>
+            </div>
+
+
               <!-- End Form -->
               <div class="d-flex justify-content-end gap-3">
                 <button type="button" class="btn btn-white">Discard</button>
@@ -1005,7 +1037,7 @@
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
-  
+
   <!-- JS Plugins Init. -->
   <script>
     (function() {
