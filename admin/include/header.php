@@ -1,18 +1,3 @@
- <?php
-// Start session
-session_start();
-
-// Check if session variables are set
-if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($_SESSION['admin_email']) || !isset($_SESSION['admin_mobile_no'])) {
-    // Session variables are not set, redirect to index.php
-    header("Location: index.php");
-    exit;
-}else{
-
-  extract($_SESSION);
-}
-// Your dashboard content goes here
-?>
  <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-container navbar-bordered bg-white">
     <div class="navbar-nav-wrap">
       <!-- Logo -->
