@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Basic Sign Up | Front - Admin &amp; Dashboard Template</title>
+  <title>Club Registration</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -137,8 +137,8 @@
 
     <!-- Content -->
     <div class="container py-5 py-sm-7">
-      <a class="d-flex justify-content-center mb-5" href="./index.html">
-        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
+      <a class="d-flex justify-content-center mb-5" href="./index.php">
+      <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
       </a>
 
       <div class="mx-auto" style="max-width: 30rem;">

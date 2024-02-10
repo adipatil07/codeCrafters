@@ -2,10 +2,10 @@
     <div class="navbar-nav-wrap">
       <!-- Logo -->
       <a class="navbar-brand" href="./dashboard.php" aria-label="Front">
-        <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo" data-hs-theme-appearance="default">
-        <img class="navbar-brand-logo" src="./assets/svg/logos-light/logo.svg" alt="Logo" data-hs-theme-appearance="dark">
-        <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo" data-hs-theme-appearance="default">
-        <img class="navbar-brand-logo-mini" src="./assets/svg/logos-light/logo-short.svg" alt="Logo" data-hs-theme-appearance="dark">
+      <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
+      <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
+      <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
+      <img class="zi-2" src="./images/logo-no-background.png" alt="Image Description" style="width: 15rem;">
       </a>
       <!-- End Logo -->
       <div class="navbar-nav-wrap-content-start">
