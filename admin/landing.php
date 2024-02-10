@@ -25,7 +25,7 @@
 
 <<<<<<< HEAD:admin/landing.php
   <script>
-            window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/index.php","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
+            window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/dashboard.php","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
             window.hs_config.gulpRGBA = (p1) => {
   const options = p1.split(',')
   const hex = options[0].toString()
@@ -50,7 +50,7 @@ https://templatemo.com/tm-583-festava-live
         </header>
 
 <<<<<<< HEAD:admin/landing.php
-        <a class="navbar-brand" href="./index.php" aria-label="Front">
+        <a class="navbar-brand" href="./dashboard.php" aria-label="Front">
           <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo" data-hs-theme-appearance="default">
           <img class="navbar-brand-logo" src="./assets/svg/logos-light/logo.svg" alt="Logo" data-hs-theme-appearance="dark">
         </a>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
 <<<<<<< HEAD:admin/landing.php
-          <a class="btn btn-primary navbar-btn" href="./index.php">Preview Demo</a>
+          <a class="btn btn-primary navbar-btn" href="./dashboard.php">Preview Demo</a>
         </div>
         <!-- End Secondary Content -->
 =======
@@ -99,7 +99,7 @@ https://templatemo.com/tm-583-festava-live
         <div class="collapse navbar-collapse" id="navbarContainerNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link py-2 py-lg-3" href="./documentation/index.php">Documentation <span class="badge bg-dark rounded-pill ms-1">v2.1.1</span></a>
+              <a class="nav-link py-2 py-lg-3" href="./documentation/dashboard.php">Documentation <span class="badge bg-dark rounded-pill ms-1">v2.1.1</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link py-2 py-lg-3" href="https://htmlstream.com/contact-us" target="_blank">Support <i class="bi-box-arrow-up-right small ms-1"></i></a>
@@ -180,7 +180,7 @@ https://templatemo.com/tm-583-festava-live
       <div class="row">
         <div class="col-md-6 mb-4">
           <!-- Card -->
-          <a class="card card-lg card-transition h-100 bg-light border-0 shadow-none overflow-hidden" href="./index.php">
+          <a class="card card-lg card-transition h-100 bg-light border-0 shadow-none overflow-hidden" href="./dashboard.php">
             <div class="card-body">
               <h2 class="card-title h1 text-inherit">Vertical Sidebar</h2>
               <p class="card-text lead">Experience a native pilled-styled sidebar that can be minimized on the fly.</p>
@@ -903,7 +903,7 @@ https://templatemo.com/tm-583-festava-live
         <img class="img-fluid" src="./assets/svg/illustrations/docs-main-page-dark.svg" alt="Image Description" data-hs-theme-appearance="dark">
 
         <div class="gradient-y-lg-dark position-absolute bottom-0 start-0 end-0 w-100 d-flex justify-content-center zi-1 pb-8" style="padding-top: 13rem;">
-          <a class="btn btn-primary btn-lg" href="./documentation/index.php">Browse Documentation</a>
+          <a class="btn btn-primary btn-lg" href="./documentation/dashboard.php">Browse Documentation</a>
         </div>
       </div>
     </div>

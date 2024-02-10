@@ -3,7 +3,7 @@
       <div class="navbar-vertical-footer-offset">
         <!-- Logo -->
 
-        <a class="navbar-brand" href="./index.php" aria-label="Front">
+        <a class="navbar-brand" href="./dashboard.php" aria-label="Front">
           <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo" data-hs-theme-appearance="default">
           <img class="navbar-brand-logo" src="./assets/svg/logos-light/logo.svg" alt="Logo" data-hs-theme-appearance="dark">
           <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo" data-hs-theme-appearance="default">
@@ -31,7 +31,7 @@
               </a>
 
               <div id="navbarVerticalMenuDashboards" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenu">
-                <a class="nav-link " href="./index.php">Default</a>
+                <a class="nav-link " href="./dashboard.php">Default</a>
                 <a class="nav-link " href="./dashboard-alternative.php">Alternative</a>
               </div>
             </div>
@@ -323,7 +323,7 @@
             <small class="bi-three-dots nav-subtitle-replacer"></small>
 
             <div class="nav-item">
-              <a class="nav-link " href="./layouts/index.php" data-placement="left">
+              <a class="nav-link " href="./layouts/dashboard.php" data-placement="left">
                 <i class="bi-grid-1x2 nav-icon"></i>
                 <span class="nav-link-title">Layouts</span>
               </a>
@@ -333,7 +333,7 @@
             <small class="bi-three-dots nav-subtitle-replacer"></small>
 
             <div class="nav-item">
-              <a class="nav-link " href="./documentation/index.php" data-placement="left">
+              <a class="nav-link " href="./documentation/dashboard.php" data-placement="left">
                 <i class="bi-book nav-icon"></i>
                 <span class="nav-link-title">Documentation <span class="badge bg-primary rounded-pill ms-1">v2.1.1</span></span>
               </a>
