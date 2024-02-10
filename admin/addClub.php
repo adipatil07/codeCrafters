@@ -182,86 +182,53 @@
           <!-- Card -->
           <br>
           <form action="#" method="post">
-          <div class="card">
-            <!-- Body -->
-            <div class="card-body">
-              <div class="row">
+    <div class="card">
+        <!-- Body -->
+        <div class="card-body">
+            <div class="row">
                 <div class="col-sm-12">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <label for="firstNameLabel" class="form-label">Club name</label>
-                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Club name" aria-label="Clarice">
-                  </div>
-                  <!-- End Form -->
+                    <!-- Form -->
+                    <div class="mb-4">
+                        <label for="firstNameLabel" class="form-label">Club name</label>
+                        <input type="text" class="form-control" name="clubName" id="clubName" placeholder="Club name" aria-label="Clarice">
+                    </div>
+                    <!-- End Form -->
                 </div>
-                <!-- End Col -->
-
-                
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              <!-- Form -->
-              <div class="mb-4">
-                <label for="emailLabel" class="form-label">Club Purpose</label>
-                <input type="textArea" class="form-control" name="email" id="purposeLabel" placeholder="" aria-label="clarice@site.com">
-              </div>
-              <!-- End Form -->
-
-              <!-- Form -->
-              <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">Target Audience</label>
-
-                <div class="input-group">
-                  <input type="text" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="">
-                </div>
-
-                <!-- Container For Input Field -->
-
-                
-              </div>
-              <!-- End Form -->
-              <!-- Form -->
-              
-
-
-              <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Social Media Links</label>
-
-                <div class="input-group">
-                  <input type="text" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
-                </div>
-
-                <!-- Container For Input Field -->
-
-                
-              </div>
-              <!-- End Form -->
-              <div class="d-flex justify-content-end gap-3">
-                <button type="button" class="btn btn-white">Discard</button>
-                <button type="button" class="btn btn-primary" name="btn_submit">Save</button>
-              </div>
             </div>
-            <!-- Body -->
-          </div></form>
-          <!-- End Card -->
+            <!-- End Row -->
+
+            <!-- Form -->
+            <div class="mb-4">
+                <label for="emailLabel" class="form-label">Club Purpose</label>
+                <input type="textArea" class="form-control" name="clubPurpose" id="clubPurpose" placeholder="" aria-label="clarice@site.com">
+            </div>
+            <!-- End Form -->
+
+            <!-- Form -->
+            <div class="js-add-field mb-4" >
+                <label for="phoneLabel" class="form-label">Target Audience</label>
+                <div class="input-group">
+                    <input type="text" class="js-input-mask form-control" name="clubAudience" id="clubAudience" placeholder="" aria-label="">
+                </div>
+            </div>
+            <!-- End Form -->
+
+            <!-- Form -->
+            <div class="js-add-field mb-4" >
+                <label for="time" class="form-label">Social Media Links</label>
+                <div class="input-group">
+                    <input type="text" class="js-input-mask form-control" name="clubSocialMedia" id="clubSocialMedia" placeholder="" aria-label="" >
+                </div>
+            </div>
+            <!-- End Form -->
+
+            <div class="d-flex justify-content-end gap-3">
+                <button type="submit" class="btn btn-primary" name="btn_submit">Save</button>
+            </div>
         </div>
-      </div>-
-      <!-- End Row -->
-
-      <hr class="my-5">
-
-      <!-- End Row -->
-
-      <hr class="my-5">
-
-       <!-- End Row -->
+        <!-- Body -->
     </div>
-    <!-- End Content -->
-
-    <!-- Footer -->
-<?php include "include/footer.php";   ?>
-
+</form>
 <?php
 // Include the configuration file
 include 'include/config.php';
@@ -277,10 +244,10 @@ if(isset($_POST['btn_submit'])){
     }
     
     // Retrieve form data
-    $clubName = $_POST['firstName'];
-    $clubPurpose = $_POST['email'];
-    $clubAudience = $_POST['audience'];
-    $clubSocialMedia = $_POST['socialMedia'];
+    $clubName = $_POST['clubName'];
+    $clubPurpose = $_POST['clubPurpose'];
+    $clubAudience = $_POST['clubAudience'];
+    $clubSocialMedia = $_POST['clubSocialMedia'];
     
     // Prepare SQL statement for insertion
     $stmt = $con->prepare("INSERT INTO `tbl_club`(`club_name`, `club_purpose`, `club_audience`, `club_social_media`) VALUES (?, ?, ?, ?)");
@@ -296,8 +263,8 @@ if(isset($_POST['btn_submit'])){
     }
     
     // Close statement and connection
-    // $stmt->close();
-    // $con->close();
+    $stmt->close();
+    $con->close();
 }
 ?>
 
