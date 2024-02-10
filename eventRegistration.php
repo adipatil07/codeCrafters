@@ -144,12 +144,8 @@
               
               <div class="col-lg-8">
                 <!-- Step -->
-                <div class="content container-fluid">
-          <div class=" col-lg-4 mb-4">
-          <h1>EventName</h1>
-          <p>Start Date - End Date</p>
-        </div>
-                <ul id="addUserStepFormProgress" class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
+            
+               <!--  <ul id="addUserStepFormProgress" class="js-step-progress step step-sm step-icon-sm step step-inline step-item-between mb-3 mb-md-5">
                   <li class="step-item">
                     <a class="step-content-wrapper" href="javascript:;" data-hs-step-form-next-options='{
                         "targetSelector": "#addUserStepProfile"
@@ -182,25 +178,48 @@
                       </div>
                     </a>
                   </li>
-                </ul>
+                </ul> -->
                 <!-- End Step -->
 
                 <!-- Content Step Form -->
                 <div id="addUserStepFormContent">
                   <!-- Card -->
                   <div id="addUserStepProfile" class="card card-lg active">
+
+                    <div class="col-lg-12">
+          <!-- Profile Cover -->
+          <div class="profile-cover">
+            <div class="profile-cover-img-wrapper">
+              <img class="profile-cover-img" src="admin/assets/img/1920x400/img1.jpg" alt="Image Description">
+            </div>
+          </div>
                     <!-- Body -->
                     <div class="card-body">
                       <!-- Form -->
+                          <div class="content container-fluid">
+        <center>  <div class=" col-lg-6 mb-6">
+          <h1 class="step-title">EventName</h1>
+          <h2 class="step-title">Fees : 50 Rs.</h2>
+          <p>Start Date - End Date</p>
+              </div> </center>
 
                       <!-- Form first name-->
                       <div class="row mb-4">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">First name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
 
                         <div class="col-sm-9">
                           <div class="input-group input-group-sm-vertical">
                             <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="First Name" aria-label="Aditya">
-                            <input type="text" class="form-control" name="lastName" id="lastNameLabel" placeholder="Last Name" aria-label="Patil">
+                          </div>
+                        </div>
+                      </div>
+
+                       <div class="row mb-4">
+                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Last name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
+
+                        <div class="col-sm-9">
+                          <div class="input-group input-group-sm-vertical">
+                            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Last Name" aria-label="Aditya">
                           </div>
                         </div>
                       </div>
@@ -262,96 +281,20 @@
 
                     <!-- Footer -->
                     <div class="card-footer d-flex justify-content-end align-items-center">
+<<<<<<< HEAD
                       <button type="button" class="btn btn-primary" name="register" data-hs-step-form-next-options='{
                                 "targetSelector": "#addUserStepBillingAddress"
                               }'>
+                        Proceed to pay<i class="bi-chevron-right"></i>
+=======
+                      <button type="submit" class="btn btn-primary" name="btn_register">
                         Next <i class="bi-chevron-right"></i>
+>>>>>>> 818b260a9379bb833a0abb283dfb3b72fb8c0739
                       </button>
                     </div>
                     <!-- End Footer -->
                   </div>
-                  <!-- End Card -->
-
-                  <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
-                    <!-- Body -->
-                    <div class="card-body align-items-center">
-                        <div class="card" style="width: 18rem;">
-                          <div class="card-body align-items-center">
-                            <h3 class="card-title">Event Name</h3>
-                            <h6 class="card-subtitle mb-1 text-muted">Amount : 50</h6>
-                            <p class="card-text">Pay with Razorpay</p>
-                            <a href="#" class="btn btn-soft-primary">Pay</a>
-                          </div>
-                        </div>
-                      <!-- End Form -->
-                    </div>
-                    <!-- End Body -->
-
-                    <!-- Footer -->
-                    <div class="card-footer d-flex align-items-center">
-                      <button type="button" class="btn btn-ghost-secondary" data-hs-step-form-prev-options='{
-                          "targetSelector": "#addUserStepProfile"
-                        }'>
-                        <i class="bi-chevron-left"></i> Previous step
-                      </button>
-
-                      <div class="ms-auto">
-                        <button type="button" class="btn btn-primary" data-hs-step-form-next-options='{
-                                  "targetSelector": "#addUserStepConfirmation"
-                                }'>
-                          Next <i class="bi-chevron-right"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <!-- End Footer -->
-                  </div>
-
-                  <div id="addUserStepConfirmation" class="card card-lg" style="display: none;">
-                    <!-- Profile Cover -->
-                    <div class="profile-cover">
-                      <div class="profile-cover-img-wrapper">
-                        <img class="profile-cover-img" src="./assets/img/1920x400/img1.jpg" alt="Image Description">
-                      </div>
-                    </div>
-                    <!-- End Profile Cover -->
-                    <!-- Body -->
-                    <div class="card-body">
-                      <dl class="row">
-                        <dt class="col-sm-6 text-sm-end">Full name:</dt>
-                        <dd class="col-sm-6">Aditya Patil</dd>
-
-                        <dt class="col-sm-6 text-sm-end">Email:</dt>
-                        <dd class="col-sm-6">ella@site.com</dd>
-
-                        <dt class="col-sm-6 text-sm-end">Phone:</dt>
-                        <dd class="col-sm-6">+91 9529323131</dd>
-
-                        <dt class="col-sm-6 text-sm-end">College:</dt>
-                        <dd class="col-sm-6">Htmlstream</dd>
-
-                        <dt class="col-sm-6 text-sm-end">Department:</dt>
-                        <dd class="col-sm-6">-</dd>
-
-                      </dl>
-                      <!-- End Row -->
-                    </div>
-                    <!-- End Body -->
-
-                    <!-- Footer -->
-                    <div class="card-footer d-sm-flex align-items-sm-center">
-                      <button type="button" class="btn btn-ghost-secondary mb-2 mb-sm-0" data-hs-step-form-prev-options='{
-                          "targetSelector": "#addUserStepBillingAddress"
-                        }'>
-                        <i class="bi-chevron-left"></i> Previous step
-                      </button>
-
-                      <div class="ms-auto">
-                        
-                        <button id="addUserFinishBtn" type="button" class="btn btn-primary">Done</button>
-                      </div>
-                    </div>
-                    <!-- End Footer -->
-                  </div>
+                  </div>                 
                 </div>
                 <!-- End Content Step Form -->
 
@@ -568,7 +511,7 @@
 include 'admin/include/config.php'; // Added a semicolon here
 
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $reg_fname = $_POST['firstName'];
     $reg_lname = $_POST['lastName'];
@@ -583,13 +526,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$reg_fname', '$reg_lname', '$reg_email', '$reg_mobile', '$reg_clg', '$reg_dept', '$reg_timestamp')";
 
     // Execute the query
-    if ($conn->query($sql) === TRUE) {
+    if ($con->query($sql) === TRUE) {
         echo "New record inserted successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-}
+}*/
 
 // Close connection
-$con->close();
+//$con->close();
+
+?>
+<?php
+if(isset($_POST['btn_register'])){
+ // print_r($_POST);
+  extract($_POST);
+  $k1=$_GET['event_id'];
+  $k2=$_GET['event_name'];
+
+$sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`) VALUES 
+(NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$k1', '$k2')";
+if(mysqli_query($con,$sql))
+{
+ // echo "data updated";
+  echo '<script>
+          document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(\'[data-hs-step-form-next-options]\').setAttribute(\'targetSelector\', \'#addUserStepBillingAddress\');
+          });
+        </script>';
+
+      }else{
+  echo "error is present";
+}
+ob_end_flush(); // Flush the output buffer and turn off output buffering
+
+}
+
 ?>
