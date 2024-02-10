@@ -54,8 +54,8 @@
 
                 <div id="navbarVerticalMenuPagesUsersMenu" class="nav-collapse collapse " data-bs-parent="#navbarVerticalMenuPagesMenu">
                   <a class="nav-link " href="./addevent.php">Add Event</a>
-                  <a class="nav-link " href="./users-leaderboard.php">Update Event</a>
-                  <a class="nav-link " href="./users-add-user.php">View Event</a>
+                  <a class="nav-link " href="./adminEvent.php">Update Event</a>
+                  <a class="nav-link " href="./adminViewEvent.php">View Event</a>
                 </div>
               </div>
               <!-- End Collapse -->
