@@ -143,13 +143,11 @@
 
       <div class="mx-auto" style="max-width: 65rem;">
 
-
-<?php
-// Assuming $con is your database connection variable
+      <?php
 include "admin/include/config.php";
 
 // Query to fetch data from the database
-$query = "SELECT * FROM tbl_event";
+$query = "SELECT * FROM tbl_add_event";
 $result = mysqli_query($con, $query);
 
 // Check if the query was successful
@@ -157,17 +155,16 @@ if ($result) {
     // Loop through the results
     while ($row = mysqli_fetch_assoc($result)) {
         // Extracting data from each row
-        $eventId = $row['event_id'];
-        $eventClubId = $row['event_cid'];
-        $eventName = $row['event_name'];
-        $eventClubName = $row['event_cname'];
-        $eventStartDate = $row['event_sdate'];
-        $eventEndDate = $row['event_ldate'];
-        $eventStartTime = $row['event_stime'];
-        $eventEndTime = $row['event_ltime'];
-        $eventRegAmt = $row['event_reg_amt'];
-        $eventImg = $row['event_img'];
-        $eventDesc = $row['event_desc'];
+        $eventId = $row['add_event_id'];
+        $eventName = $row['add_event_name'];
+        $eventClubName = $row['add_event_name'];
+        $eventStartDate = $row['add_event_sdate'];
+        $eventEndDate = $row['add_event_ldate'];
+        $eventStartTime = $row['add_event_stime'];
+        $eventEndTime = $row['add_event_ltime'];
+        $eventRegAmt = $row['add_event_fee'];
+        // $eventImg = $row['add_event_logo'];
+        // $eventDesc = $row['add_event_dis'];
 
         // Determine registration fee display
         $registrationFeeDisplay = ($eventRegAmt == 0) ? 'Free' : $eventRegAmt;
@@ -177,12 +174,12 @@ if ($result) {
             <div class="card mb-3" style="max-width: 1000px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img class="img-fluid" src="./images/' . $eventImg . '" alt="Card image cap" style="width: 300px; height: 200px;">
+                  <!-- Uncomment if you have event images -->
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                     <h1 class="card-title">' . $eventName . '</h1>
-                    <p class="card-text">' . $eventDesc . '</p>
+                    <!-- Uncomment if you have event descriptions -->
                     <p>Event Club: ' . $eventClubName . '</p>
                     <p>Start Date: ' . $eventStartDate . '</p>
                     <p>End Date: ' . $eventEndDate . '</p>
@@ -196,8 +193,6 @@ if ($result) {
             </div>
             <!-- End Card -->
             ';
-            
-
     }
 
     // Free result set
