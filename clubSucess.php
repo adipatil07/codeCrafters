@@ -98,10 +98,12 @@
                         <div class="body1">
 
  <div class="container1">
-        <img src="./images/paymentsucess.gif" alt="Payment Success Icon">
-        <h1>Payment Successful...</h1>
-        <p>Your payment has been successfully processed.</p>
-        <p>You will receive your confirmation letter in the next 24 hours. Please check your email inbox. If you don't find it, kindly check your spam folder.</p>
+        <img src="images/paymentsucess.gif">
+        <h1>Club Successfully Added...</h1>
+        <p>Congratulations! Your club has been successfully added. Thank you for choosing our platform to showcase your club.</p>
+        <p>
+        You can now start promoting your club and inviting members. Don't forget to check back for updates and manage your club details as needed.</p>
+
         
       <!--   <div class="contact-info">
             <p>WhatsApp: +91 7030707134</p>           
@@ -110,9 +112,10 @@
         </div> -->
 
         <p><b>Thank you so much</b></p>
+                
+<button type="button" class="btn btn-primary btn-sm">Back</button>
     </div>
 </div>
-        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

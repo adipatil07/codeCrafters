@@ -98,10 +98,13 @@
                         <div class="body1">
 
  <div class="container1">
-        <img src="./images/paymentsucess.gif" alt="Payment Success Icon">
-        <h1>Payment Successful...</h1>
-        <p>Your payment has been successfully processed.</p>
-        <p>You will receive your confirmation letter in the next 24 hours. Please check your email inbox. If you don't find it, kindly check your spam folder.</p>
+        <img src="images/paymentsucess.gif">
+        <h1>Event Added Succesfully...</h1>
+        <p>Congratulations! Your event has been successfully created.</p>
+        <p>
+ Thank you for choosing our platform to host your event.
+You can now start promoting your event and inviting guests. Don't forget to check back for updates and manage your event details as needed.
+Thank you for using CodeCrafters!</p>
         
       <!--   <div class="contact-info">
             <p>WhatsApp: +91 7030707134</p>           
@@ -110,6 +113,8 @@
         </div> -->
 
         <p><b>Thank you so much</b></p>
+        
+        <button type="button" class="btn btn-primary btn-sm">Back</button>
     </div>
 </div>
         
