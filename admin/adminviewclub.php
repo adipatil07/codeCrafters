@@ -176,26 +176,53 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
       <!-- End Page Header -->
 
       <!-- Stats -->
-        <div class="row">
-            <div class="col-md-5 mb-5">
+      <div class="container">
+    <div class="row">
+        <!-- Card 1 -->
+ <?php
+// Include the configuration file to establish database connection
+include 'include/config.php';
+
+// Query to fetch club details
+$query = "SELECT * FROM tbl_club";
+$result = mysqli_query($con, $query);
+
+// Check if query was successful
+if ($result) {
+    // Loop through each row in the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Extract data from the row
+        $clubName = $row['club_name'];
+        $clubDesc = $row['club_desc'];
+        $clubLogo = $row['club_logo'];
+
+        // HTML template with placeholders replaced by fetched values
+        echo '<div class="col-sm-4 mb-4">
                 <a href="#">
-                    <div class="card" style="width: 20rem;height: 22rem">
-                        <img class="card-img-top" src="../images/codex.jpg " alt="Poster of Event" style="width: 20rem;height: 10rem">
+                    <div class="card" style="width: 20rem;height: 20rem">
+                        <img class="card-img-top" src="' . $clubLogo . '" alt="Logo of Club" style="width: 20rem;height: 10rem">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="./adminclub.php"><button type="button" class="btn btn-ghost-primary">More Info</button></a>
-                            <br><br>
+                            <h5 class="card-title">' . $clubName . '</h5>
+                            <p class="card-text">' . $clubDesc . '</p>
                         </div>
                     </div>
                 </a>
-            </div>
-        <!-- Repeat the above structure for the next two cards -->
-        
-        
-        
-        
-        </div>
+            </div>';
+    }
+} else {
+    echo "Error in fetching clubs: " . mysqli_error($con);
+}
+
+// Close the database connection
+mysqli_close($con);
+?>
+
+        <!-- Card 2 -->
+
+        <!-- Add more cards as needed -->
+    </div>
+    <!-- Add more rows as needed -->
+</div>
 
       <!-- End Stats -->
 

@@ -176,24 +176,65 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
       <!-- End Page Header -->
 
       <!-- Stats -->
-        <div class="row">
-            <div class="col-md-4 mb-4">
+
+<div class="container">
+    <div class="row">
+        <!-- Card 1 -->
+       <?php
+// Include the configuration file to establish database connection
+include 'include/config.php';
+
+// Query to fetch event details
+$query = "SELECT * FROM tbl_event";
+$result = mysqli_query($con, $query);
+
+// Check if query was successful
+if ($result) {
+    // Loop through each row in the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Extract data from the row
+        $eventName = $row['event_name'];
+        $eventDesc = $row['event_desc'];
+        $eventClub = $row['event_cname'];
+        $startDate = $row['event_sdate'];
+        $endDate = $row['event_ldate'];
+        $startTime = $row['event_stime'];
+        $endTime = $row['event_ltime'];
+        $regFee = $row['event_reg_amt'];
+        $imagePath = $row['event_img'];
+
+        // HTML template with placeholders replaced by fetched values
+        echo '<div class="col-sm-4 mb-4">
                 <a href="#">
-                    <div class="card" style="width: 20rem;height: 20rem">
-                        <img class="card-img-top" src="../images/codex.jpg " alt="Poster of Event" style="width: 20rem;height: 10rem">
+                    <div class="card"  style="width: 20rem;height: 20rem">
+                        <img class="card-img-top" src="' . $imagePath . '" alt="Poster of Event" style="width: 20rem;height: 10rem">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">' . $eventName . '</h5>
+                            <p class="card-text">' . $eventDesc . '<br>
+                            Event Club: ' . $eventClub . '<br>
+                            Date: From ' . $startDate . ' to ' . $endDate . '<br>
+                            Time: ' . $startTime . ' to ' . $endTime . '<br>
+                            Registration Fee: ' . $regFee . '<br>
+                            </p>
                         </div>
                     </div>
                 </a>
-            </div>
-        <!-- Repeat the above structure for the next two cards -->
-        
-        
-        
-        
-        </div>
+            </div>';
+    }
+} else {
+    echo "Error in fetching events: " . mysqli_error($con);
+}
+
+// Close the database connection
+mysqli_close($con);
+?>
+        <!-- Card 2 -->
+
+        <!-- Add more cards as needed -->
+    </div>
+    <!-- Add more rows as needed -->
+</div>
+
 
       <!-- End Stats -->
 
