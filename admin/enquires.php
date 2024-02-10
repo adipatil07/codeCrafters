@@ -1,4 +1,4 @@
- <?php
+<?php
 // Start session
 session_start();
 
@@ -160,121 +160,12 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
       <div class="page-header">
         <div class="row align-items-center">
           <div class="col">
-            <h1 class="page-header-title">Dashboard</h1>
+            <h1 class="page-header-title">Enquires</h1>
           </div>
-          <!-- End Col -->
-
-          
-          <!-- End Col -->
         </div>
-        <!-- End Row -->
       </div>
-      <!-- End Page Header -->
 
-      <!-- Stats -->
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
-            <div class="card-body">
-              <h6 class="card-subtitle">Total Events</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">24</h1>
-                </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
-            </div>
-          </a>
-          <!-- End Card -->
         </div>
-
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
-            <div class="card-body">
-              <h6 class="card-subtitle">Total Students Enrolled</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">64</h1>
-                </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
-            </div>
-          </a>
-          <!-- End Card -->
-        </div>
-
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
-            <div class="card-body">
-              <h6 class="card-subtitle">Total Clubs</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">3</h1>
-                </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
-            </div>
-          </a>
-          <!-- End Card -->  </div>
-
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
-            <div class="card-body">
-              <h6 class="card-subtitle">Total Club Students</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">30</h1>
-                </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
-            </div>
-          </a>
-          <!-- End Card -->  </div>
-      </div>
       <!-- End Stats -->
 
       <!-- End Row -->
@@ -337,12 +228,13 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
                     <label class="form-check-label" for="datatableCheckAll"></label>
                   </div>
                 </th>
-                <th class="table-column-ps-0">Full name</th>
-                <th>College</th>
-                <th>Branch</th>
+                <th class="table-column-ps-0">Id</th>
+                <th>Name</th>
                 <th>Email</th>
-                <th>Event</th>
-                <th>User ID</th>
+                <th>Message</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+
               </tr>
             </thead>
 
@@ -360,17 +252,18 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
                       
                     </div>
                     <div class="flex-grow-1 ms-3">
-                      <h5 class="text-inherit mb-0">Aditya Patil <i class="bi-patch-check-fill text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Top endorsed"></i></h5>
+                      <h5 class="text-inherit mb-0">1 </h5>
                     </div>
                   </a>
                 </td>
                 <td>
-                  <span class="legend-indicator bg-success"></span>SKNCOE
+                  <span class="legend-indicator bg-success"></span>Aditya Patil
                 </td>
-                <td>COMP</td>
-                <td>abc@site.com</td>
-                <td>Codex</td>
-                <td>67989</td>
+                <td>abc@gmail.com</td>
+                <td>Hello There</td>
+                <td>2024-02-10 17:47:26</td>
+                <td><button type="button" class="btn btn-soft-success">Mark as Read</button>
+</td>
               </tr>
 
             </tbody>

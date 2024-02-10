@@ -76,6 +76,14 @@
                 </div>
               </div>
               <!-- End Collapse -->
+              <div class="nav-item">
+                <a class="nav-link dropdown-toggle " href="./enquires.php" role="button" >
+                  <i class="bi bi-calendar-event nav-icon"></i> 
+                  <span class="nav-link-title">Enquires</span>
+                </a>
+
+                
+              </div>
 
              
 
