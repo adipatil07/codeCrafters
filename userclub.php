@@ -160,14 +160,16 @@ if (!$result) {
 while ($row = mysqli_fetch_assoc($result)) {
     $clubID = $row['club_id'];
     $clubName = $row['club_name'];
-    $clubDescription = $row['club_desc'];
-    $clubImage = $row['club_logo'];
+    $clubDescription = $row['club_purpose'];
+    $clubImage = $row['club_audience'];
+    
 
+    // <img class="img-fluid" src="./images/' . $clubImage . '" alt="Club Logo" style="width: 300px; height: 200px;">
     // Output the HTML structure with fetched data
     echo '<div class="card mb-3" style="max-width: 1000px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img class="img-fluid" src="./images/' . $clubImage . '" alt="Club Logo" style="width: 300px; height: 200px;">
+                
               </div>
               <div class="col-md-8">
                 <div class="card-body">
