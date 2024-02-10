@@ -166,7 +166,7 @@
         <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
   <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
 
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" name="logo" accept=".png, .jpeg, .jpg">
+  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" accept=".png, .jpeg, .jpg">
 
   <span class="avatar-uploader-trigger">
     <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
@@ -292,16 +292,19 @@
     <!-- End Content -->
 
     <!-- Footer -->
+
 <?php include "include/footer.php";   ?>
+
 <?php
 include 'include/config.php';
+
 if(isset($_POST['btn_submit'])){
     $con = new mysqli($servername, $username, $password, $dbname);
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
     
-    // Retrieve form data
+    // Retrieve form data for tbl_add_event
     $eventName = $_POST['eventName'];
     $venue = $_POST['venue'];
     $startDate = $_POST['startDate'];
@@ -310,23 +313,51 @@ if(isset($_POST['btn_submit'])){
     $endTime = $_POST['endTime'];
     $registrationFee = $_POST['registrationFee'];
     $eventDescription = $_POST['eventDescription'];
-    // $logo = $_POST['logo'];
     
-    // Prepare SQL statement
-    $stmt = $con->prepare("INSERT INTO `tbl_add_event`(`add_event_name`, `add_event_veneu`, `add_event_sdate`, `add_event_ldate`, `add_event_stime`, `add_event_ltime`, `add_event_fee`, `add_event_dis`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    // Prepare SQL statement for tbl_add_event
+    $stmt_add_event = $con->prepare("INSERT INTO tbl_add_event (add_event_name, add_event_veneu, add_event_sdate, add_event_ldate, add_event_stime, add_event_ltime, add_event_fee, add_event_dis) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     
-    // Bind parameters
-    $stmt->bind_param("ssssssss", $eventName, $venue, $startDate, $endDate, $startTime, $endTime, $registrationFee, $eventDescription);
+    // Bind parameters for tbl_add_event
+    $stmt_add_event->bind_param("ssssssss", $eventName, $venue, $startDate, $endDate, $startTime, $endTime, $registrationFee, $eventDescription);
     
-    // Execute statement
-    if ($stmt->execute()) {
+    // Execute statement for tbl_add_event
+    if ($stmt_add_event->execute()) {
         echo '<script>alert("Event added successfully.");</script>';
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $stmt_add_event->error;
     }
     
-    // Close statement and connection
-    $stmt->close();
+    // Close statement for tbl_add_event
+    $stmt_add_event->close();
+
+    // Retrieve club data from tbl_club
+    $stmt_club = $con->prepare("SELECT * FROM `tbl_club` WHERE 1");
+    $stmt_club->execute();
+    $result = $stmt_club->get_result();
+    $row = $result->fetch_assoc();
+    
+    // Retrieve relevant club data
+    $club_id = $row['club_id'];
+    $club_name = $row['club_name'];
+    // Add more fields as needed
+    
+    // Prepare SQL statement for tbl_event
+    $stmt_event = $con->prepare("INSERT INTO tbl_event (event_id, event_cid, event_name, event_venue, event_reg_amt, event_cname, event_sdate, event_ldate, event_stime, event_ltime, event_timestamp, event_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)");
+    
+    // Bind parameters for tbl_event
+    $stmt_event->bind_param("ssssssssss", $event_id, $club_id, $eventName, $venue, $registrationFee, $club_name, $startDate, $endDate, $startTime, $endTime, $eventDescription);
+    
+    // Execute statement for tbl_event
+    if ($stmt_event->execute()) {
+        echo '<script>alert("Event details added to tbl_event successfully.");</script>';
+    } else {
+        echo "Error: " . $stmt_event->error;
+    }
+    
+    // Close statement for tbl_event
+    $stmt_event->close();
+
+    // Close connection
     $con->close();
 }
 ?>
