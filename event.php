@@ -147,6 +147,7 @@
 <?php
 // Assuming $con is your database connection variable
 include "admin/include/config.php";
+
 // Query to fetch data from the database
 $query = "SELECT * FROM tbl_event";
 $result = mysqli_query($con, $query);
@@ -164,24 +165,31 @@ if ($result) {
         $eventEndDate = $row['event_ldate'];
         $eventStartTime = $row['event_stime'];
         $eventEndTime = $row['event_ltime'];
+        $eventRegAmt = $row['event_reg_amt'];
+        $eventImg = $row['event_img'];
+        $eventDesc = $row['event_desc'];
+
+        // Determine registration fee display
+        $registrationFeeDisplay = ($eventRegAmt == 0) ? 'Free' : $eventRegAmt;
 
         // Output HTML with the fetched data
         echo '<!-- Card -->
             <div class="card mb-3" style="max-width: 1000px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img class="img-fluid" src="./images/codex.jpg" alt="Card image cap" style="width: 300px; height: 200px;">
+                  <img class="img-fluid" src="./images/' . $eventImg . '" alt="Card image cap" style="width: 300px; height: 200px;">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h1 class="card-title">' . $eventName . '</h5>
-                    <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the ' . $eventName . ' coding competition.</p>
+                    <h1 class="card-title">' . $eventName . '</h1>
+                    <p class="card-text">' . $eventDesc . '</p>
                     <p>Event Club: ' . $eventClubName . '</p>
                     <p>Start Date: ' . $eventStartDate . '</p>
                     <p>End Date: ' . $eventEndDate . '</p>
                     <p>Start Time: ' . $eventStartTime . '</p>
                     <p>End Time: ' . $eventEndTime . '</p>
-                    <a href="eventRegistration.php?event_id=' . $eventId . '&event_name=' . urlencode($eventName) . '"><button type="button" class="btn btn-soft-primary">Enroll Now</button></a>
+                    <p>Registration Fee: ' . $registrationFeeDisplay . '</p>
+                    <a href="eventRegistration.php?event_id=' . $eventId . '&event_name=' . urlencode($eventName) . '&cost=' . $eventRegAmt . '"><button type="button" class="btn btn-soft-primary">Enroll Now</button></a>
                   </div>
                 </div>
               </div>
@@ -199,6 +207,7 @@ if ($result) {
 // Close the connection
 mysqli_close($con);
 ?>
+
 
 
         
