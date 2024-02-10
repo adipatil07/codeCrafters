@@ -35,7 +35,7 @@
   </style>
 
   <script>
-            window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/index.php","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
+            window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/dashboard.php","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
             window.hs_config.gulpRGBA = (p1) => {
   const options = p1.split(',')
   const hex = options[0].toString()
@@ -137,9 +137,10 @@
 
     <!-- Content -->
     <div class="container py-5 py-sm-7">
-      <a class="d-flex justify-content-center mb-5" href="./index.php">
-        <img class="zi-2" src="./assets/svg/logos/Sinhgad White.png" alt="Image Description" style="width: 15rem;">
+      <a class="d-flex justify-content-center mb-5" href="./dashboard.php">
+        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
       </a>
+
       <div class="mx-auto" style="max-width: 30rem;">
         <!-- Card -->
         <div class="card card-lg mb-5">
@@ -148,25 +149,25 @@
             <form class="js-validate needs-validation" novalidate>
               <div class="text-center">
                 <div class="mb-5">
-                  <h1 class="display-5">Admin Login</h1>
-                  <!-- <p>Don't have an account yet?</p> -->
+                  <h1 class="display-5">Sign in</h1>
+                  <p>Don't have an account yet? <a class="link" href="./authentication-signup-basic.php">Sign up here</a></p>
                 </div>
 
-                <!-- <div class="d-grid mb-4">
+                <div class="d-grid mb-4">
                   <a class="btn btn-white btn-lg" href="#">
                     <span class="d-flex justify-content-center align-items-center">
                       <img class="avatar avatar-xss me-2" src="./assets/svg/brands/google-icon.svg" alt="Image Description">
                       Sign in with Google
                     </span>
                   </a>
-                </div> -->
+                </div>
 
-                <!-- <span class="divider-center text-muted mb-4">OR</span> -->
+                <span class="divider-center text-muted mb-4">OR</span>
               </div>
 
               <!-- Form -->
               <div class="mb-4">
-                <label class="form-label" for="signinSrEmail">Email</label>
+                <label class="form-label" for="signinSrEmail">Your email</label>
                 <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required>
                 <span class="invalid-feedback">Please enter a valid email address.</span>
               </div>
@@ -207,7 +208,7 @@
               <!-- End Form Check -->
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
               </div>
             </form>
             <!-- End Form -->
@@ -217,7 +218,32 @@
 
         <!-- Footer -->
         <div class="position-relative text-center zi-1">
-          <small class="text-cap text-body mb-4">&copy;All Right Reserved.<span class="d-none d-sm-inline-block">2024 Code Crafters .</small>
+          <small class="text-cap text-body mb-4">Trusted by the world's best teams</small>
+
+          <div class="w-85 mx-auto">
+            <div class="row justify-content-between">
+              <div class="col">
+                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Logo">
+              </div>
+              <!-- End Col -->
+
+              <div class="col">
+                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Logo">
+              </div>
+              <!-- End Col -->
+
+              <div class="col">
+                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Logo">
+              </div>
+              <!-- End Col -->
+
+              <div class="col">
+                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Logo">
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
         </div>
         <!-- End Footer -->
       </div>
@@ -259,10 +285,3 @@
   </script>
 </body>
 </html>
-<?PHP
-
-include 'include/config.php';
-
-
-
-?>
