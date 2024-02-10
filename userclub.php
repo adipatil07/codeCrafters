@@ -143,20 +143,44 @@
 
       <div class="mx-auto" style="max-width: 65rem;">
  <!-- Card -->
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-    <img class="img-fluid" src="./images/gdsc.jpg" alt="Card image cap" style="width: 300px; height: 200px;">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h1 class="card-title">GDSC - Google Developer Students club</h5>
-        <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
-        <a href="./clubRegistration.php"><button type="button" href= "./clubRegistration.php"class="btn btn-soft-primary" >Enroll Now</button></a>
-      </div>
-    </div>
-  </div>
-</div>
+<?php
+
+include "admin/include/config.php";
+
+// SQL query to fetch data from the database
+$query = "SELECT * FROM tbl_club";
+$result = mysqli_query($con, $query);
+
+// Check if query execution was successful
+if (!$result) {
+    echo "Error: " . mysqli_error($con);
+}
+
+// Fetch the data from the result set
+while ($row = mysqli_fetch_assoc($result)) {
+    $clubName = $row['club_name'];
+    $clubDescription = $row['club_desc'];
+    $clubImage = $row['club_logo'];
+
+    // Output the HTML structure with fetched data
+    echo '<div class="card mb-3" style="max-width: 1000px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img class="img-fluid" src="./images/' . $clubImage . '" alt="Club Logo" style="width: 300px; height: 200px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h1 class="card-title">' . $clubName . '</h1>
+                  <p class="card-text">' . $clubDescription . '</p>
+                  <a href="./clubRegistration.php"><button type="button" class="btn btn-soft-primary">Enroll Now</button></a>
+                </div>
+              </div>
+            </div>
+          </div>';
+}
+
+
+?>
 <!-- End Card -->
 
 
