@@ -1,4 +1,4 @@
-  !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Required Meta Tags Always Come First -->
@@ -16,6 +16,9 @@
 
   <!-- CSS Implementing Plugins -->
   <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="./assets/vendor/tom-select/dist/css/tom-select.bootstrap5.css">
+  <link rel="stylesheet" href="./assets/vendor/quill/dist/quill.snow.css">
 
   <!-- CSS Front Template -->
 
@@ -119,173 +122,858 @@
             </script>
 </head>
 
-<body>
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
 
   <script src="./assets/js/hs.theme-appearance.js"></script>
 
+  <script src="./assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js"></script>
+
+  <!-- ========== HEADER ========== -->
+
+<?php   include "include/header.php"; ?>
+  <!-- ========== END HEADER ========== -->
   <!-- ========== MAIN CONTENT ========== -->
+  <!-- Navbar Vertical -->
+<?php include "include/sidebar.php";  ?>
+
+
   <main id="content" role="main" class="main">
-    <div class="position-fixed top-0 end-0 start-0 bg-img-start" style="height: 32rem; background-image: url(./assets/svg/components/card-6.svg);">
-      <!-- Shape -->
-      <div class="shape shape-bottom zi-1">
-        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1921 273">
-          <polygon fill="#fff" points="0,273 1921,273 1921,0 " />
-        </svg>
-      </div>
-      <!-- End Shape -->
-    </div>
-
     <!-- Content -->
-    <div class="container py-5 py-sm-7">
-      <a class="d-flex justify-content-center mb-5" href="./dashboard.php">
-        <img class="zi-2" src="../images/Sinhgad White.png" alt="Image Description" style="width: 8rem;">
-      </a>
+    <div class="content container-fluid">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col-sm mb-2 mb-sm-0">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item active" aria-current="page">Event</li>
+              </ol>
+            </nav>
 
-      <div class="mx-auto" style="max-width: 30rem;">
-        <!-- Card -->
-        <div class="card card-lg mb-5">
-          <div class="card-body">
-            <!-- Form -->
-            <form class="js-validate needs-validation" novalidate>
-              <div class="text-center">
-                <div class="mb-5">
-                  <h1 class="display-5">Add Event</h1>
+            <h1 class="page-header-title">Add Event</h1>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </div>
+      <!-- End Page Header -->
+
+      <div class="row">
+        <div class="col-lg-4 mb-3 mb-lg-0">
+          <h4>Event information</h4>
+        </div>
+
+        <div class="col-lg-8">
+        <div class="d-flex align-items-center">
+        <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
+  <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
+
+  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" data-hs-file-attach-options='{
+    "textTarget": "#avatarImg",
+    "mode": "image",
+    "targetAttr": "src",
+    "resetTarget": ".js-file-attach-reset-img",
+    "resetImg": "./assets/img/160x160/img1.jpg",
+    "allowTypes": [".png", ".jpeg", ".jpg"]
+  }'>
+
+  <span class="avatar-uploader-trigger">
+    <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
+  </span>
+</label>
+
+
+                        <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
+                      </div>
+          <!-- Card -->
+          <div class="card">
+            <!-- Body -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <!-- Form -->
+                  <div class="mb-4">
+                    <label for="firstNameLabel" class="form-label">Event name</label>
+                    <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="event name" aria-label="Clarice">
+                  </div>
+                  <!-- End Form -->
                 </div>
+                <!-- End Col -->
 
                 
-
+                <!-- End Col -->
               </div>
-
-              <label class="form-label" for="fullNameSrEmail">Event name</label>
+              <!-- End Row -->
 
               <!-- Form -->
-              <div class="row">
-                <div class="col-sm-6">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" name="fullName" id="fullNameSrEmail" placeholder="Mark" aria-label="Mark" required>
-                    <span class="invalid-feedback">Please enter your event name.</span>
+              <div class="mb-4">
+                <label for="emailLabel" class="form-label">Venue</label>
+                <input type="email" class="form-control" name="email" id="emailLabel" placeholder="" aria-label="clarice@site.com">
+              </div>
+              <!-- End Form -->
+
+              <!-- Form -->
+              <div class="js-add-field mb-4" >
+                <label for="phoneLabel" class="form-label">Start Date</label>
+
+                <div class="input-group">
+                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+
+                  
+                </div>
+
+                <!-- Container For Input Field -->
+
+                
+              </div>
+              <!-- End Form -->
+              <!-- Form -->
+              <div class="js-add-field mb-4" >
+                <label for="phoneLabel" class="form-label">End Date</label>
+
+                <div class="input-group">
+                  <input type="date" class="js-input-mask form-control" name="" id="" placeholder="" aria-label="" >
+
+                  
+                </div>
+
+                <!-- Container For Input Field -->
+
+                
+              </div>
+              <!-- End Form -->
+              <div class="d-flex justify-content-end gap-3">
+                <button type="button" class="btn btn-white">Discard</button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+            <!-- Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+      <!-- End Row -->
+
+      <hr class="my-5">
+
+      <!-- End Row -->
+
+      <hr class="my-5">
+
+       <!-- End Row -->
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+<?php include "include/footer.php";   ?>
+
+    <!-- End Footer -->
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== SECONDARY CONTENTS ========== -->
+  <!-- Keyboard Shortcuts -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasKeyboardShortcuts" aria-labelledby="offcanvasKeyboardShortcutsLabel">
+    <div class="offcanvas-header">
+      <h4 id="offcanvasKeyboardShortcutsLabel" class="mb-0">Keyboard shortcuts</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+        <div class="list-group-item">
+          <h5 class="mb-1">Formatting</h5>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span class="fw-semibold">Bold</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">b</kbd>
+            </div>
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <em>italic</em>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">i</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <u>Underline</u>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">u</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <s>Strikethrough</s>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Alt</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">s</kbd>
+              <!-- End Col -->
+            </div>
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span class="small">Small text</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">s</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <mark>Highlight</mark>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">e</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+      </div>
+
+      <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+        <div class="list-group-item">
+          <h5 class="mb-1">Insert</h5>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Mention person <a href="#">(@Brian)</a></span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">@</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Link to doc <a href="#">(+Meeting notes)</a></span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">+</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <a href="#">#hashtag</a>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">#hashtag</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Date</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">/date</kbd>
+              <kbd class="d-inline-block mb-1">Space</kbd>
+              <kbd class="d-inline-block mb-1">/datetime</kbd>
+              <kbd class="d-inline-block mb-1">/datetime</kbd>
+              <kbd class="d-inline-block mb-1">Space</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Time</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">/time</kbd>
+              <kbd class="d-inline-block mb-1">Space</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Note box</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">/note</kbd>
+              <kbd class="d-inline-block mb-1">Enter</kbd>
+              <kbd class="d-inline-block mb-1">/note red</kbd>
+              <kbd class="d-inline-block mb-1">/note red</kbd>
+              <kbd class="d-inline-block mb-1">Enter</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+      </div>
+
+      <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
+        <div class="list-group-item">
+          <h5 class="mb-1">Editing</h5>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Find and replace</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">r</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Find next</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">n</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Find previous</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">p</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Indent</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Tab</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Un-indent</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Tab</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Move line up</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1"><i class="bi-arrow-up-short"></i></kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Move line down</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1"><i class="bi-arrow-down-short fs-5"></i></kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Add a comment</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Alt</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">m</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Undo</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">z</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Redo</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">y</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+      </div>
+
+      <div class="list-group list-group-sm list-group-flush list-group-no-gutters">
+        <div class="list-group-item">
+          <h5 class="mb-1">Application</h5>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Create new doc</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Alt</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">n</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Present</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">p</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Share</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">s</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Search docs</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">o</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <span>Keyboard shortcuts</span>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-7 text-end">
+              <kbd class="d-inline-block mb-1">Ctrl</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">Shift</kbd> <span class="text-muted small">+</span> <kbd class="d-inline-block mb-1">/</kbd>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End Keyboard Shortcuts -->
+
+  <!-- Activity -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasActivityStream" aria-labelledby="offcanvasActivityStreamLabel">
+    <div class="offcanvas-header">
+      <h4 id="offcanvasActivityStreamLabel" class="mb-0">Activity stream</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Step -->
+      <ul class="step step-icon-sm step-avatar-sm">
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <div class="step-avatar">
+              <img class="step-avatar" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+            </div>
+
+            <div class="step-content">
+              <h5 class="mb-1">Iana Robinson</h5>
+
+              <p class="fs-5 mb-1">Added 2 files to task <a class="text-uppercase" href="#"><i class="bi-journal-bookmark-fill"></i> Fd-7</a></p>
+
+              <ul class="list-group list-group-sm">
+                <!-- List Item -->
+                <li class="list-group-item list-group-item-light">
+                  <div class="row gx-1">
+                    <div class="col-6">
+                      <!-- Media -->
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img class="avatar avatar-xs" src="./assets/svg/brands/excel-icon.svg" alt="Image Description">
+                        </div>
+                        <div class="flex-grow-1 text-truncate ms-2">
+                          <span class="d-block fs-6 text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
+                          <span class="d-block small text-muted">12kb</span>
+                        </div>
+                      </div>
+                      <!-- End Media -->
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-6">
+                      <!-- Media -->
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img class="avatar avatar-xs" src="./assets/svg/brands/word-icon.svg" alt="Image Description">
+                        </div>
+                        <div class="flex-grow-1 text-truncate ms-2">
+                          <span class="d-block fs-6 text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
+                          <span class="d-block small text-muted">4kb</span>
+                        </div>
+                      </div>
+                      <!-- End Media -->
+                    </div>
+                    <!-- End Col -->
                   </div>
-                  <!-- End Form -->
-                </div>
+                  <!-- End Row -->
+                </li>
+                <!-- End List Item -->
+              </ul>
 
-                <div class="col-sm-6">
-                  <!-- Form -->
-                  <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Williams" aria-label="Williams" required>
-                    <span class="invalid-feedback">Please enter your last name.</span>
+              <span class="small text-muted text-uppercase">Now</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
+
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <span class="step-icon step-icon-soft-dark">B</span>
+
+            <div class="step-content">
+              <h5 class="mb-1">Bob Dean</h5>
+
+              <p class="fs-5 mb-1">Marked <a class="text-uppercase" href="#"><i class="bi-journal-bookmark-fill"></i> Fr-6</a> as <span class="badge bg-soft-success text-success rounded-pill"><span class="legend-indicator bg-success"></span>"Completed"</span></p>
+
+              <span class="small text-muted text-uppercase">Today</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
+
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <div class="step-avatar">
+              <img class="step-avatar-img" src="./assets/img/160x160/img3.jpg" alt="Image Description">
+            </div>
+
+            <div class="step-content">
+              <h5 class="h5 mb-1">Crane</h5>
+
+              <p class="fs-5 mb-1">Added 5 card to <a href="#">Payments</a></p>
+
+              <ul class="list-group list-group-sm">
+                <li class="list-group-item list-group-item-light">
+                  <div class="row gx-1">
+                    <div class="col">
+                      <img class="img-fluid rounded" src="./assets/svg/components/card-1.svg" alt="Image Description">
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid rounded" src="./assets/svg/components/card-2.svg" alt="Image Description">
+                    </div>
+                    <div class="col">
+                      <img class="img-fluid rounded" src="./assets/svg/components/card-3.svg" alt="Image Description">
+                    </div>
+                    <div class="col-auto align-self-center">
+                      <div class="text-center">
+                        <a href="#">+2</a>
+                      </div>
+                    </div>
                   </div>
-                  <!-- End Form -->
-                </div>
-              </div>
-              <!-- End Form -->
+                </li>
+              </ul>
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Your email</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@site.com" aria-label="Markwilliams@site.com" required>
-                <span class="invalid-feedback">Please enter a valid email address.</span>
-              </div>
-              <!-- End Form -->
+              <span class="small text-muted text-uppercase">May 12</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label class="form-label" for="signupSrPassword">Password</label>
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <span class="step-icon step-icon-soft-info">D</span>
 
-                <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                  <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8" data-hs-toggle-password-options='{
-                           "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
-                           "defaultClass": "bi-eye-slash",
-                           "showClass": "bi-eye",
-                           "classChangeTarget": ".js-toggle-password-show-icon-1"
-                         }'>
-                  <a class="js-toggle-password-target-1 input-group-append input-group-text" href="javascript:;">
-                    <i class="js-toggle-password-show-icon-1 bi-eye"></i>
-                  </a>
-                </div>
+            <div class="step-content">
+              <h5 class="mb-1">David Lidell</h5>
 
-                <span class="invalid-feedback">Your password is invalid. Please try again.</span>
-              </div>
-              <!-- End Form -->
+              <p class="fs-5 mb-1">Added a new member to Front Dashboard</p>
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label class="form-label" for="signupSrConfirmPassword">Confirm password</label>
+              <span class="small text-muted text-uppercase">May 15</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
 
-                <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                  <input type="password" class="js-toggle-password form-control form-control-lg" name="confirmPassword" id="signupSrConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8" data-hs-toggle-password-options='{
-                           "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
-                           "defaultClass": "bi-eye-slash",
-                           "showClass": "bi-eye",
-                           "classChangeTarget": ".js-toggle-password-show-icon-2"
-                         }'>
-                  <a class="js-toggle-password-target-2 input-group-append input-group-text" href="javascript:;">
-                    <i class="js-toggle-password-show-icon-2 bi-eye"></i>
-                  </a>
-                </div>
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <div class="step-avatar">
+              <img class="step-avatar-img" src="./assets/img/160x160/img7.jpg" alt="Image Description">
+            </div>
 
-                <span class="invalid-feedback">Password does not match the confirm password.</span>
-              </div>
-              <!-- End Form -->
+            <div class="step-content">
+              <h5 class="mb-1">Rachel King</h5>
 
-              <!-- Form Check -->
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" value="" id="termsCheckbox" required>
-                <label class="form-check-label" for="termsCheckbox">
-                  I accept the <a href="#">Terms and Conditions</a>
-                </label>
-                <span class="invalid-feedback">Please accept our Terms and Conditions.</span>
-              </div>
-              <!-- End Form Check -->
+              <p class="fs-5 mb-1">Marked <a class="text-uppercase" href="#"><i class="bi-journal-bookmark-fill"></i> Fr-3</a> as <span class="badge bg-soft-success text-success rounded-pill"><span class="legend-indicator bg-success"></span>"Completed"</span></p>
 
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary btn-lg">Create an account</button>
+              <span class="small text-muted text-uppercase">Apr 29</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
 
-                <button type="submit" class="btn btn-link">
-                  or Start your 30-day trial <i class="bu-chevron-right"></i>
-                </button>
-              </div>
-            </form>
-            <!-- End Form -->
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <div class="step-avatar">
+              <img class="step-avatar-img" src="./assets/img/160x160/img5.jpg" alt="Image Description">
+            </div>
+
+            <div class="step-content">
+              <h5 class="mb-1">Finch Hoot</h5>
+
+              <p class="fs-5 mb-1">Earned a "Top endorsed" <i class="bi-patch-check-fill text-primary"></i> badge</p>
+
+              <span class="small text-muted text-uppercase">Apr 06</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
+
+        <!-- Step Item -->
+        <li class="step-item">
+          <div class="step-content-wrapper">
+            <span class="step-icon step-icon-soft-primary">
+              <i class="bi-person-fill"></i>
+            </span>
+
+            <div class="step-content">
+              <h5 class="mb-1">Project status updated</h5>
+
+              <p class="fs-5 mb-1">Marked <a class="text-uppercase" href="#"><i class="bi-journal-bookmark-fill"></i> Fr-3</a> as <span class="badge bg-soft-primary text-primary rounded-pill"><span class="legend-indicator bg-primary"></span>"In progress"</span></p>
+
+              <span class="small text-muted text-uppercase">Feb 10</span>
+            </div>
+          </div>
+        </li>
+        <!-- End Step Item -->
+      </ul>
+      <!-- End Step -->
+
+      <div class="d-grid">
+        <a class="btn btn-white" href="javascript:;">View all <i class="bi-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- End Activity -->
+
+  <!-- Welcome Message Modal -->
+  <div class="modal fade" id="welcomeMessageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-close">
+          <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi-x-lg"></i>
+          </button>
+        </div>
+        <!-- End Header -->
+
+        <!-- Body -->
+        <div class="modal-body p-sm-5">
+          <div class="text-center">
+            <div class="w-75 w-sm-50 mx-auto mb-4">
+              <img class="img-fluid" src="./assets/svg/illustrations/oc-collaboration.svg" alt="Image Description" data-hs-theme-appearance="default">
+              <img class="img-fluid" src="./assets/svg/illustrations-light/oc-collaboration.svg" alt="Image Description" data-hs-theme-appearance="dark">
+            </div>
+
+            <h4 class="h1">Welcome to Front</h4>
+
+            <p>We're happy to see you in our community.</p>
           </div>
         </div>
-        <!-- End Card -->
+        <!-- End Body -->
 
         <!-- Footer -->
-        <div class="position-relative text-center zi-1">
-          <small class="text-cap text-body mb-4">Trusted by the world's best teams</small>
+        <div class="modal-footer d-block text-center py-sm-5">
+          <small class="text-cap text-muted">Trusted by the world's best teams</small>
 
           <div class="w-85 mx-auto">
             <div class="row justify-content-between">
               <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Logo">
+                <img class="img-fluid" src="./assets/svg/brands/gitlab-gray.svg" alt="Image Description">
               </div>
-              <!-- End Col -->
-
               <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Logo">
+                <img class="img-fluid" src="./assets/svg/brands/fitbit-gray.svg" alt="Image Description">
               </div>
-              <!-- End Col -->
-
               <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Logo">
+                <img class="img-fluid" src="./assets/svg/brands/flow-xo-gray.svg" alt="Image Description">
               </div>
-              <!-- End Col -->
-
               <div class="col">
-                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Logo">
+                <img class="img-fluid" src="./assets/svg/brands/layar-gray.svg" alt="Image Description">
               </div>
-              <!-- End Col -->
             </div>
-            <!-- End Row -->
           </div>
         </div>
         <!-- End Footer -->
       </div>
     </div>
-    <!-- End Content -->
-  </main>
-  <!-- ========== END MAIN CONTENT ========== -->
+  </div>
+
+  <!-- End Welcome Message Modal -->
+  <!-- ========== END SECONDARY CONTENTS ========== -->
 
   <!-- JS Global Compulsory  -->
   <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -293,7 +981,13 @@
   <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <script src="./assets/vendor/hs-toggle-password/dist/js/hs-toggle-password.js"></script>
+  <script src="./assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside.min.js"></script>
+  <script src="./assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
+
+  <script src="./assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
+  <script src="./assets/vendor/hs-add-field/dist/hs-add-field.min.js"></script>
+  <script src="./assets/vendor/tom-select/dist/js/tom-select.complete.min.js"></script>
+  <script src="./assets/vendor/imask/dist/imask.min.js"></script>
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
@@ -302,21 +996,83 @@
   <script>
     (function() {
       window.onload = function () {
-        // INITIALIZATION OF BOOTSTRAP VALIDATION
+        
+
+        // INITIALIZATION OF NAVBAR VERTICAL ASIDE
         // =======================================================
-        HSBsValidation.init('.js-validate', {
-          onSubmit: data => {
-            data.event.preventDefault()
-            alert('Submited')
+        new HSSideNav('.js-navbar-vertical-aside').init()
+
+
+        // INITIALIZATION OF FORM SEARCH
+        // =======================================================
+        new HSFormSearch('.js-form-search')
+
+
+        // INITIALIZATION OF BOOTSTRAP DROPDOWN
+        // =======================================================
+        HSBsDropdown.init()
+
+
+        // INITIALIZATION OF SELECT
+        // =======================================================
+        HSCore.components.HSTomSelect.init('.js-select')
+
+
+        // INITIALIZATION OF ADD FIELD
+        // =======================================================
+        new HSAddField('.js-add-field', {
+          addedField: field => {
+            HSCore.components.HSTomSelect.init(field.querySelector('.js-select-dynamic'))
+            HSCore.components.HSMask.init(field.querySelector('.js-input-mask'))
           }
         })
 
 
-        // INITIALIZATION OF TOGGLE PASSWORD
+        // INITIALIZATION OF INPUT MASK
         // =======================================================
-        new HSTogglePassword('.js-toggle-password')
+        HSCore.components.HSMask.init('.js-input-mask')
       }
     })()
   </script>
+
+  <!-- Style Switcher JS -->
+
+  <script>
+      (function () {
+        // STYLE SWITCHER
+        // =======================================================
+        const $dropdownBtn = document.getElementById('selectThemeDropdown') // Dropdowon trigger
+        const $variants = document.querySelectorAll(`[aria-labelledby="selectThemeDropdown"] [data-icon]`) // All items of the dropdown
+
+        // Function to set active style in the dorpdown menu and set icon for dropdown trigger
+        const setActiveStyle = function () {
+          $variants.forEach($item => {
+            if ($item.getAttribute('data-value') === HSThemeAppearance.getOriginalAppearance()) {
+              $dropdownBtn.innerHTML = `<i class="${$item.getAttribute('data-icon')}" />`
+              return $item.classList.add('active')
+            }
+
+            $item.classList.remove('active')
+          })
+        }
+
+        // Add a click event to all items of the dropdown to set the style
+        $variants.forEach(function ($item) {
+          $item.addEventListener('click', function () {
+            HSThemeAppearance.setAppearance($item.getAttribute('data-value'))
+          })
+        })
+
+        // Call the setActiveStyle on load page
+        setActiveStyle()
+
+        // Add event listener on change style to call the setActiveStyle function
+        window.addEventListener('on-hs-appearance-change', function () {
+          setActiveStyle()
+        })
+      })()
+    </script>
+
+  <!-- End Style Switcher JS -->
 </body>
 </html>
