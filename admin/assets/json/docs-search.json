@@ -1,0 +1,442 @@
+[
+  {
+    "component": "Introduction",
+    "category": "Getting Started",
+    "link": "./index.php"
+  },
+  {
+    "component": "Gulp",
+    "category": "Getting Started",
+    "link": "./gulp.php"
+  },
+  {
+    "component": "Customization",
+    "category": "Getting Started",
+    "link": "./customization.php"
+  },
+  {
+    "component": "Credits",
+    "category": "Getting Started",
+    "link": "./credits.php"
+  },
+  {
+    "component": "Changelog",
+    "category": "Getting Started",
+    "link": "./changelog.php"
+  },
+  {
+    "component": "Bootstrap Icons",
+    "category": "Design & Graphics",
+    "link": "./bootstrap-icons.php"
+  },
+  {
+    "component": "Illustrations",
+    "category": "Design & Graphics",
+    "link": "./illustrations.php"
+  },
+  {
+    "component": "Accordion",
+    "category": "Components",
+    "link": "./accordion.php"
+  },
+  {
+    "component": "Alerts",
+    "category": "Components",
+    "link": "./alerts.php"
+  },
+  {
+    "component": "Avatars",
+    "category": "Components",
+    "link": "./avatars.php"
+  },
+  {
+    "component": "Badge",
+    "category": "Components",
+    "link": "./badge.php"
+  },
+  {
+    "component": "Breadcrumb",
+    "category": "Components",
+    "link": "./breadcrumb.php"
+  },
+  {
+    "component": "Buttons",
+    "category": "Components",
+    "link": "./buttons.php"
+  },
+  {
+    "component": "Button group",
+    "category": "Components",
+    "link": "./button-group.php"
+  },
+  {
+    "component": "Cards",
+    "category": "Components",
+    "link": "./cards.php"
+  },
+  {
+    "component": "Collapse",
+    "category": "Components",
+    "link": "./collapse.php"
+  },
+  {
+    "component": "Column divider",
+    "category": "Components",
+    "link": "./column-divider.php"
+  },
+  {
+    "component": "Devices",
+    "category": "Components",
+    "link": "./devices.php"
+  },
+  {
+    "component": "Divider",
+    "category": "Components",
+    "link": "./divider.php"
+  },
+  {
+    "component": "Dropdowns",
+    "category": "Components",
+    "link": "./dropdowns.php"
+  },
+  {
+    "component": "Icons",
+    "category": "Components",
+    "link": "./icons.php"
+  },
+  {
+    "component": "List Group",
+    "category": "Components",
+    "link": "./list-group.php"
+  },
+  {
+    "component": "Lists",
+    "category": "Components",
+    "link": "./lists.php"
+  },
+  {
+    "component": "Legend Indicator",
+    "category": "Components",
+    "link": "./legend-indicator.php"
+  },
+  {
+    "component": "Modal",
+    "category": "Components",
+    "link": "./modal.php"
+  },
+  {
+    "component": "Offcanvas",
+    "category": "Components",
+    "link": "./offcanvas.php"
+  },
+  {
+    "component": "Page Header",
+    "category": "Components",
+    "link": "./page-header.php"
+  },
+  {
+    "component": "Pagination",
+    "category": "Components",
+    "link": "./pagination.php"
+  },
+  {
+    "component": "Popovers",
+    "category": "Components",
+    "link": "./popovers.php"
+  },
+  {
+    "component": "Progress",
+    "category": "Components",
+    "link": "./progress.php"
+  },
+  {
+    "component": "Profile",
+    "category": "Components",
+    "link": "./profile.php"
+  },
+  {
+    "component": "Shapes",
+    "category": "Components",
+    "link": "./shapes.php"
+  },
+  {
+    "component": "Sliding Image",
+    "category": "Components",
+    "link": "./sliding-img.php"
+  },
+  {
+    "component": "Spinners",
+    "category": "Components",
+    "link": "./spinners.php"
+  },
+  {
+    "component": "Steps",
+    "category": "Components",
+    "link": "./steps.php"
+  },
+  {
+    "component": "Tab",
+    "category": "Components",
+    "link": "./tab.php"
+  },
+  {
+    "component": "Toasts",
+    "category": "Components",
+    "link": "./toasts.php"
+  },
+  {
+    "component": "Tooltips",
+    "category": "Components",
+    "link": "./tooltips.php"
+  },
+  {
+    "component": "Typography",
+    "category": "Components",
+    "link": "./typography.php"
+  },
+  {
+    "component": "Navbar",
+    "category": "Navbars",
+    "link": "./navbar.php"
+  },
+  {
+    "component": "Navs",
+    "category": "Navbars",
+    "link": "./navs.php"
+  },
+  {
+    "component": "Mega Menu",
+    "category": "Navbars",
+    "link": "./mega-menu.php"
+  },
+  {
+    "component": "Navbar Vertical Aside",
+    "category": "Navbars",
+    "link": "./navbar-vertical-aside.php"
+  },
+  {
+    "component": "Scrollspy",
+    "category": "Navbars",
+    "link": "./scrollspy.php"
+  },
+  {
+    "component": "Tables",
+    "category": "Tables",
+    "link": "./tables.php"
+  },
+  {
+    "component": "Datatables",
+    "category": "Tables",
+    "link": "./datatables.php"
+  },
+  {
+    "component": "Sticky Header",
+    "category": "Tables",
+    "link": "./sticky-header.php"
+  },
+  {
+    "component": "Basic forms",
+    "category": "Basic forms",
+    "link": "./basic-forms.php"
+  },
+  {
+    "component": "Checks and switches",
+    "category": "Basic forms",
+    "link": "./checks-and-switches.php"
+  },
+  {
+    "component": "Input group",
+    "category": "Basic forms",
+    "link": "./input-group.php"
+  },
+  {
+    "component": "Backgrounds",
+    "category": "Utilities",
+    "link": "./backgrounds.php"
+  },
+  {
+    "component": "Borders",
+    "category": "Utilities",
+    "link": "./borders.php"
+  },
+  {
+    "component": "Colors",
+    "category": "Utilities",
+    "link": "./colors.php"
+  },
+  {
+    "component": "Links",
+    "category": "Utilities",
+    "link": "./links.php"
+  },
+  {
+    "component": "Position",
+    "category": "Utilities",
+    "link": "./position.php"
+  },
+  {
+    "component": "Rotations",
+    "category": "Utilities",
+    "link": "./rotations.php"
+  },
+  {
+    "component": "Shadows",
+    "category": "Utilities",
+    "link": "./shadows.php"
+  },
+  {
+    "component": "Sizing",
+    "category": "Utilities",
+    "link": "./sizing.php"
+  },
+  {
+    "component": "Spacing",
+    "category": "Utilities",
+    "link": "./spacing.php"
+  },
+  {
+    "component": "Z-index",
+    "category": "Utilities",
+    "link": "./z-index.php"
+  },
+  {
+    "component": "Opacity",
+    "category": "Utilities",
+    "link": "./opacity.php"
+  },
+  {
+    "component": "Advanced select",
+    "category": "Advanced forms",
+    "link": "./select.php"
+  },
+  {
+    "component": "Datepicker",
+    "category": "Advanced forms",
+    "link": "./datepicker.php"
+  },
+  {
+    "component": "Date Range Picker",
+    "category": "Advanced forms",
+    "link": "./daterangepicker.php"
+  },
+  {
+    "component": "Calendar (Fullcalendar)",
+    "category": "Advanced forms",
+    "link": "./calendar.php"
+  },
+  {
+    "component": "File attachments",
+    "category": "Advanced forms",
+    "link": "./file-attachments.php"
+  },
+  {
+    "component": "Drag’ n’ drop file uploads",
+    "category": "Advanced forms",
+    "link": "./dropzone.php"
+  },
+  {
+    "component": "WYSIWYG Editor",
+    "category": "Advanced forms",
+    "link": "./quill.php"
+  },
+  {
+    "component": "Quantity counter",
+    "category": "Advanced forms",
+    "link": "./quantity-counter.php"
+  },
+  {
+    "component": "Copy to Clipboard",
+    "category": "Advanced forms",
+    "link": "./copy-to-clipboard.php"
+  },
+  {
+    "component": "Input mask",
+    "category": "Advanced forms",
+    "link": "./input-mask.php"
+  },
+  {
+    "component": "Step forms (Wizards)",
+    "category": "Advanced forms",
+    "link": "./step-forms.php"
+  },
+  {
+    "component": "Wizards",
+    "category": "Advanced forms",
+    "link": "./step-forms.php"
+  },
+  {
+    "component": "Add field",
+    "category": "Advanced forms",
+    "link": "./add-field.php"
+  },
+  {
+    "component": "Toggle password",
+    "category": "Advanced forms",
+    "link": "./toggle-password.php"
+  },
+  {
+    "component": "Count characters",
+    "category": "Advanced forms",
+    "link": "./count-characters.php"
+  },
+  {
+    "component": "Form Search",
+    "category": "Advanced forms",
+    "link": "./form-search.php"
+  },
+  {
+    "component": "Toggle switch",
+    "category": "Advanced forms",
+    "link": "./toggle-switch.php"
+  },
+  {
+    "component": "Google reCAPTCHA",
+    "category": "Advanced forms",
+    "link": "./google-recaptcha.php"
+  },
+  {
+    "component": "Chart.js",
+    "category": "Others",
+    "link": "./chartjs.php"
+  },
+  {
+    "component": "Counter",
+    "category": "Others",
+    "link": "./counter.php"
+  },
+  {
+    "component": "Circles.js (Pie Chart)",
+    "category": "Others",
+    "link": "./circles.php"
+  },
+  {
+    "component": "Fullscreen Lightbox",
+    "category": "Others",
+    "link": "./fslightbox.php"
+  },
+  {
+    "component": "Leaflet",
+    "category": "Others",
+    "link": "./maps-leaflet.php"
+  },
+  {
+    "component": "JSVectorMap",
+    "category": "Others",
+    "link": "./maps-jsvectormap.php"
+  },
+  {
+    "component": "SortableJS",
+    "category": "Others",
+    "link": "./sortablejs.php"
+  },
+  {
+    "component": "Sticky block",
+    "category": "Others",
+    "link": "./sticky-block.php"
+  },
+  {
+    "component": "Go To",
+    "category": "Others",
+    "link": "./go-to.php"
+  }
+]
