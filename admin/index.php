@@ -272,8 +272,6 @@ if (mysqli_num_rows($result) == 0) {
             $_SESSION['admin_mobile_no'] = $row['admin_mobile_no'];
                         echo "<script>alert('Login Sucess...!');</script>";
 
-<<<<<<< HEAD
-=======
             echo "<script>window.location.href = 'dashboard.php';</script>";
             exit;
         } else {
@@ -283,5 +281,5 @@ if (mysqli_num_rows($result) == 0) {
     }
 }
 }
->>>>>>> af37672d45d99d9e9405f4b0f254f6db904c190a
+
 ?>
