@@ -152,7 +152,7 @@
       <div class="card-body">
         <h1 class="card-title">GDSC - Google Developer Students club</h5>
         <p class="card-text">Unleash your coding prowess and conquer challenges in the ultimate test of skill at the Codex coding competition.</p>
-        <button type="button" href= "./eventRegistration.php"class="btn btn-soft-primary" >Enroll Now</button>
+        <button type="button" href= "./clubRegistration.php"class="btn btn-soft-primary" >Enroll Now</button>
       </div>
     </div>
   </div>
