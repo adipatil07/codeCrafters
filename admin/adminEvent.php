@@ -298,9 +298,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
     echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';
     // echo '<td><span class="legend-indicator bg-success"></span>' . $eventStatus . '</td>'; // Removed event status column
-    echo '<td><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+    echo '<td><a href="./addevent.php"><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="bi-pencil-fill me-1"></i> Edit
-              </button></td>';
+              </button></a></td>';
     echo '</tr>';
 }
 
