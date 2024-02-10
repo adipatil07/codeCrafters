@@ -157,11 +157,7 @@
       <!-- End Page Header -->
 
       <div class="row">
-        <div class="col-lg-4 mb-3 mb-lg-0">
-          <h4>Club information</h4>
-        </div>
-        
-        <div class="col-lg-8">
+        <div class="col-lg-12">
         <div class="d-flex align-items-center">
         <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
   <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
@@ -181,7 +177,7 @@
 </label>
 
 
-                        <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
+                        <!-- <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button> -->
                       </div>
           <!-- Card -->
           <br>
@@ -1091,3 +1087,10 @@
   <!-- End Style Switcher JS -->
 </body>
 </html>
+<?PHP
+
+include'include/config.php';
+
+
+
+?>

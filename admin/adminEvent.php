@@ -292,12 +292,9 @@ while ($row = mysqli_fetch_assoc($result)) {
               </div>
             </td>';
     echo '<td><span class="d-block h5 mb-0">' . $eventId . '</span></td>';
-
     echo '<td>' . $eventDescription . '</td>'; 
     echo '<td>' . $eventStartDate . '<br>'.$eventStartTime.'</td>';
     echo '<td>' . $eventEndDate . '<br>'.$eventEndTime.'</td>';
-    // echo '<td>' . $eventStartTime . '</td>'; // Removed event status column
-    echo '<td><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
     echo '<td>' . $eventDescription . '</td>'; // Changed venue to description
     echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
     echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';
