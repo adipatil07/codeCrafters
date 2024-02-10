@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Basic Sign Up | Front - Admin &amp; Dashboard Template</title>
+  <title>Add Event</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -138,7 +138,7 @@
     <!-- Content -->
     <div class="container py-5 py-sm-7">
       <a class="d-flex justify-content-center mb-5" href="./dashboard.php">
-        <img class="zi-2" src="./assets/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">
+        <img class="zi-2" src="../images/Sinhgad White.png" alt="Image Description" style="width: 8rem;">
       </a>
 
       <div class="mx-auto" style="max-width: 30rem;">
@@ -149,23 +149,14 @@
             <form class="js-validate needs-validation" novalidate>
               <div class="text-center">
                 <div class="mb-5">
-                  <h1 class="display-5">Create your account</h1>
-                  <p>Already have an account? <a class="link" href="./authentication-login-basic.php">Sign in here</a></p>
+                  <h1 class="display-5">Add Event</h1>
                 </div>
 
-                <div class="d-grid mb-4">
-                  <a class="btn btn-white btn-lg" href="#">
-                    <span class="d-flex justify-content-center align-items-center">
-                      <img class="avatar avatar-xss me-2" src="./assets/svg/brands/google-icon.svg" alt="Image Description">
-                      Sign up with Google
-                    </span>
-                  </a>
-                </div>
+                
 
-                <span class="divider-center text-muted mb-4">OR</span>
               </div>
 
-              <label class="form-label" for="fullNameSrEmail">Full name</label>
+              <label class="form-label" for="fullNameSrEmail">Event name</label>
 
               <!-- Form -->
               <div class="row">
@@ -173,7 +164,7 @@
                   <!-- Form -->
                   <div class="mb-4">
                     <input type="text" class="form-control form-control-lg" name="fullName" id="fullNameSrEmail" placeholder="Mark" aria-label="Mark" required>
-                    <span class="invalid-feedback">Please enter your first name.</span>
+                    <span class="invalid-feedback">Please enter your event name.</span>
                   </div>
                   <!-- End Form -->
                 </div>
