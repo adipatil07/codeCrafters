@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -139,7 +143,7 @@
       </header>
 
       <main id="content" role="main" class="main">
-         <form class="js-step-form py-md-5" method="POST" action="#" data-hs-step-form-options='{ "progressSelector": "#addUserStepFormProgress", "stepsSelector": "#addUserStepFormContent", "endSelector": "#addUserFinishBtn", "isValidate": false }'>
+         <form class="js-step-form py-md-5" method="post" action="#" data-hs-step-form-options='{ "progressSelector": "#addUserStepFormProgress", "stepsSelector": "#addUserStepFormContent", "endSelector": "#addUserFinishBtn", "isValidate": false }'>
             <div class="row justify-content-lg-center">
               
               <div class="col-lg-8">
@@ -198,10 +202,10 @@
                       <!-- Form -->
                           <div class="content container-fluid">
         <center>  <div class=" col-lg-6 mb-6">
-          <h1 class="step-title">EventName</h1>
-          <h2 class="step-title">Fees : 50 Rs.</h2>
-          <p>Start Date - End Date</p>
-              </div> </center>
+          <h1 class="step-title">Event Name : <?php echo $_GET['event_name']; ?></h1>
+          <h2 class="step-title">Fees : INR <?php echo $_GET['cost']; ?></h2>
+<!--           <p>Start Date - End Date</p>
+ -->              </div> </center>
 
                       <!-- Form first name-->
                       <div class="row mb-4">
@@ -219,7 +223,7 @@
 
                         <div class="col-sm-9">
                           <div class="input-group input-group-sm-vertical">
-                            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Last Name" aria-label="Aditya">
+                            <input type="text" class="form-control" name="lastName" id="firstNameLabel" placeholder="Last Name" aria-label="Aditya">
                           </div>
                         </div>
                       </div>
@@ -281,16 +285,12 @@
 
                     <!-- Footer -->
                     <div class="card-footer d-flex justify-content-end align-items-center">
-<<<<<<< HEAD
-                      <button type="button" class="btn btn-primary" name="register" data-hs-step-form-next-options='{
+                      <button type="submit" class="btn btn-primary" name="btn_register" data-hs-step-form-next-options='{
                                 "targetSelector": "#addUserStepBillingAddress"
                               }'>
                         Proceed to pay<i class="bi-chevron-right"></i>
-=======
-                      <button type="submit" class="btn btn-primary" name="btn_register">
-                        Next <i class="bi-chevron-right"></i>
->>>>>>> 818b260a9379bb833a0abb283dfb3b72fb8c0739
-                      </button>
+
+                     
                     </div>
                     <!-- End Footer -->
                   </div>
@@ -509,7 +509,19 @@
 <?php
 // Database connection parameters
 include 'admin/include/config.php'; // Added a semicolon here
+$d1 =  date('Y-m-d');
+$d2 = date('H:i:s');
+$date_n_time = $d1." - ".$d2;
+$d3 = random_int(10,99);
+$d4 = random_int(10,99);
+$d5 = $d1."".$d3."".$d2."".$d4;
 
+$z1 =  date('Ymd');
+$z2 = date('His');
+$z3 = random_int(10,99);
+$z4 = random_int(10,99);
+
+$page_tracking_id = $z1."".$z3."".$z2."".$z4;
 // Check if the form is submitted
 /*if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
@@ -543,22 +555,60 @@ if(isset($_POST['btn_register'])){
   extract($_POST);
   $k1=$_GET['event_id'];
   $k2=$_GET['event_name'];
+  $k3=$_GET['cost'];
 
-$sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`) VALUES 
-(NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$k1', '$k2')";
+$sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`,`reg_amt`,`reg_tk_id`) VALUES 
+(NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$k1', '$k2','$k3','$page_tracking_id')";
 if(mysqli_query($con,$sql))
 {
- // echo "data updated";
-  echo '<script>
-          document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector(\'[data-hs-step-form-next-options]\').setAttribute(\'targetSelector\', \'#addUserStepBillingAddress\');
-          });
-        </script>';
+  echo "data added";
+?>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    pay_now();
 
+    function pay_now(){
+        var name="abhijit";
+        var amt="<?php echo $k3; ?>";
+        var tkno="<?php echo $page_tracking_id; ?>";
+        var mob="<?php echo $phone; ?>";
+        
+         jQuery.ajax({
+               type:'post',
+               url:'payment_process.php',
+               data:"pti="+tkno+"&mobno="+mob,
+               success:function(result){
+                   var options = {
+                        "key": "rzp_test_F7x1JKRcw87rk5", 
+                        "amount": amt*100, 
+                        "currency": "INR",
+                        "name": "Code Crafters",
+                        "description": "Test Transaction",
+                        "image": "https://techking.in.net/img/service/654bdd2ff261a.png",
+                       "handler": function (response){
+                           jQuery.ajax({
+                               type:'post',
+                               url:'payment_process.php',
+                            data:"pyid="+response.razorpay_payment_id,
+                               success:function(result){
+                                   window.location.href="payment_status_sucess.php";
+                               }
+                           });
+                        }
+                    };
+                    var rzp1 = new Razorpay(options);
+                    rzp1.open();
+               }
+           });
+        
+        
+    }
+</script>
+<?php
       }else{
   echo "error is present";
 }
-ob_end_flush(); // Flush the output buffer and turn off output buffering
 
 }
 
