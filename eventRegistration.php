@@ -262,9 +262,7 @@
 
                     <!-- Footer -->
                     <div class="card-footer d-flex justify-content-end align-items-center">
-                      <button type="button" class="btn btn-primary" name="register" data-hs-step-form-next-options='{
-                                "targetSelector": "#addUserStepBillingAddress"
-                              }'>
+                      <button type="submit" class="btn btn-primary" name="btn_register">
                         Next <i class="bi-chevron-right"></i>
                       </button>
                     </div>
@@ -568,7 +566,7 @@
 include 'admin/include/config.php'; // Added a semicolon here
 
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $reg_fname = $_POST['firstName'];
     $reg_lname = $_POST['lastName'];
@@ -583,13 +581,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$reg_fname', '$reg_lname', '$reg_email', '$reg_mobile', '$reg_clg', '$reg_dept', '$reg_timestamp')";
 
     // Execute the query
-    if ($conn->query($sql) === TRUE) {
+    if ($con->query($sql) === TRUE) {
         echo "New record inserted successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-}
+}*/
 
 // Close connection
-$con->close();
+//$con->close();
+
+?>
+<?php
+if(isset($_POST['btn_register'])){
+ // print_r($_POST);
+  extract($_POST);
+  $k1=$_GET['event_id'];
+  $k2=$_GET['event_name'];
+
+$sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`) VALUES 
+(NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$k1', '$k2')";
+if(mysqli_query($con,$sql))
+{
+ // echo "data updated";
+  echo '<script>
+          document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(\'[data-hs-step-form-next-options]\').setAttribute(\'targetSelector\', \'#addUserStepBillingAddress\');
+          });
+        </script>';
+
+      }else{
+  echo "error is present";
+}
+ob_end_flush(); // Flush the output buffer and turn off output buffering
+
+}
+
 ?>

@@ -13,5 +13,13 @@ if (!$con) {
 else{
     echo "Database connected Sucessfully...";
 }
+date_default_timezone_set('Asia/Kolkata'); // Set the default timezone to Kolkata
 
+// Create a DateTime object with current date and time
+$date = new DateTime('now');
+
+// Format the DateTime object as a string with desired format
+$time_stamp = $date->format('Y-m-d H:i:s');
+
+//echo $timestamp;
 ?> 
