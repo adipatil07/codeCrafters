@@ -278,13 +278,13 @@
 
                 <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
                   <!-- Body -->
-                  <div class="card-body ">
+                  <div class="card-body align-items-center">
                       <div class="card" style="width: 18rem;">
-                        <div class="card-body ">
-                          <h5 class="card-title">Event Name</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">Amount : 50</h6>
+                        <div class="card-body align-items-center">
+                          <h3 class="card-title">Event Name</h3>
+                          <h6 class="card-subtitle mb-1 text-muted">Amount : 50</h6>
                           <p class="card-text">Pay with Razorpay</p>
-                          <a href="#" class="card-link">Pay</a>
+                          <a href="#" class="btn btn-soft-primary">Pay</a>
                         </div>
                       </div>
                     <!-- End Form -->
