@@ -281,16 +281,10 @@
 
                     <!-- Footer -->
                     <div class="card-footer d-flex justify-content-end align-items-center">
-<<<<<<< HEAD
                       <button type="button" class="btn btn-primary" name="register" data-hs-step-form-next-options='{
                                 "targetSelector": "#addUserStepBillingAddress"
                               }'>
                         Proceed to pay<i class="bi-chevron-right"></i>
-=======
-                      <button type="submit" class="btn btn-primary" name="btn_register">
-                        Next <i class="bi-chevron-right"></i>
->>>>>>> 818b260a9379bb833a0abb283dfb3b72fb8c0739
-                      </button>
                     </div>
                     <!-- End Footer -->
                   </div>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Basic Log In | Front - Admin &amp; Dashboard Template</title>
+  <title>Sinhgad Admin Login | - Admin &amp; Dashboard Template</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
