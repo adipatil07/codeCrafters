@@ -408,7 +408,15 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['reg_dept'] . "</td>";
         echo "<td>" . $row['reg_amt'] . "</td>";
         echo "<td>" . $row['reg_tk_id'] . "</td>";
-        echo "<td>" . $row['reg_payment_status'] . "</td>";
+$userid = $row['reg_id'];
+        if($row['reg_payment_status']=='complete'){
+        echo '<td><a href="./digi/generate_cc.php?id='.$userid.'"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                <i class="bi-envelope-fill me-1"></i> Certificate
+              </button></a></td>';
+        }else{
+        echo '<td>Processing</td>';    
+        }
+        
         // echo '<td><a href="./addevent.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
         //         <i class="bi-pencil-fill me-1"></i> Edit
         //       </button></a></td>';

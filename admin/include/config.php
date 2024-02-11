@@ -11,7 +11,7 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 else{
-   echo "Database connected Sucessfully...";
+//   echo "Database connected Sucessfully...";
 }
 date_default_timezone_set('Asia/Kolkata'); // Set the default timezone to Kolkata
 
