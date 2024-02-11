@@ -181,7 +181,7 @@
                     <!-- Form -->
                     <div class="mb-4">
                         <label for="firstNameLabel" class="form-label">Club name</label>
-                        <input type="text" class="form-control" name="clubName" id="clubName" placeholder="Club name" aria-label="Clarice">
+                        <input type="text" class="form-control" name="clubName" id="clubName" placeholder="Club name" aria-label="Clarice" Required>
                     </div>
                     <!-- End Form -->
                 </div>
@@ -191,7 +191,7 @@
             <!-- Form -->
             <div class="mb-4">
                 <label for="emailLabel" class="form-label">Club Purpose</label>
-                <input type="textArea" class="form-control" name="clubPurpose" id="clubPurpose" placeholder="" aria-label="clarice@site.com">
+                <input type="textArea" class="form-control" name="clubPurpose" id="clubPurpose" placeholder="" aria-label="clarice@site.com" Required>
             </div>
             <!-- End Form -->
 
@@ -199,7 +199,7 @@
             <div class="js-add-field mb-4" >
                 <label for="phoneLabel" class="form-label">Target Audience</label>
                 <div class="input-group">
-                    <input type="text" class="js-input-mask form-control" name="clubAudience" id="clubAudience" placeholder="" aria-label="">
+                    <input type="text" class="js-input-mask form-control" name="clubAudience" id="clubAudience" placeholder="" aria-label="" Required>
                 </div>
             </div>
             <!-- End Form -->
@@ -208,7 +208,7 @@
             <div class="js-add-field mb-4" >
                 <label for="time" class="form-label">Social Media Links</label>
                 <div class="input-group">
-                    <input type="text" class="js-input-mask form-control" name="clubSocialMedia" id="clubSocialMedia" placeholder="" aria-label="" >
+                    <input type="text" class="js-input-mask form-control" name="clubSocialMedia" id="clubSocialMedia" placeholder="" aria-label="" Required >
                 </div>
             </div>
             <!-- End Form -->

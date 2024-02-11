@@ -162,11 +162,6 @@
           </div>
           <!-- End Col -->
 
-          <div class="col-sm-auto">
-            <a class="btn btn-primary" href="./users-add-user.html">
-              <i class="bi-person-plus-fill me-1"></i> Add Event
-            </a>
-          </div>
           <!-- End Col -->
         </div>
         <!-- End Row -->
@@ -1165,7 +1160,7 @@ mysqli_close($con);
 
                   <div class="col-sm-9">
                     <div class="input-group input-group-sm-vertical">
-                      <input type="text" class="form-control" name="editFirstNameModal" id="editFirstNameModalLabel" placeholder="New Event Name" aria-label="Your first name" value="">
+                      <input type="text" class="form-control" name="editFirstNameModal" id="editFirstNameModalLabel" placeholder="New Event Name" aria-label="Your first name" value="" Required>
                       <!-- <input type="text" class="form-control" name="editLastNameModal" id="editLastNameModalLabel" placeholder="Your last name" aria-label="Your last name" value="Lauda"> -->
                     </div>
                   </div>
@@ -1181,7 +1176,7 @@ mysqli_close($con);
                   <label for="editOrganizationModalLabel" class="col-sm-3 col-form-label form-label">Venue</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="editOrganizationModal" id="editOrganizationModalLabel" placeholder="Venue Name" aria-label="Venue" value="SKNCOE">
+                    <input type="text" class="form-control" name="editOrganizationModal" id="editOrganizationModalLabel" placeholder="Venue Name" aria-label="Venue" value="SKNCOE" Required>
                   </div>
                 </div>
                 <!-- End Form -->
@@ -1191,7 +1186,7 @@ mysqli_close($con);
                   <label for="editDepartmentModalLabel" class="col-sm-3 col-form-label form-label">Start Date</label>
 
                   <div class="col-sm-9">
-                    <input type="date" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="Start Date" aria-label="Start Date">
+                    <input type="date" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="Start Date" aria-label="Start Date" Required>
                   </div>
                 </div>
                 <!-- End Form -->
@@ -1202,7 +1197,7 @@ mysqli_close($con);
                   <label for="editDepartmentModalLabel" class="col-sm-3 col-form-label form-label">End Date</label>
 
                   <div class="col-sm-9">
-                    <input type="date" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="End Date" aria-label="End Date">
+                    <input type="date" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="End Date" aria-label="End Date" Required>
                   </div>
                 </div>
                 <!-- End Form -->
@@ -1212,7 +1207,7 @@ mysqli_close($con);
                   <label for="editDepartmentModalLabel" class="col-sm-3 col-form-label form-label">Time</label>
 
                   <div class="col-sm-9">
-                    <input type="time" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="Time" aria-label="Time">
+                    <input type="time" class="form-control" name="editDepartmentModal" id="editDepartmentModalLabel" placeholder="Time" aria-label="Time" Required>
                   </div>
                 </div>
                 <!-- End Form -->
