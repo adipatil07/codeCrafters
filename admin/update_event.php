@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Add Club</title>
+  <title>Update Event</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -145,10 +145,12 @@
         <div class="row align-items-center">
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
-              
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item active" aria-current="page">Event</li>
+              </ol>
             </nav>
 
-            <h1 class="page-header-title">Add Club</h1>
+            <h1 class="page-header-title">Update Event</h1>
           </div>
           <!-- End Col -->
         </div>
@@ -157,98 +159,165 @@
       <!-- End Page Header -->
 
       <div class="row">
+        
+
         <div class="col-lg-12">
         <div class="d-flex align-items-center">
 
+
+<script>
+  document.getElementById('avatarUploader').addEventListener('change', function () {
+    var input = this;
+    var img = document.getElementById('avatarImg');
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  });
+</script>
 
                         <!-- <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button> -->
                       </div>
           <!-- Card -->
           <br>
-          
-      
-        <!-- Body -->
-        <div class="card-body">
-            <div class="row">
-            <form action="#" method="post">
+          <form action="#" method="post">
     <div class="card">
+
     <?PHP
         include 'include/later_head.php';
     
     ?>
+        <!-- Body -->
+        <div class="card-body">
+            <div class="row">
                 <div class="col-sm-12">
-                  
                     <!-- Form -->
                     <div class="mb-4">
-                        <label for="firstNameLabel" class="form-label">Club name</label>
-                        <input type="text" class="form-control" name="clubName" id="clubName" placeholder="Club name" aria-label="Clarice">
+                        <label for="eventName" class="form-label">Event name</label>
+                        <input type="text" class="form-control" name="eventName" id="eventName" placeholder="Event name" aria-label="Clarice">
                     </div>
                     <!-- End Form -->
                 </div>
+                <!-- End Col -->
+
+                
+                <!-- End Col -->
             </div>
             <!-- End Row -->
 
             <!-- Form -->
             <div class="mb-4">
-                <label for="emailLabel" class="form-label">Club Purpose</label>
-                <input type="textArea" class="form-control" name="clubPurpose" id="clubPurpose" placeholder="" aria-label="clarice@site.com">
+                <label for="venue" class="form-label">Venue</label>
+                <input type="text" class="form-control" name="venue" id="venue" placeholder="Venue" aria-label="clarice@site.com">
             </div>
             <!-- End Form -->
 
             <!-- Form -->
-            <div class="js-add-field mb-4" >
-                <label for="phoneLabel" class="form-label">Target Audience</label>
+            <div class="js-add-field mb-4">
+                <label for="startDate" class="form-label">Start Date</label>
                 <div class="input-group">
-                    <input type="text" class="js-input-mask form-control" name="clubAudience" id="clubAudience" placeholder="" aria-label="">
+                    <input type="date" class="js-input-mask form-control" name="startDate" id="startDate" placeholder="Start Date" aria-label="">
                 </div>
             </div>
             <!-- End Form -->
 
             <!-- Form -->
-            <div class="js-add-field mb-4" >
-                <label for="time" class="form-label">Social Media Links</label>
+            <div class="js-add-field mb-4">
+                <label for="endDate" class="form-label">End Date</label>
                 <div class="input-group">
-                    <input type="text" class="js-input-mask form-control" name="clubSocialMedia" id="clubSocialMedia" placeholder="" aria-label="" >
+                    <input type="date" class="js-input-mask form-control" name="endDate" id="endDate" placeholder="End Date" aria-label="">
                 </div>
             </div>
             <!-- End Form -->
 
+            <div class="js-add-field mb-4">
+                <label for="startTime" class="form-label">Start Time</label>
+                <div class="input-group">
+                    <input type="time" class="js-input-mask form-control" name="startTime" id="startTime" placeholder="Start Time" aria-label="">
+                </div>
+            </div>
+
+            <div class="js-add-field mb-4">
+                <label for="endTime" class="form-label">End Time</label>
+                <div class="input-group">
+                    <input type="time" class="js-input-mask form-control" name="endTime" id="endTime" placeholder="End Time" aria-label="">
+                </div>
+            </div>
+
+            <div class="js-add-field mb-4">
+                <label for="registrationFee" class="form-label">Registration Fee</label>
+                <div class="input-group">
+                    <input type="number" class="js-input-mask form-control" name="registrationFee" id="registrationFee" placeholder="Registration Fee" aria-label="">
+                </div>
+            </div>
+
+            <div class="js-add-field mb-4">
+                <label for="eventDescription" class="form-label">Event Description</label>
+                <div class="input-group">
+                    <textarea class="form-control" name="eventDescription" id="eventDescription" placeholder="Enter event description" aria-label="Event Description"></textarea>
+                </div>
+            </div>
+
+            <!-- End Form -->
             <div class="d-flex justify-content-end gap-3">
+                <button type="button" class="btn btn-white">Discard</button>
                 <button type="submit" class="btn btn-primary" name="btn_submit">Save</button>
             </div>
         </div>
         <!-- Body -->
     </div>
+    <!-- End Card -->
 </form>
-<?php
-// Include the configuration file
+
+          <!-- End Card -->
+        </div>
+      </div>
+      <!-- End Row -->
+
+      <hr class="my-5">
+
+      <!-- End Row -->
+
+      <hr class="my-5">
+
+       <!-- End Row -->
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+    <?php
 include 'include/config.php';
 
-// Check if the form is submitted
 if(isset($_POST['btn_submit'])){
-    // Create a new MySQLi connection
     $con = new mysqli($servername, $username, $password, $dbname);
-    
-    // Check the connection
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
     
     // Retrieve form data
-    $clubName = $_POST['clubName'];
-    $clubPurpose = $_POST['clubPurpose'];
-    $clubAudience = $_POST['clubAudience'];
-    $clubSocialMedia = $_POST['clubSocialMedia'];
+    $eventName = $_POST['eventName'];
+    $venue = $_POST['venue'];
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
+    $registrationFee = $_POST['registrationFee'];
+    $eventDescription = $_POST['eventDescription'];
     
-    // Prepare SQL statement for insertion
-    $stmt = $con->prepare("INSERT INTO `tbl_club`(`club_name`, `club_purpose`, `club_audience`, `club_social_media`) VALUES (?, ?, ?, ?)");
+    // Prepare SQL statement for updating event details
+    $stmt = $con->prepare("UPDATE tbl_add_event SET add_event_veneu=?, add_event_sdate=?, add_event_ldate=?, add_event_stime=?, add_event_ltime=?, add_event_fee=?, add_event_dis=? WHERE add_event_name=?");
     
     // Bind parameters
-    $stmt->bind_param("ssss", $clubName, $clubPurpose, $clubAudience, $clubSocialMedia);
+    $stmt->bind_param("ssssssss", $venue, $startDate, $endDate, $startTime, $endTime, $registrationFee, $eventDescription, $eventName);
     
     // Execute statement
     if ($stmt->execute()) {
-        echo '<script>alert("Club added successfully.");</script>';
+        echo '<script>window.location.href="eventSucces.php";</script>';
+        exit; // Ensure that no further code is executed after redirection
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -258,6 +327,8 @@ if(isset($_POST['btn_submit'])){
     $con->close();
 }
 ?>
+
+
 
 
     <!-- End Footer -->
@@ -984,22 +1055,7 @@ if(isset($_POST['btn_submit'])){
 
   <!-- JS Front -->
   <script src="./assets/js/theme.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-  document.getElementById('avatarUploader').addEventListener('change', function () {
-    var input = this;
-    var img = document.getElementById('avatarImg');
 
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(input.files[0]);
-    }
-  });
-</script>
-</script>
   <!-- JS Plugins Init. -->
   <script>
     (function() {
@@ -1084,3 +1140,4 @@ if(isset($_POST['btn_submit'])){
   <!-- End Style Switcher JS -->
 </body>
 </html>
+

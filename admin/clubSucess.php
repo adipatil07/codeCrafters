@@ -113,7 +113,7 @@
 
         <p><b>Thank you so much</b></p>
                 
-<button type="button" class="btn btn-primary btn-sm">Back</button>
+        <link><a href="dashboard.php" target="_blank"><button class="btn btn-sucess">Go To DashBoard</button></a></link>
     </div>
 </div>
 

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +43,7 @@
             window.hs_config = {"autopath":"@@autopath","deleteLine":"hs-builder:delete","deleteLine:build":"hs-builder:build-delete","deleteLine:dist":"hs-builder:dist-delete","previewMode":false,"startPath":"/dashboard.php","vars":{"themeFont":"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap","version":"?v=1.0"},"layoutBuilder":{"extend":{"switcherSupport":true},"header":{"layoutMode":"default","containerMode":"container-fluid"},"sidebarLayout":"default"},"themeAppearance":{"layoutSkin":"default","sidebarSkin":"default","styles":{"colors":{"primary":"#377dff","transparent":"transparent","white":"#fff","dark":"132144","gray":{"100":"#f9fafc","900":"#1e2022"}},"font":"Inter"}},"languageDirection":{"lang":"en"},"skipFilesFromBundle":{"dist":["assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","assets/js/demo.js"],"build":["assets/css/theme.css","assets/vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside-mini-cache.js","assets/js/demo.js","assets/css/theme-dark.css","assets/css/docs.css","assets/vendor/icon-set/style.css","assets/js/hs.theme-appearance.js","assets/js/hs.theme-appearance-charts.js","node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js","assets/js/demo.js"]},"minifyCSSFiles":["assets/css/theme.css","assets/css/theme-dark.css"],"copyDependencies":{"dist":{"*assets/js/theme-custom.js":""},"build":{"*assets/js/theme-custom.js":"","node_modules/bootstrap-icons/font/*fonts/**":"assets/css"}},"buildFolder":"","replacePathsToCDN":{},"directoryNames":{"src":"./src","dist":"./dist","build":"./build"},"fileNames":{"dist":{"js":"theme.min.js","css":"theme.min.css"},"build":{"css":"theme.min.css","js":"theme.min.js","vendorCSS":"vendor.min.css","vendorJS":"vendor.min.js"}},"fileTypes":"jpg|png|svg|mp4|webm|ogv|json"}
             window.hs_config.gulpRGBA = (p1) => {
   const options = p1.split(',')
-  const hex = options[0].toString()
+  const hex = options[0].toStrinlea()
   const transparent = options[1].toString()
 
   var c;
@@ -157,45 +159,142 @@
         <!-- End Row -->
       </div>
       <!-- End Page Header -->
+                <!-- Profile Header -->
 
-      <div class="row">
-        
+           <!-- Profile Cover -->
+<div class="profile-cover">
+  <div class="profile-cover-img-wrapper">
+    <img class="profile-cover-img" src="../assets/img/1920x400/img1.jpg" alt="Image Description">
+  </div>
+</div>
+<!-- End Profile Cover -->
+<div class="text-center mb-5">
+<label class="avatar avatar-xl avatar-uploader me-4" for="avatarUploader">
+  <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/logo.jpeg" alt="Image Description">
 
-        <div class="col-lg-12">
-        <div class="d-flex align-items-center">
-        <label class="avatar avatar-xl avatar-uploader me-6" for="avatarUploader">
-  <img id="avatarImg" class="avatar-img img-fluid rounded" src="./assets/img/160x160/img1.jpg" alt="Image Description">
-
-  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" accept=".png, .jpeg, .jpg">
+  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" name="logo" accept=".png, .jpeg, .jpg">
 
   <span class="avatar-uploader-trigger">
     <i class="bi-pencil avatar-uploader-icon shadow-sm"></i>
   </span>
 </label>
 
+
 <script>
-  document.getElementById('avatarUploader').addEventListener('change', function () {
+document.getElementById('avatarUploader').addEventListener('change', function () {
     var input = this;
     var img = document.getElementById('avatarImg');
 
     if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(input.files[0]);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
     }
-  });
+});
+
 </script>
+
+<?php
+include('include/config.php'); // Include your database connection file
+
+if(isset($_POST["btn_submit"])) {
+    // Retrieve other form data
+    $eventName = $_POST['eventName'];
+    $venue = $_POST['venue'];
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+    $startTime = $_POST['startTime'];
+    $endTime = $_POST['endTime'];
+    $registrationFee = $_POST['registrationFee'];
+    $eventDescription = $_POST['eventDescription'];
+
+    // Process the image file
+    if(isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
+        // Retrieve file details
+        $fileTmpPath = $_FILES['logo']['tmp_name'];
+        $fileName = $_FILES['logo']['name'];
+        $fileType = $_FILES['logo']['type'];
+        
+        // Read the file as binary data
+        $fp = fopen($fileTmpPath, 'rb');
+        $imageData = fread($fp, filesize($fileTmpPath));
+        fclose($fp);
+        
+        // Escape special characters to prevent SQL injection
+        $eventName = mysqli_real_escape_string($con, $eventName);
+        $venue = mysqli_real_escape_string($con, $venue);
+        // Repeat for other fields
+        
+        // Prepare SQL statement
+        $sql = "INSERT INTO tbl_add_event (add_event_name, add_event_venue, add_event_sdate, add_event_ldate, add_event_stime, add_event_ltime, add_event_fee, add_event_dis, add_event_logo, add_event_timestamp) 
+                VALUES ('$eventName', '$venue', '$startDate', '$endDate', '$startTime', '$endTime', '$registrationFee', '$eventDescription', ?, NOW())";
+        
+        // Prepare the SQL statement
+        $stmt = mysqli_stmt_init($con);
+        if(mysqli_stmt_prepare($stmt, $sql)) {
+            // Bind the image data to the SQL statement
+            mysqli_stmt_bind_param($stmt, "s", $imageData);
+            
+            // Execute the statement
+            if(mysqli_stmt_execute($stmt)) {
+                // Image inserted successfully
+                echo "Image inserted successfully.";
+            } else {
+                // Error occurred while executing the statement
+                echo "Error: " . mysqli_error($con);
+            }
+        } else {
+            // Error occurred while preparing the statement
+            echo "Error: " . mysqli_error($con);
+        }
+        
+        // Close statement and connection
+        mysqli_stmt_close($stmt);
+        // mysqli_close($con);
+    } else {
+        // Error handling for file upload failure
+        echo "Error: File upload failed.";
+    }
+}
+?>
+
+
+  <!-- End Profile Header -->
+
+      <div class="row">
+
+      
+        
+
+        <div class="col-lg-12">
+        <div class="d-flex align-items-center">
+        
+
 
                         <!-- <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button> -->
                       </div>
           <!-- Card -->
           <br>
-          <form action="#" method="post">
+        
+    
+          
+          <form action="#" method="post" enctype="multipart/form-data">
+           
+
+
     <div class="card">
+      
         <!-- Body -->
         <div class="card-body">
+
+
+
+  <!-- <h1 class="page-header-title">Ella Lauda <i class="bi-patch-check-fill fs-2 text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Top endorsed"></i></h1> -->
+
+</div>
+<!-- End Profile Header -->
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Form -->
@@ -1145,4 +1244,3 @@ if(isset($_POST['btn_submit'])){
   <!-- End Style Switcher JS -->
 </body>
 </html>
-

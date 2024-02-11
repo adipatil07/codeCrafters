@@ -295,7 +295,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['add_event_stime'] . "</td>";
         echo "<td>" . $row['add_event_ltime'] . "</td>";
         echo "<td>" . $row['add_event_fee'] . "</td>";
-        echo '<td><a href="./addevent.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+        echo '<td><a href="./update_event.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="bi-pencil-fill me-1"></i> Edit
               </button></a></td>';
         echo '<td><a href="?delete_id=' . $row['add_event_id'] . '" onclick="return confirm(\'Are you sure you want to delete this event?\')"><button type="button" class="btn btn-warning btn-sm">
