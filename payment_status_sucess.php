@@ -102,7 +102,7 @@
     <h1>Payment Successful...</h1>
     <p>Your payment has been successfully processed.</p>
     <p>You will receive your confirmation letter in the next 24 hours. Please check your email inbox. If you don't find it, kindly check your spam folder.</p>
-
+    
     <p><b>Thank you so much</b></p>
     <a href="index.php">Back</a>
 </div>
