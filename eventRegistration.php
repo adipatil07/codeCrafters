@@ -608,4 +608,10 @@ if(isset($_POST['btn_register'])){
     echo "Error: Unable to add registration data";
   }
 }
+<<<<<<< HEAD
+=======
+
+}
+
+>>>>>>> 4cd5fb2894af499f663ace17f00806388461c1d6
 ?>

@@ -182,7 +182,7 @@ if ($result) {
                     <!-- Uncomment if you have event descriptions -->
                     <p>Event Club: ' . $eventClubName . '</p>
                     <p>Start Date: ' . $eventStartDate . '</p>
-                    <p>End Date: ' . $eventEndDate . '</p>
+                    <p>Registration End Date: ' . $eventEndDate . '</p>
                     <p>Start Time: ' . $eventStartTime . '</p>
                     <p>End Time: ' . $eventEndTime . '</p>
                     <p>Registration Fee: ' . $registrationFeeDisplay . '</p>
