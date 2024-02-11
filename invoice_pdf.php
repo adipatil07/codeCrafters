@@ -151,149 +151,183 @@
       </div>
       <!-- End Page Header -->
 
-      <div class="row">
+      <?php
+include 'admin/include/config.php';
+
+// Connect to the database
+$con = new mysqli($servername, $username, $password, $dbname);
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+
+// Query to fetch all details
+$query = "SELECT * FROM tbl_register";
+$result = mysqli_query($con, $query);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row">
         <div class="col-lg-8 mb-5 mb-lg-0">
-          <!-- Card -->
-          <div class="card card-lg mb-5">
-            <div class="card-body">
-              <div class="row justify-content-lg-between">
-                <div class="col-sm order-2 order-sm-1 mb-3">
-                  <div class="mb-2">
-                    <img class="avatar" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-                  </div>
+            <!-- Card -->
+            <div class="card card-lg mb-5">
+                <div class="card-body">
+                    <div class="row justify-content-lg-between">
+                        <div class="col-sm order-2 order-sm-1 mb-3">
+                            <div class="mb-8">
+                                <!-- Adjust the width and height attributes of the img element -->
+                                <img src="images/Sinhgadlogo.png" alt="Logo" width="150" height="100">
+                            </div>
 
-                  <h1 class="h2 text-primary">Front Inc.</h1>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-sm-auto order-1 order-sm-2 text-sm-end mb-3">
+                            <div class="mb-3">
+                                <!-- <h1> echo '<th>' . $row['reg_fname'] . '</th>';</h1> -->
+                                <!-- <span class="d-block">3682303</span> -->
+                            </div>
+                            <?php
+                                // Check if there are any records in the result set
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    // Fetch the first row to get data for the invoice
+                                    $row = mysqli_fetch_assoc($result);
+                                    // Output the required fields for the invoice
+                                    echo '<h1>' . $row['reg_event_name'] . '</h1>';
+                                    echo '<span class="d-block">' . $row['reg_clg'] . '</span>';
+                                    echo '<span class="text-muted"><b>Token ID: ' . $row['reg_tk_id'] . '</span></b>';
+                                } else {
+                                    // Handle case where no records are found
+                                    echo '<h4>Customer Name</h4>';
+                                    echo '<span class="d-block">Customer Address</span>';
+                                }
+                                ?>
+
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <div class="row justify-content-md-between mb-3">
+                        <div class="col-md">
+                            <h4>Bill to:</h4>
+                            <h4>Sara Williams</h4>
+
+                            <?php
+                                // Check if there are any records in the result set
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    // Fetch the first row to get data for the invoice
+                                    $row = mysqli_fetch_assoc($result);
+                                    // Output the required fields for the invoice
+                                    echo '<h1>' . $row['reg_fname'] . '</h1>';
+                                    echo '<span class="d-block">' . $row['reg_clg'] . '</span>';
+                                    echo '<span class="text-muted"><b>Token ID: ' . $row['reg_tk_id'] . '</span></b>';
+                                } else {
+                                    // Handle case where no records are found
+                                    echo '<h4>Customer Name</h4>';
+                                    echo '<span class="d-block">Customer Address</span>';
+                                }
+                                ?>
+                        </div>
+                        <!-- End Col -->
+
+                        <div class="col-md text-md-end">
+                            <dl class="row">
+                                <dt class="col-sm-8">Invoice date:</dt>
+                                <dd class="col-sm-4">03/10/2018</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col-sm-8">Due date:</dt>
+                                <dd class="col-sm-4">03/11/2018</dd>
+                            </dl>
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+
+                    <!-- Table -->
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-nowrap table-align-middle">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Event Name </th>
+                                    <th>Mobile No</th>
+                                    <th class="table-text-end">Amount</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- End Table -->
+
+                    <hr class="my-5">
+
+                    <div class="row justify-content-md-end mb-3">
+                        <div class="col-md-8 col-lg-7">
+                            <dl class="row text-sm-end">
+                                <dt class="col-sm-6">Subtotal:</dt>
+                                <dd class="col-sm-6">$2750.00</dd>
+                                <dt class="col-sm-6">Total:</dt>
+                                <dd class="col-sm-6">$2750.00</dd>
+                                <dt class="col-sm-6">Tax:</dt>
+                                <dd class="col-sm-6">$39.00</dd>
+                                <dt class="col-sm-6">Amount paid:</dt>
+                                <dd class="col-sm-6">$2789.00</dd>
+                                <dt class="col-sm-6">Due balance:</dt>
+                                <dd class="col-sm-6">$0.00</dd>
+                            </dl>
+                            <!-- End Row -->
+                        </div>
+                    </div>
+                    <!-- End Row -->
+
+                    <div class="mb-3">
+                        <h3>Thank you!</h3>
+                        <p>If you have any questions concerning this invoice, use the following contact information:</p>
+                    </div>
+
+                    <p class="small mb-0">&copy; 2021 Htmlstream.</p>
                 </div>
-                <!-- End Col -->
-
-                <div class="col-sm-auto order-1 order-sm-2 text-sm-end mb-3">
-                  <div class="mb-3">
-                    <h2>Invoice #</h2>
-                    <span class="d-block">3682303</span>
-                  </div>
-
-                  <address class="text-dark">
-                    45 Roker Terrace<br>
-                    Latheronwheel<br>
-                    KW5 8NW, London<br>
-                    United Kingdom
-                  </address>
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              <div class="row justify-content-md-between mb-3">
-                <div class="col-md">
-                  <h4>Bill to:</h4>
-                  <h4>Sara Williams</h4>
-
-                  <address>
-                    280 Suzanne Throughway,<br>
-                    Breannabury, OR 45801,<br>
-                    United States
-                  </address>
-                </div>
-                <!-- End Col -->
-
-                <div class="col-md text-md-end">
-                  <dl class="row">
-                    <dt class="col-sm-8">Invoice date:</dt>
-                    <dd class="col-sm-4">03/10/2018</dd>
-                  </dl>
-                  <dl class="row">
-                    <dt class="col-sm-8">Due date:</dt>
-                    <dd class="col-sm-4">03/11/2018</dd>
-                  </dl>
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              <!-- Table -->
-              <div class="table-responsive">
-                <table class="table table-borderless table-nowrap table-align-middle">
-                  <thead class="thead-light">
-                    <tr>
-                      <th>Item</th>
-                      <th>Quantity</th>
-                      <th>Rate</th>
-                      <th class="table-text-end">Amount</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <th>Design UX and UI</th>
-                      <td>1</td>
-                      <td>5</td>
-                      <td class="table-text-end">$500</td>
-                    </tr>
-
-                    <tr>
-                      <th>Web project</th>
-                      <td>1</td>
-                      <td>24</td>
-                      <td class="table-text-end">$1250</td>
-                    </tr>
-
-                    <tr>
-                      <th>SEO</th>
-                      <td>1</td>
-                      <td>6</td>
-                      <td class="table-text-end">$2000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- End Table -->
-
-              <hr class="my-5">
-
-              <div class="row justify-content-md-end mb-3">
-                <div class="col-md-8 col-lg-7">
-                  <dl class="row text-sm-end">
-                    <dt class="col-sm-6">Subtotal:</dt>
-                    <dd class="col-sm-6">$2750.00</dd>
-                    <dt class="col-sm-6">Total:</dt>
-                    <dd class="col-sm-6">$2750.00</dd>
-                    <dt class="col-sm-6">Tax:</dt>
-                    <dd class="col-sm-6">$39.00</dd>
-                    <dt class="col-sm-6">Amount paid:</dt>
-                    <dd class="col-sm-6">$2789.00</dd>
-                    <dt class="col-sm-6">Due balance:</dt>
-                    <dd class="col-sm-6">$0.00</dd>
-                  </dl>
-                  <!-- End Row -->
-                </div>
-              </div>
-              <!-- End Row -->
-
-              <div class="mb-3">
-                <h3>Thank you!</h3>
-                <p>If you have any questions concerning this invoice, use the following contact information:</p>
-              </div>
-
-              <p class="small mb-0">&copy; 2021 Htmlstream.</p>
             </div>
-          </div>
-          <!-- End Card -->
+            <!-- End Card -->
 
-          <!-- Footer -->
-          <div class="d-flex justify-content-end d-print-none gap-3">
-            <a class="btn btn-white" href="#">
-              <i class="bi-file-earmark-arrow-down me-1"></i> PDF
-            </a>
+            <!-- Footer -->
+            <div class="d-flex justify-content-end d-print-none gap-3">
+                <a class="btn btn-white" href="#">
+                    <i class="bi-file-earmark-arrow-down me-1"></i> PDF
+                </a>
 
-            <a class="btn btn-primary" href="javascript:;" onclick="window.print(); return false;">
-              <i class="bi-printer me-1"></i> Print details
-            </a>
-          </div>
-          <!-- End Footer -->
+                <a class="btn btn-primary" href="javascript:;" onclick="window.print(); return false;">
+                    <i class="bi-printer me-1"></i> Print details
+                </a>
+            </div>
+            <!-- End Footer -->
         </div>
-    <!-- End Content -->
+        <!-- End Content -->
 
-    <!-- Footer -->
+        <!-- Footer -->
+        </body>
+
+</html>
+
+<?php
+// Close the database connection
+mysqli_close($con);
+?>
+
 
      <?PHP 
           include'admin/include/footer.php';

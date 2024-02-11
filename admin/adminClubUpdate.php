@@ -233,35 +233,38 @@
                  }'>
             <thead class="thead-light">
               <tr>
-                <th class="table-column-pe-0">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll">
-                    <label class="form-check-label" for="datatableCheckAll"></label>
-                  </div>
-                </th>
-                <th class="table-column-ps-0">Club Name</th>
-                <th>Members</th>
+                <th>Id</th>
+                <th>Club Name</th>
                 <th>Club Purpose</th>
                 <th>Target Audience</th>
                 <th>Social Media Links</th>
-                
-                <!-- <th>Capacity</th> -->
-                <th>Action</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
 
             <tbody>
             
-<?php
-// Assuming you have already connected to your database
-// $dbConnection = new PDO("mysql:host=localhost;dbname=your_database", "username", "password");
+            <?php
 include 'include/config.php';
-// SQL query to fetch data from the database
+
+// Check if the delete button is clicked
+if(isset($_GET['delete_id'])) {
+    $delete_id = $_GET['delete_id'];
+    
+    // SQL query to delete the event with the specified ID
+    $delete_query = "DELETE FROM tbl_club WHERE club_id= $delete_id";
+    
+    // Execute the delete query
+    if(mysqli_query($con, $delete_query)) {
+        echo '<script>alert("Event deleted successfully.");</script>';
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
 
 // SQL query to fetch data from the database
-
-// SQL query to fetch data from the database
-$query = "SELECT * FROM tbl_event";
+$query = "SELECT * FROM tbl_club";
 $result = mysqli_query($con, $query);
 
 // Check if query execution was successful
@@ -269,43 +272,38 @@ if (!$result) {
     echo "Error: " . mysqli_error($con);
 }
 
-// Fetch the data from the result set
-while ($row = mysqli_fetch_assoc($result)) {
-    $eventId = $row['event_id'];
-    $eventName = $row['event_name'];
-    $eventDescription = $row['event_desc']; // Fetching description instead of venue
-    $eventStartDate = $row['event_sdate'];
-    $eventEndDate = $row['event_ldate'];
-    $eventStartTime = $row['event_stime']; // Assuming you have a field for start time
-    $eventEndTime = $row['event_ltime']; // Assuming you have a field for end time
+// Check if there are any records in the result set
+if (mysqli_num_rows($result) > 0) {
+    // Output the HTML table header
 
-    // Output the HTML table row with fetched data
-    echo '<tr>';
-    echo '<td class="table-column-pe-0">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll1">
-                <label class="form-check-label" for="datatableCheckAll1"></label>
-              </div>
-            </td>';
-    echo '<td class="table-column-ps-0">
-              <div class="ms-3">
-                <span class="d-block h5 text-inherit mb-0">' . $eventName . '</span>
-                <span class="d-block fs-5 text-body">' . $eventDescription . '</span> <!-- Changed venue to description -->
-              </div>
-            </td>';
-    echo '<td><span class="d-block h5 mb-0">' . $eventId . '</span></td>';
-    echo '<td>' . $eventDescription . '</td>'; // Changed venue to description
-    echo '<td>' . $eventStartDate . '<br>' . $eventStartTime . '</td>';
-    echo '<td>' . $eventEndDate . '<br>' . $eventEndTime . '</td>';
-    // echo '<td><span class="legend-indicator bg-success"></span>' . $eventStatus . '</td>'; // Removed event status column
-    echo '<td><a href="./addClub.php"><button type="button" class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+    // Fetch and output each row of data
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['club_id'] . "</td>";
+        echo "<td>" . $row['club_name'] . "</td>";
+        echo "<td>" . $row['club_purpose'] . "</td>";
+        echo "<td>" . $row['club_audience'] . "</td>";
+        echo "<td>" . $row['club_social_media'] . "</td>";
+        echo '<td><a href="./addevent.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="bi-pencil-fill me-1"></i> Edit
               </button></a></td>';
-    echo '</tr>';
+
+        echo '<td><a href="?delete_id=' . $row['club_id'] . '" onclick="return confirm(\'Are you sure you want to delete this event?\')"><button type="button" class="btn btn-warning btn-sm">
+                <i class="bi-trash-fill me-1"></i> Delete
+              </button></a></td>';
+        echo "</tr>";
+    }
+
+    // Close the table
+    echo "</table>";
+} else {
+    echo "No records found";
 }
 
-
+// Close the connection
+mysqli_close($con);
 ?>
+
 
             </tbody>
           </table>

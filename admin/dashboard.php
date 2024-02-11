@@ -172,112 +172,133 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
       <!-- End Page Header -->
 
       <!-- Stats -->
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
+      <?php
+include 'include/config.php';
+
+// Connect to the database
+$con = new mysqli($servername, $username, $password, $dbname);
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+
+// Query to get the total count of events
+$query_events = "SELECT COUNT(*) AS total_events FROM tbl_add_event";
+$result_events = mysqli_query($con, $query_events);
+$total_events = 0;
+
+// Check if the query for events was successful
+if ($result_events) {
+    $row_events = mysqli_fetch_assoc($result_events);
+    $total_events = $row_events['total_events'];
+} else {
+    // Error handling for events query
+    echo "Error fetching total events: " . mysqli_error($con);
+}
+
+// Query to get the total count of students enrolled
+$query_students = "SELECT COUNT(*) AS total_students FROM tbl_register";
+$result_students = mysqli_query($con, $query_students);
+$total_students = 0;
+
+// Check if the query for students was successful
+if ($result_students) {
+    $row_students = mysqli_fetch_assoc($result_students);
+    $total_students = $row_students['total_students'];
+} else {
+    // Error handling for students query
+    echo "Error fetching total students: " . mysqli_error($con);
+}
+
+// Query to get the total count of clubs
+$query_clubs = "SELECT COUNT(*) AS total_clubs FROM tbl_club";
+$result_clubs = mysqli_query($con, $query_clubs);
+$total_clubs = 0;
+
+// Check if the query for clubs was successful
+if ($result_clubs) {
+    $row_clubs = mysqli_fetch_assoc($result_clubs);
+    $total_clubs = $row_clubs['total_clubs'];
+} else {
+    // Error handling for clubs query
+    echo "Error fetching total clubs: " . mysqli_error($con);
+}
+
+// Query to get the total count of club students
+$query_club_students = "SELECT COUNT(*) AS total_club_students FROM tbl_register";
+$result_club_students = mysqli_query($con, $query_club_students);
+$total_club_students = 0;
+
+// Check if the query for club students was successful
+if ($result_club_students) {
+    $row_club_students = mysqli_fetch_assoc($result_club_students);
+    $total_club_students = $row_club_students['total_club_students'];
+} else {
+    // Error handling for club students query
+    echo "Error fetching total club students: " . mysqli_error($con);
+}
+
+// Close the database connection
+mysqli_close($con);
+?>
+
+<div class="row">
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+        <!-- Card -->
+        <a class="card card-hover-shadow h-100" href="#">
             <div class="card-body">
-              <h6 class="card-subtitle">Total Events</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">24</h1>
+                <h6 class="card-subtitle">Total Events</h6>
+                <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                        <h1 class="card-title text-inherit"><?php echo $total_events; ?></h1>
+                    </div>
                 </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
             </div>
-          </a>
-          <!-- End Card -->
-        </div>
+        </a>
+    </div>
 
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+        <!-- Card -->
+        <a class="card card-hover-shadow h-100" href="#">
             <div class="card-body">
-              <h6 class="card-subtitle">Total Students Enrolled</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">64</h1>
+                <h6 class="card-subtitle">Total Students Enrolled</h6>
+                <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                        <h1 class="card-title text-inherit"><?php echo $total_students; ?></h1>
+                    </div>
                 </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
             </div>
-          </a>
-          <!-- End Card -->
-        </div>
+        </a>
+    </div>
 
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+        <!-- Card -->
+        <a class="card card-hover-shadow h-100" href="#">
             <div class="card-body">
-              <h6 class="card-subtitle">Total Clubs</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">3</h1>
+                <h6 class="card-subtitle">Total Clubs</h6>
+                <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                        <h1 class="card-title text-inherit"><?php echo $total_clubs; ?></h1>
+                    </div>
                 </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
             </div>
-          </a>
-          <!-- End Card -->  </div>
+        </a>
+    </div>
 
-        <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
-          <!-- Card -->
-          <a class="card card-hover-shadow h-100" href="#">
+    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-5">
+        <!-- Card -->
+        <a class="card card-hover-shadow h-100" href="#">
             <div class="card-body">
-              <h6 class="card-subtitle">Total Club Students</h6>
-
-              <div class="row align-items-center gx-2 mb-1">
-                <div class="col-6">
-                  <h1 class="card-title text-inherit">30</h1>
+                <h6 class="card-subtitle">Total Club Students</h6>
+                <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                        <h1 class="card-title text-inherit"><?php echo $total_club_students; ?></h1>
+                    </div>
                 </div>
-                <!-- End Col -->
-
-                <div class="col-6">
-                  
-                  <!-- End Chart -->
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-
-              
             </div>
-          </a>
-          <!-- End Card -->  </div>
-      </div>
-      <!-- End Stats -->
+        </a>
+    </div>
+</div>
 
-      <!-- End Row -->
 
       <!-- Card -->
       <div class="card mb-3 mb-lg-5">
@@ -331,49 +352,81 @@ if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_name']) || !isset($
                  }'>
             <thead class="thead-light">
               <tr>
-                <th scope="col" class="table-column-pe-0">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="datatableCheckAll">
-                    <label class="form-check-label" for="datatableCheckAll"></label>
-                  </div>
-                </th>
-                <th class="table-column-ps-0">Full name</th>
-                <th>College</th>
-                <th>Branch</th>
+                <th >No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th>Email</th>
-                <th>Event</th>
-                <th>User ID</th>
+                <th>Mobile</th>
+                <th>College</th>
+                <th>Dept.</th>
+                <th>Fees</th>
+                <th>Token Id</th>
+                <th>Status</th>
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td class="table-column-pe-0">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="usersDataCheck2">
-                    <label class="form-check-label" for="usersDataCheck2"></label>
-                  </div>
-                </td>
-                <td class="table-column-ps-0">
-                  <a class="d-flex align-items-center" href="../user-profile.php">
-                    <div class="flex-shrink-0">
-                      
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                      <h5 class="text-inherit mb-0">Aditya Patil <i class="bi-patch-check-fill text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Top endorsed"></i></h5>
-                    </div>
-                  </a>
-                </td>
-                <td>
-                  <span class="legend-indicator bg-success"></span>SKNCOE
-                </td>
-                <td>COMP</td>
-                <td>abc@site.com</td>
-                <td>Codex</td>
-                <td>67989</td>
-              </tr>
+            <?php
+include 'include/config.php';
 
-            </tbody>
+// Check if the delete button is clicked
+if(isset($_GET['delete_id'])) {
+    $delete_id = $_GET['delete_id'];
+    
+    // SQL query to delete the event with the specified ID
+    $delete_query = "DELETE FROM tbl_add_event WHERE add_event_id = $delete_id";
+    
+    // Execute the delete query
+    if(mysqli_query($con, $delete_query)) {
+        echo '<script>alert("Event deleted successfully.");</script>';
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
+
+// SQL query to fetch data from the database
+$query = "SELECT * FROM tbl_register";
+$result = mysqli_query($con, $query);
+
+// Check if query execution was successful
+if (!$result) {
+    echo "Error: " . mysqli_error($con);
+}
+
+// Check if there are any records in the result set
+if (mysqli_num_rows($result) > 0) {
+    // Output the HTML table header
+
+    // Fetch and output each row of data
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['reg_id'] . "</td>";
+        echo "<td>" . $row['reg_fname'] . "</td>";
+        echo "<td>" . $row['reg_lname'] . "</td>";
+        echo "<td>" . $row['reg_email'] . "</td>";
+        echo "<td>" . $row['reg_mobile'] . "</td>";
+        echo "<td>" . $row['reg_clg'] . "</td>";
+        echo "<td>" . $row['reg_dept'] . "</td>";
+        echo "<td>" . $row['reg_amt'] . "</td>";
+        echo "<td>" . $row['reg_tk_id'] . "</td>";
+        echo "<td>" . $row['reg_payment_status'] . "</td>";
+        // echo '<td><a href="./addevent.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+        //         <i class="bi-pencil-fill me-1"></i> Edit
+        //       </button></a></td>';
+        // echo '<td><a href="?delete_id=' . $row['add_event_id'] . '" onclick="return confirm(\'Are you sure you want to delete this event?\')"><button type="button" class="btn btn-warning btn-sm">
+        //         <i class="bi-trash-fill me-1"></i> Delete
+        //       </button></a></td>';
+        echo "</tr>";
+    }
+
+    // Close the table
+    echo "</table>";
+} else {
+    echo "No records found";
+}
+
+// Close the connection
+mysqli_close($con);
+?>
           </table>
         </div>
         <!-- End Table -->
