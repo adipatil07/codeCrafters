@@ -209,78 +209,57 @@ session_start();
 
                       <!-- Form first name-->
                       <div class="row mb-4">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">First name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
+    <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">First name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
+    <div class="col-sm-9">
+        <div class="input-group input-group-sm-vertical">
+            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="First Name" aria-label="Aditya" required>
+        </div>
+    </div>
+</div>
 
-                        <div class="col-sm-9">
-                          <div class="input-group input-group-sm-vertical">
-                            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="First Name" aria-label="Aditya">
-                          </div>
-                        </div>
-                      </div>
+<div class="row mb-4">
+    <label for="lastNameLabel" class="col-sm-3 col-form-label form-label">Last name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Last Name"></i></label>
+    <div class="col-sm-9">
+        <div class="input-group input-group-sm-vertical">
+            <input type="text" class="form-control" name="lastName" id="lastNameLabel" placeholder="Last Name" aria-label="Patil" required>
+        </div>
+    </div>
+</div>
 
-                       <div class="row mb-4">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Last name <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enter Name of Your Leader"></i></label>
+<div class="row mb-4">
+    <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
+    <div class="col-sm-9">
+        <input type="email" class="form-control" name="email" id="emailLabel" placeholder="email@gmail.com" aria-label="aditya@gmail.com" required>
+    </div>
+</div>
 
-                        <div class="col-sm-9">
-                          <div class="input-group input-group-sm-vertical">
-                            <input type="text" class="form-control" name="lastName" id="firstNameLabel" placeholder="Last Name" aria-label="Aditya">
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End Form -->
+<div class="js-add-field row mb-4" data-hs-add-field-options='{
+    "template": "#addPhoneFieldTemplate",
+    "container": "#addPhoneFieldContainer",
+    "defaultCreated": 0
+}'>
+    <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone</label>
+    <div class="col-sm-9">
+        <div class="input-group input-group-sm-vertical">
+            <input type="text" class="js-input-mask form-control" name="phone" id="phoneLabel" placeholder="+91 xxxxx xxxxx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{"mask": "00000 00000"}' required>
+        </div>
+    </div>
+</div>
 
-                      <!-- Form email-->
-                      <div class="row mb-4">
-                        <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
+<div class="row mb-4">
+    <label for="organizationLabel" class="col-sm-3 col-form-label form-label">College Name</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" name="organization" id="organizationLabel" placeholder="SKNCOE" aria-label="SKNCOE" required>
+    </div>
+</div>
 
-                        <div class="col-sm-9">
-                          <input type="email" class="form-control" name="email" id="emailLabel" placeholder="email@gmail.com" aria-label="aditya@gmail.com">
-                        </div>
-                      </div>
-                      <!-- End Form -->
-
-                      <!-- Form Phone -->
-                      <div class="js-add-field row mb-4" data-hs-add-field-options='{
-                              "template": "#addPhoneFieldTemplate",
-                              "container": "#addPhoneFieldContainer",
-                              "defaultCreated": 0
-                            }'>
-                        <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone</label>
-
-                        <div class="col-sm-9">
-                          <div class="input-group input-group-sm-vertical">
-                            <input type="text" class="js-input-mask form-control" name="phone" id="phoneLabel" placeholder="+91 xxxxx xxxxx" aria-label="+x(xxx)xxx-xx-xx" data-hs-mask-options='{
-                                    "mask": "00000 00000"
-                                  }'>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End Form -->
-
-                      <!-- Form College-->
-                      <div class="row mb-4">
-                        <label for="organizationLabel" class="col-sm-3 col-form-label form-label">College Name</label>
-
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" name="organization" id="organizationLabel" placeholder="SKNCOE" aria-label="Htmlstream">
-                        </div>
-                      </div>
-                      <!-- End Form -->
-
-                      <!-- Form Department-->
-                      <div class="row mb-4">
-                        <label for="departmentLabel" class="col-sm-3 col-form-label form-label">Department</label>
-
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" name="department" id="departmentLabel" placeholder="Computer" aria-label="Human resources">
-                        </div>
-                      </div>
-                      <!-- End Form -->
-
-                      <!-- Form -->
-                      
-                      <!-- End Form -->
-                    </div>
+<div class="row mb-4">
+    <label for="departmentLabel" class="col-sm-3 col-form-label form-label">Department</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" name="department" id="departmentLabel" placeholder="Computer" aria-label="Computer Science" required>
+    </div>
+</div>
+ </div>
                     <!-- End Body -->
 
                     <!-- Footer -->
@@ -608,10 +587,7 @@ if(isset($_POST['btn_register'])){
     echo "Error: Unable to add registration data";
   }
 }
-<<<<<<< HEAD
-=======
 
-}
 
->>>>>>> 4cd5fb2894af499f663ace17f00806388461c1d6
+
 ?>
