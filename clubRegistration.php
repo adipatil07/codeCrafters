@@ -146,138 +146,74 @@
         <div class="card card-lg mb-5">
           <div class="card-body">
             <!-- Form -->
-            <form action="#" method="post">
-              <div class="text-center">
-                <div class="mb-5">
-                  <h1 class="display-4">Join Club</h1>
-                  <h2 class="display-5">Club Name : <?php extract($_GET); echo $club_name; ?></h2>
-                  <h2 class="display-5">Club ID : <?php echo $club_id; ?></h2>
+            <form action="#" method="post" id="joinClubForm">
+    <div class="text-center">
+        <div class="mb-5">
+            <h1 class="display-4">Join Club</h1>
+            <h2 class="display-5">Club Name: <?php extract($_GET); echo $club_name; ?></h2>
+            <h2 class="display-5">Club ID: <?php echo $club_id; ?></h2>
+        </div>
+    </div>
 
-                  <!-- <p>Already have an account? <a class="link" href="./authentication-login-basic.html">Sign in here</a></p> -->
-                </div>
+    <div class="mb-4">
+        <label class="form-label" for="fullName">Full Name</label>
+        <input type="text" class="form-control form-control-lg" name="fullName" id="fullName" placeholder="Mark Williams" aria-label="Mark Williams" required>
+        <span class="invalid-feedback">Please enter your full name.</span>
+    </div>
 
-             </div>
+    <div class="mb-4">
+        <label class="form-label" for="signupSrEmail">Your email</label>
+        <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@site.com" aria-label="Markwilliams@site.com" required>
+        <span class="invalid-feedback">Please enter a valid email address.</span>
+    </div>
 
-              <div class="mb-4">
-                <label class="form-label" for="fullName">Full Name</label>
-                <input type="text" class="form-control form-control-lg" name="fullName" id="fullName" placeholder="Mark Williams" aria-label="Mark Williams" required>
-                <span class="invalid-feedback">Please enter your full name.</span>
-            </div>
-              <!-- End Form -->
+    <div class="mb-4">
+        <label class="form-label" for="mobile">Your Mobile No</label>
+        <input type="text" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="+91 xxxxx xxxxx" required>
+        <span class="invalid-feedback">Please enter a valid mobile number.</span>
+    </div>
 
-              <!-- Form -->
-              <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Your email</label>
-                <input type="email" class="form-control form-control-lg" name="email" id="signupSrEmail" placeholder="Markwilliams@site.com" aria-label="Markwilliams@site.com" required>
-                <span class="invalid-feedback">Please enter a valid email address.</span>
-              </div>
-               <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Your Mobile No</label>
-                <input type="email" class="form-control form-control-lg" name="mobile" id="mobile" placeholder="+91 xxxxx xxxxx"  required>
-                <span class="invalid-feedback">Please enter a valid mobile number.</span>
-              </div>
-            
-              <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Department</label>
-<<<<<<< HEAD
-                <input type="email" class="form-control form-control-lg" name="department" id="signupSrEmail" placeholder="Enter your Department name " required>
-=======
-                <input type="text" class="form-control form-control-lg" name="dept" id="signupSrEmail" placeholder="CS" aria-label="Markwilliams@site.com" required>
->>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
-                <span class="invalid-feedback">Please Enter your Department name</span>
-              </div>
+    <div class="mb-4">
+        <label class="form-label" for="dept">Department</label>
+        <input type="text" class="form-control form-control-lg" name="dept" id="dept" placeholder="CS" required>
+        <span class="invalid-feedback">Please Enter your Department name</span>
+    </div>
 
-              <div class="mb-4">
-                <label class="form-label" for="departmentDropdown">Domain</label>
-                <select class="form-select form-select-lg" id="departmentDropdown" name="domain" required>
-                <option value="" selected disabled>Choose Your Domain</option>
-                <option value="AD">Android Development</option>
-                <option value="WD">Web Development</option>
-                <option value="AM">AI/ML</option>
-                <option value="CC">Cloud Computing</option>
-                <!-- Add more options as needed -->
-                </select>
-                <span class="invalid-feedback">Please select your department.</span>
-            </div>
+    <div class="mb-4">
+        <label class="form-label" for="departmentDropdown">Domain</label>
+        <select class="form-select form-select-lg" id="departmentDropdown" name="domain" required>
+            <option value="" selected disabled>Choose Your Domain</option>
+            <option value="AD">Android Development</option>
+            <option value="WD">Web Development</option>
+            <option value="AM">AI/ML</option>
+            <option value="CC">Cloud Computing</option>
+        </select>
+        <span class="invalid-feedback">Please select your department.</span>
+    </div>
 
+    <div class="mb-4">
+        <label class="form-label" for="linkedin">LinkedIn Profile</label>
+        <input type="text" class="form-control form-control-lg" name="linkdean" id="linkedin" placeholder="https://www.linkedin.com/in/xyz" required>
+        <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
+    </div>
 
-              <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">LinkedIn Profile</label>
-<<<<<<< HEAD
-                <input type="email" class="form-control form-control-lg" name="linkedin" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz"  required>
-=======
-                <input type="text" class="form-control form-control-lg" name="linkdean" id="signupSrEmail" placeholder="https://www.linkedin.com/in/xyz" aria-label="Markwilliams@site.com" required>
->>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
-                <span class="invalid-feedback">Please Enter your LinkedIn Profile link</span>
-              </div>
+    <div class="mb-4">
+        <label class="form-label" for="github">Github Profile</label>
+        <input type="text" class="form-control form-control-lg" name="git_hub" id="github" placeholder="https://github.com/xyz" required>
+        <span class="invalid-feedback">Please enter your Github Profile link</span>
+    </div>
 
-              <div class="mb-4">
-                <label class="form-label" for="signupSrEmail">Github Profile</label>
-<<<<<<< HEAD
-                <input type="email" class="form-control form-control-lg" name="github" id="signupSrEmail" placeholder="https://github.com/xyz" required>
-=======
-                <input type="text" class="form-control form-control-lg" name="git_hub" id="signupSrEmail" placeholder="https://github.com/xyz" aria-label="Markwilliams@site.com" required>
->>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7
-                <span class="invalid-feedback">Please enter your Github Profile link</span>
-              </div>
+    <div class="mb-4">
+        <label class="form-label" for="reasonForJoining">Why do you want to join the club?</label>
+        <textarea class="form-control" name="reasonForJoining" id="reasonForJoining" rows="4" placeholder="Write your response here..." required></textarea>
+        <span class="invalid-feedback">Please provide a reason for joining the club.</span>
+    </div>
 
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-lg" name="btn_submit">Submit</button>
+    </div>
+</form>
 
-              <!-- End Form -->
-
-              <!-- Form -->
-              <!-- <div class="mb-4">
-                <label class="form-label" for="signupSrPassword">Password</label>
-
-                <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                  <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8" data-hs-toggle-password-options='{
-                           "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
-                           "defaultClass": "bi-eye-slash",
-                           "showClass": "bi-eye",
-                           "classChangeTarget": ".js-toggle-password-show-icon-1"
-                         }'>
-                  <a class="js-toggle-password-target-1 input-group-append input-group-text" href="javascript:;">
-                    <i class="js-toggle-password-show-icon-1 bi-eye"></i>
-                  </a>
-                </div>
-
-                <span class="invalid-feedback">Your password is invalid. Please try again.</span>
-              </div>
-              End Form
-
-              Form
-              <div class="mb-4">
-                <label class="form-label" for="signupSrConfirmPassword">Confirm password</label>
-
-                <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                  <input type="password" class="js-toggle-password form-control form-control-lg" name="confirmPassword" id="signupSrConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" required minlength="8" data-hs-toggle-password-options='{
-                           "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
-                           "defaultClass": "bi-eye-slash",
-                           "showClass": "bi-eye",
-                           "classChangeTarget": ".js-toggle-password-show-icon-2"
-                         }'>
-                  <a class="js-toggle-password-target-2 input-group-append input-group-text" href="javascript:;">
-                    <i class="js-toggle-password-show-icon-2 bi-eye"></i>
-                  </a>
-                </div>
-
-                <span class="invalid-feedback">Password does not match the confirm password.</span>
-              </div> -->
-              <!-- End Form -->
-
-              <div class="mb-4">
-    <label class="form-label" for="reasonForJoining">Why do you want to join the club?</label>
-    <textarea class="form-control" name="reasonForJoining" id="reasonForJoining" rows="4" placeholder="Write your response here..." required></textarea>
-    <span class="invalid-feedback">Please provide a reason for joining the club.</span>
-  </div>
-
-              
-              <!-- End Form Check -->
-
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary btn-lg" name="btn_submit">Submit</button>
-
-              </div>
-            </form>
             <!-- End Form -->
           </div>
         </div>
@@ -322,42 +258,6 @@
 </html>
 <?php
 if(isset($_POST['btn_submit'])){
-<<<<<<< HEAD
-    include 'admin/include/config.php';
-    $con = new mysqli($servername, $username, $password, $dbname);
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }
-    
-    // Retrieve form data
-    $fullName = $_POST['fullName'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $department = $_POST['department'];
-    $domain = $_POST['domain'];
-    $linkedin = $_POST['linkedin'];
-    $github = $_POST['github'];
-    $reasonForJoining = $_POST['reasonForJoining'];
-    
-    // Prepare SQL statement
-    $stmt = $con->prepare("INSERT INTO `tbl_user_club_req`(`req_user_name`, `req_user_email`, `req_user_mobile`, `req_user_dept`, `req_user_domain`, `reg_user_linkedin`, `reg_user_github`, `req_user_msg`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    
-    // Bind parameters
-    $stmt->bind_param("ssssssss", $fullName, $email, $mobile, $department, $domain, $linkedin, $github, $reasonForJoining);
-    
-    // Execute statement
-    if ($stmt->execute()) {
-        echo '<script>alert("Send Message Successfully");</script>';
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-    
-    // Close statement and connection
-    // $stmt->close();
-    // $con->close();
-}
-?>
-=======
   print_r($_POST);
   extract($_POST);
 include('admin/include/config.php');
@@ -382,4 +282,3 @@ if(mysqli_query($con, $sql)){
 
 
 ?>
->>>>>>> 15b6e4c3c20a881d8aa36ef2ebb14ce77448e6c7

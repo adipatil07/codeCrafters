@@ -266,16 +266,16 @@
             </div>
 
             <!-- End Form -->
+            
             <div class="d-flex justify-content-end gap-3">
                 <button type="button" class="btn btn-white">Discard</button>
-                <button type="submit" class="btn btn-primary" name="btn_submit">Save</button>
+                <button type="submit" class="btn btn-primary"   name="btn_submit">Save</button>
             </div>
         </div>
         <!-- Body -->
     </div>
     <!-- End Card -->
 </form>
-
           <!-- End Card -->
         </div>
       </div>
