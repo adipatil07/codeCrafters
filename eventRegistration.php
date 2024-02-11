@@ -547,69 +547,65 @@ $page_tracking_id = $z1."".$z3."".$z2."".$z4;
 
 // Close connection
 //$con->close();
-
 ?>
 <?php
 if(isset($_POST['btn_register'])){
- // print_r($_POST);
   extract($_POST);
-  $k1=$_GET['event_id'];
-  $k2=$_GET['event_name'];
-  $k3=$_GET['cost'];
+  // Retrieve event information from URL parameters
+  $event_id = $_GET['event_id'];
+  $event_name = $_GET['event_name'];
+  $cost = $_GET['cost'];
 
-$sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`,`reg_amt`,`reg_tk_id`) VALUES 
-(NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$k1', '$k2','$k3','$page_tracking_id')";
-if(mysqli_query($con,$sql))
-{
-  echo "data added";
+  // Insert registration data into the database
+  $sql = "INSERT INTO `tbl_register` (`reg_id`, `reg_fname`, `reg_lname`, `reg_email`, `reg_mobile`, `reg_clg`, `reg_dept`, `reg_timestamp`, `reg_event_id`, `reg_event_name`, `reg_amt`, `reg_tk_id`) VALUES 
+  (NULL, '$firstName', '$lastName', '$email', '$phone', '$organization', '$department', '$time_stamp', '$event_id', '$event_name', '$cost', '$page_tracking_id')";
+
+  if(mysqli_query($con, $sql)) {
+    // Registration data added successfully, initiate payment process
 ?>
    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
+   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+   <script>
     pay_now();
 
     function pay_now(){
         var name="abhijit";
-        var amt="<?php echo $k3; ?>";
+        var amt="<?php echo $cost; ?>";
         var tkno="<?php echo $page_tracking_id; ?>";
         var mob="<?php echo $phone; ?>";
         
-         jQuery.ajax({
-               type:'post',
-               url:'payment_process.php',
-               data:"pti="+tkno+"&mobno="+mob,
-               success:function(result){
-                   var options = {
-                        "key": "rzp_test_F7x1JKRcw87rk5", 
-                        "amount": amt*100, 
-                        "currency": "INR",
-                        "name": "Code Crafters",
-                        "description": "Test Transaction",
-                        "image": "https://techking.in.net/img/service/654bdd2ff261a.png",
-                       "handler": function (response){
-                           jQuery.ajax({
-                               type:'post',
-                               url:'payment_process.php',
+        jQuery.ajax({
+           type:'post',
+           url:'payment_process.php',
+           data:"pti="+tkno+"&mobno="+mob,
+           success:function(result){
+               var options = {
+                    "key": "rzp_test_F7x1JKRcw87rk5", 
+                    "amount": amt*100, 
+                    "currency": "INR",
+                    "name": "Code Crafters",
+                    "description": "Test Transaction",
+                    "image": "https://techking.in.net/img/service/654bdd2ff261a.png",
+                    "handler": function (response){
+                        jQuery.ajax({
+                            type:'post',
+                            url:'payment_process.php',
                             data:"pyid="+response.razorpay_payment_id,
-                               success:function(result){
-                                   window.location.href="payment_status_sucess.php";
-                               }
-                           });
-                        }
-                    };
-                    var rzp1 = new Razorpay(options);
-                    rzp1.open();
-               }
-           });
-        
-        
+                            success:function(result){
+                                window.location.href="payment_status_sucess.php";
+                            }
+                        });
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+           }
+        });
     }
-</script>
+   </script>
 <?php
-      }else{
-  echo "error is present";
+  } else {
+    echo "Error: Unable to add registration data";
+  }
 }
-
-}
-
 ?>

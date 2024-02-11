@@ -322,7 +322,8 @@ if(isset($_POST['btn_submit'])){
     
     // Execute statement
     if ($stmt->execute()) {
-        echo '<script>alert("Event added successfully.");</script>';
+      echo '<script>window.location.href="eventSucces.php";</script>';
+        exit; // Ensure that no further code is executed after redirection
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -332,6 +333,7 @@ if(isset($_POST['btn_submit'])){
     $con->close();
 }
 ?>
+
 
 
     <!-- End Footer -->

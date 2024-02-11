@@ -98,7 +98,7 @@
                         <div class="body1">
 
  <div class="container1">
-        <img src="images/paymentsucess.gif">
+ <img src="assets/svg/logos/paymentsucess.gif">
         <h1>Club Successfully Added...</h1>
         <p>Congratulations! Your club has been successfully added. Thank you for choosing our platform to showcase your club.</p>
         <p>

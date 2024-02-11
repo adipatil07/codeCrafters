@@ -98,7 +98,7 @@
                         <div class="body1">
 
  <div class="container1">
-        <img src="images/paymentsucess.gif">
+        <img src="assets/svg/logos/paymentsucess.gif">
         <h1>Event Added Succesfully...</h1>
         <p>Congratulations! Your event has been successfully created.</p>
         <p>
@@ -114,7 +114,7 @@ Thank you for using CodeCrafters!</p>
 
         <p><b>Thank you so much</b></p>
         
-        <button type="button" class="btn btn-primary btn-sm">Back</button>
+        <link><a href="dashboard.php" target="_blank"><button class="btn btn-sucess">Go To DashBoard</button></a></link>
     </div>
 </div>
         
