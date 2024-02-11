@@ -197,7 +197,7 @@
                 <div class="col-sm-12">
                     <!-- Form -->
                     <div class="mb-4">
-                        <label for="eventName" class="form-label">Event name</label>
+                        <!-- <label for="eventName" class="form-label">Event name</label> -->
                         <input type="text" class="form-control" name="eventName" id="eventName" placeholder="Event name" aria-label="Clarice">
                     </div>
                     <!-- End Form -->
@@ -211,14 +211,14 @@
 
             <!-- Form -->
             <div class="mb-4">
-                <label for="venue" class="form-label">Venue</label>
+                <!-- <label for="venue" class="form-label">Venue</label> -->
                 <input type="text" class="form-control" name="venue" id="venue" placeholder="Venue" aria-label="clarice@site.com">
             </div>
             <!-- End Form -->
 
             <!-- Form -->
             <div class="js-add-field mb-4">
-                <label for="startDate" class="form-label">Start Date</label>
+                <!-- <label for="startDate" class="form-label">Start Date</label> -->
                 <div class="input-group">
                     <input type="date" class="js-input-mask form-control" name="startDate" id="startDate" placeholder="Start Date" aria-label="">
                 </div>
@@ -227,7 +227,7 @@
 
             <!-- Form -->
             <div class="js-add-field mb-4">
-                <label for="endDate" class="form-label">End Date</label>
+                <!-- <label for="endDate" class="form-label">End Date</label> -->
                 <div class="input-group">
                     <input type="date" class="js-input-mask form-control" name="endDate" id="endDate" placeholder="End Date" aria-label="">
                 </div>
@@ -235,28 +235,28 @@
             <!-- End Form -->
 
             <div class="js-add-field mb-4">
-                <label for="startTime" class="form-label">Start Time</label>
+                <!-- <label for="startTime" class="form-label">Start Time</label> -->
                 <div class="input-group">
                     <input type="time" class="js-input-mask form-control" name="startTime" id="startTime" placeholder="Start Time" aria-label="">
                 </div>
             </div>
 
             <div class="js-add-field mb-4">
-                <label for="endTime" class="form-label">End Time</label>
+                <!-- <label for="endTime" class="form-label">End Time</label> -->
                 <div class="input-group">
                     <input type="time" class="js-input-mask form-control" name="endTime" id="endTime" placeholder="End Time" aria-label="">
                 </div>
             </div>
 
             <div class="js-add-field mb-4">
-                <label for="registrationFee" class="form-label">Registration Fee</label>
+                <!-- <label for="registrationFee" class="form-label">Registration Fee</label> -->
                 <div class="input-group">
                     <input type="number" class="js-input-mask form-control" name="registrationFee" id="registrationFee" placeholder="Registration Fee" aria-label="">
                 </div>
             </div>
 
             <div class="js-add-field mb-4">
-                <label for="eventDescription" class="form-label">Event Description</label>
+                <!-- <label for="eventDescription" class="form-label">Event Description</label> -->
                 <div class="input-group">
                     <textarea class="form-control" name="eventDescription" id="eventDescription" placeholder="Enter event description" aria-label="Event Description"></textarea>
                 </div>

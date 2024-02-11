@@ -174,10 +174,13 @@ if ($result) {
             <div class="card mb-3" style="max-width: 1000px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <!-- Uncomment if you have event images -->
+                <img src="images/codex.jpg" style< alt="" width="350" height="350"/>
                 </div>
                 <div class="col-md-8">
+               
+                
                   <div class="card-body">
+                  
                     <h1 class="card-title">' . $eventName . '</h1>
                     <!-- Uncomment if you have event descriptions -->
                     <p>Event Club: ' . $eventClubName . '</p>

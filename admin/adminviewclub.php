@@ -203,7 +203,7 @@ if ($result) {
         echo '<div class="col-sm-4 mb-4">
                 <a href="#">
                     <div class="card" style="width: 20rem;height: 20rem">
-                       
+                    <img class="card-img-top" src="assets/img/gdscskn.png" alt="Poster of Event" style="width: 18rem;height: 10rem"> 
                         <div class="card-body">
                             <h5 class="card-title">' . $clubName . '</h5>
                             <p class="card-text">' . $clubDesc . '</p>

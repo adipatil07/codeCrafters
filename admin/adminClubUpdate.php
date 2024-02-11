@@ -284,7 +284,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['club_purpose'] . "</td>";
         echo "<td>" . $row['club_audience'] . "</td>";
         echo "<td>" . $row['club_social_media'] . "</td>";
-        echo '<td><a href="./update_event.php"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
+        echo '<td><a href="#"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="bi-pencil-fill me-1"></i> Edit
               </button></a></td>';
 
